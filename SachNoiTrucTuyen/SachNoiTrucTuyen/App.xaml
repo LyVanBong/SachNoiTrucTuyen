@@ -4,8 +4,6 @@
              xmlns:prism="http://prismlibrary.com"
              x:Class="SachNoiTrucTuyen.App">
   <Application.Resources>
-
-    <!-- Application resource dictionary -->
-
-  </Application.Resources>
+        <ResourceDictionary Source="Resources/Themes/DayThemes/DayThemeResources.xaml"/>
+    </Application.Resources>
 </prism:PrismApplication>

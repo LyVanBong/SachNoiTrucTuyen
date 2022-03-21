@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="bgColor">White</Color>
+    <Color x:Key="primaryColor">#7963EC</Color>
+    <Color x:Key="tabBarColor">#4450E2</Color>
+    <Color x:Key="nameBookColor">Black</Color>
+    <Color x:Key="placeHolderColor">#EEEEEE</Color>
+    <Color x:Key="titleColor">Black</Color>
+    <Color x:Key="subTitleColor">#F0F0F0</Color>
+    <LinearGradientBrush x:Key="gradientColor" StartPoint="0,0"
+                     EndPoint="1,1">
+        <GradientStop Color="Yellow"
+                  Offset="0.0" />
+        <GradientStop Color="Red"
+                  Offset="0.25" />
+        <GradientStop Color="Blue"
+                  Offset="0.75" />
+        <GradientStop Color="LimeGreen"
+                  Offset="1.0" />
+    </LinearGradientBrush>
+</ResourceDictionary>

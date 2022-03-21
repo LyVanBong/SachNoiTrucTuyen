@@ -23,7 +23,9 @@ namespace SachNoiTrucTuyen.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
-
+            Syncfusion.XForms.iOS.Buttons.SfChipRenderer.Init();
+            Syncfusion.XForms.iOS.Buttons.SfChipGroupRenderer.Init();
+            Syncfusion.XForms.iOS.Graphics.SfGradientViewRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }

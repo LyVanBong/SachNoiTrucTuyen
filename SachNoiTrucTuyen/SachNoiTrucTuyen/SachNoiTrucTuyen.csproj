@@ -5,9 +5,108 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Font\Roboto-Black.ttf" />
+    <None Remove="Resources\Font\Roboto-BlackItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Bold.ttf" />
+    <None Remove="Resources\Font\Roboto-BoldItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Italic.ttf" />
+    <None Remove="Resources\Font\Roboto-Light.ttf" />
+    <None Remove="Resources\Font\Roboto-LightItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Medium.ttf" />
+    <None Remove="Resources\Font\Roboto-MediumItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Regular.ttf" />
+    <None Remove="Resources\Font\Roboto-Thin.ttf" />
+    <None Remove="Resources\Font\Roboto-ThinItalic.ttf" />
+    <None Remove="Resources\Images\ic_book_open.png" />
+    <None Remove="Resources\Images\ic_close.png" />
+    <None Remove="Resources\Images\ic_m_ap_0.png" />
+    <None Remove="Resources\Images\ic_m_ap_1.png" />
+    <None Remove="Resources\Images\ic_m_cp_0.png" />
+    <None Remove="Resources\Images\ic_m_cp_1.png" />
+    <None Remove="Resources\Images\ic_m_hp_0.png" />
+    <None Remove="Resources\Images\ic_m_hp_1.png" />
+    <None Remove="Resources\Images\ic_m_kp_0.png" />
+    <None Remove="Resources\Images\ic_m_kp_1.png" />
+    <None Remove="Resources\Images\ic_m_sp_0.png" />
+    <None Remove="Resources\Images\ic_m_sp_1.png" />
+    <None Remove="Resources\Images\ic_pause.png" />
+    <None Remove="Resources\Images\ic_play.png" />
+    <None Remove="Resources\Images\ic_search.png" />
+    <None Remove="Resources\Images\ic_ttv_ap.png" />
+    <None Remove="Resources\Images\ic_ttv_cp.png" />
+    <None Remove="Resources\Images\ic_ttv_hp.png" />
+    <None Remove="Resources\Images\ic_ttv_kp.png" />
+    <None Remove="Resources\Images\ic_ttv_sp.png" />
+    <None Remove="Resources\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Font\Roboto-Black.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-BlackItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Light.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-MediumItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Thin.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-ThinItalic.ttf" />
+    <EmbeddedResource Include="Resources\Images\ic_book_open.png" />
+    <EmbeddedResource Include="Resources\Images\ic_close.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_ap_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_ap_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_cp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_cp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_hp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_hp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_kp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_kp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_sp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_sp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_pause.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play.png" />
+    <EmbeddedResource Include="Resources\Images\ic_search.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_ap.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_cp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_hp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_kp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_sp.png" />
+    <EmbeddedResource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.4.0.56" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Themes\DayThemes\DayThemeResources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\SplashScreenPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\AccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\CollectionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\KnowledgePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\StoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
