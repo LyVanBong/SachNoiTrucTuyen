@@ -25,14 +25,33 @@
                    FontAttributes="Bold"
                    Margin="0,0,0,5"
                    TextColor="{StaticResource primaryColor}"/>
-            
+
             <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_search.png}"
                     VerticalOptions="Center"
                     WidthRequest="20"
                     HeightRequest="20"
                     HorizontalOptions="End"
                     Margin="0,0,15,10"
-                    />
+                    >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SearchPage', Animated=True, UseModalNavigation=True}">
+                        <TapGestureRecognizer.CommandParameter>
+                            <prism:NavigationParameter Key="TypePage" Value="homePage"/>
+                        </TapGestureRecognizer.CommandParameter>
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_mail.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="28"
+                    HeightRequest="28"
+                    HorizontalOptions="End"
+                    Margin="0,0,15,10"
+                    >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MailPage', Animated=True, UseModalNavigation=True}"/>
+                </Image.GestureRecognizers>
+            </Image>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Resources>
@@ -40,6 +59,7 @@
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_pause.png" x:Key="Pause"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" x:Key="BookOpen"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_close.png" x:Key="Close"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
         
         <!--Type 0-->
         <DataTemplate x:Key="Ads" x:DataType="md:LayoutPageModel">
@@ -49,7 +69,7 @@
                            Margin="15,10,15,35"
                            CornerRadius="10">
                     <Image Source="{Binding Image}"
-                               Aspect="AspectFill"/>
+                               Aspect="Fill"/>
                 </Frame>
             </ViewCell>
         </DataTemplate>
@@ -62,7 +82,8 @@
                                Margin="15,0"
                                FontFamily="RBo"
                                TextColor="{StaticResource titleColor}"/>
-                        <CollectionView HeightRequest="330"
+                        <CollectionView x:Name="listBook"
+                                        HeightRequest="330"
                                         ItemsSource="{Binding ListBook}">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout ItemSpacing="5"
@@ -70,8 +91,9 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="md:Book">
-                                    <StackLayout>
-                                        <Grid>
+                                    <StackLayout x:Name="ItemBook">
+                                    <Grid WidthRequest="160">
+                                        
                                         <StackLayout Spacing="0"
                                                      WidthRequest="160" 
                                                      Margin="5,0,0,0"
@@ -107,8 +129,20 @@
                                                    LineBreakMode="TailTruncation"
                                                    FontSize="16"
                                                    FontFamily="R"/> 
-                                        </StackLayout> 
-                                        </Grid>
+                                        </StackLayout>
+
+                                        <Image Source="{StaticResource Premium}"
+                                               WidthRequest="20"
+                                               HeightRequest="20"
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Start"
+                                               Margin="15,10"
+                                               IsVisible="{Binding IsPremium}"/>
+                                            
+                                    </Grid>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/BookDetailPage', Animated=True, UseModalNavigation=True}"/>
+                                    </StackLayout.GestureRecognizers>
                                     </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>

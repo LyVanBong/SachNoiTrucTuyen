@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.VoiceBookPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.Resources>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" x:Key="Cart"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*,55"
+              RowSpacing="0">
+            <Frame HeightRequest="55"
+                   Padding="0"
+                   Grid.Row="0"
+                   CornerRadius="0">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            HorizontalOptions="StartAndExpand"
+                            Margin="15,10,15,10"
+                            >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_home.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="25"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            Margin="5,10,5,10"
+                            >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MainPage', Animated=True, UseModalNavigation=True}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_share.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="25"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            Margin="5,10,5,10"
+                            >
+                        <Image.GestureRecognizers>
+
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_book_2.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="25"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            Margin="5,10,5,10"
+                            >
+                        <Image.GestureRecognizers>
+
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down_load.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="25"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            Margin="5,10,5,10"
+                            >
+                        <Image.GestureRecognizers>
+
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_heart.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="25"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            Margin="5,10,15,10"
+                            >
+                        <Image.GestureRecognizers>
+
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

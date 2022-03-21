@@ -22,7 +22,8 @@ namespace SachNoiTrucTuyen.Models
             {
                 get => _timeOfVoice; set => SetProperty(ref _timeOfVoice, value); 
             }
-        public bool IsPremium { get; set; }
+        private bool _isPremium = true;
+        public bool IsPremium { get => _isPremium; set => SetProperty(ref _isPremium,value); }
         private bool _isFavorite;
         public bool IsFavorite { get => _isFavorite; set => SetProperty(ref _isFavorite, value); }
         

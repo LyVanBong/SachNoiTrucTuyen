@@ -4,6 +4,9 @@ using SachNoiTrucTuyen.Models;
 using SachNoiTrucTuyen.ViewModels;
 using SachNoiTrucTuyen.Views;
 using SachNoiTrucTuyen.Views.Pages;
+using SachNoiTrucTuyen.Views.Pages.DetailPages;
+using SachNoiTrucTuyen.Views.Pages.FunctionPages;
+using SachNoiTrucTuyen.Views.Pages.SupportPages;
 using SachNoiTrucTuyen.Views.Pages.TabbedPages;
 using System.Collections.ObjectModel;
 using Xamarin.Essentials.Implementation;
@@ -38,7 +41,7 @@ namespace SachNoiTrucTuyen
 
         public static ObservableCollection<Book> Books = new ObservableCollection<Book>()
         {
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/ug4kuaa4ynuarcu/bi-quyet-hanh-phuc-cua-su-thay-20210412074657.jpg?dl=0",
                 TitleBook = "Bí quyết hạnh phúc của sư thầy",
@@ -54,7 +57,8 @@ namespace SachNoiTrucTuyen
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0",
                 TitleBook = "Hãy bắt tôi nếu có thể",
-                AuthorBook = "Frank Abagnale"
+                AuthorBook = "Frank Abagnale",
+                IsPremium = false
             },
             new Book() 
             {
@@ -66,7 +70,8 @@ namespace SachNoiTrucTuyen
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/lp9hmx94fif37ub/nha-lanh-dao-linh-hoat-20210412074657.jpg?dl=0",
                 TitleBook = "Nhà lãnh đạo linh hoạt",
-                AuthorBook = "Simon Hayward"
+                AuthorBook = "Simon Hayward",
+                IsPremium = false
             },
             new Book() 
             {
@@ -78,7 +83,8 @@ namespace SachNoiTrucTuyen
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/275jjju11hrlsvx/suc-manh-cua-thoi-quen-20210412081444.jpg?dl=0",
                 TitleBook = "Súc mạnh của thói quen",
-                AuthorBook = "Charles Duhigg"
+                AuthorBook = "Charles Duhigg",
+                IsPremium = false
             },
             new Book() 
             {
@@ -96,7 +102,8 @@ namespace SachNoiTrucTuyen
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/unairj46gyqen79/that-lung-buoc-bung-20210412081444.jpg?dl=0",
                 TitleBook = "Thắt lưng buộc bụng",
-                AuthorBook = "Alberto Alesina, Carlo Faverro, Francesco Giavazzi"
+                AuthorBook = "Alberto Alesina, Carlo Faverro, Francesco Giavazzi",
+                IsPremium = false
             },
             new Book() 
             {
@@ -114,7 +121,8 @@ namespace SachNoiTrucTuyen
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/a3cb9izjduksyx5/trieu-phu-moi-ngay-20210412081444.jpg?dl=00",
                 TitleBook = "Triệu phú mỗi ngày",
-                AuthorBook = "Cris Hogan"
+                AuthorBook = "Cris Hogan",
+                IsPremium = false
             },
 
         };
@@ -124,6 +132,8 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
+           
+
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SplashScreenPage, SplashScreenPageViewModel>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
@@ -131,6 +141,12 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<KnowledgePage, KnowledgePageViewModel>();
             containerRegistry.RegisterForNavigation<CollectionPage, CollectionPageViewModel>();
             containerRegistry.RegisterForNavigation<AccountPage, AccountPageViewModel>();
+            containerRegistry.RegisterForNavigation<MailPage, MailPageViewModel>();
+            containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
+            containerRegistry.RegisterForNavigation<BookDetailPage, BookDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<ReadBookPage, ReadBookPageViewModel>();
+            containerRegistry.RegisterForNavigation<VoiceBookPage, VoiceBookPageViewModel>();
+            containerRegistry.RegisterForNavigation<VoiceVideoPage, VoiceVideoPageViewModel>();
         }
     }
 }
