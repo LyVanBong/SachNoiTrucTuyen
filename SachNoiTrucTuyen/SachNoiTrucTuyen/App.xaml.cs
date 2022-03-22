@@ -147,6 +147,7 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<ReadBookPage, ReadBookPageViewModel>();
             containerRegistry.RegisterForNavigation<VoiceBookPage, VoiceBookPageViewModel>();
             containerRegistry.RegisterForNavigation<VoiceVideoPage, VoiceVideoPageViewModel>();
+            containerRegistry.RegisterForNavigation<BookTopicDetailPage, BookTopicDetailPageViewModel>();
         }
     }
 }

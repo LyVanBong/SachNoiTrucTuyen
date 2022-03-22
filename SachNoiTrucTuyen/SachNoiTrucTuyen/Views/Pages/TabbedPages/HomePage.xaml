@@ -193,6 +193,7 @@
                                                         TextColor="White"
                                                         FontFamily="R"
                                                         xct:CornerRadiusEffect.CornerRadius="15"
+                                                        Command="{prism:NavigateTo 'NavigationPage/BookTopicDetailPage', Animated=True, UseModalNavigation=True}"
                                                         >
                                             <buttons:SfChip.BackgroundGradient>
                                                 <gradient:SfLinearGradientBrush>
@@ -217,6 +218,10 @@
                                                     <Setter Property="TextColor" Value="{StaticResource titleColor}"/>
                                                 </Trigger>
                                             </buttons:SfChip.Triggers>
+
+                                            <buttons:SfChip.CommandParameter>
+                                                <prism:NavigationParameter Key="topic" Value="{Binding .}"/>
+                                            </buttons:SfChip.CommandParameter>
                                         </buttons:SfChip>
                                             
                                         

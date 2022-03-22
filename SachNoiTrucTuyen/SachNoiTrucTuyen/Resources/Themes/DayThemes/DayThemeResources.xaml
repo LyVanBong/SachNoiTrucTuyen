@@ -8,6 +8,7 @@
     <Color x:Key="placeHolderColor">#EEEEEE</Color>
     <Color x:Key="titleColor">Black</Color>
     <Color x:Key="subTitleColor">#F0F0F0</Color>
+    <Color x:Key="placeHolderColor2">#DEDEDE</Color>
     <LinearGradientBrush x:Key="gradientColor" StartPoint="0,0"
                      EndPoint="1,1">
         <GradientStop Color="Yellow"

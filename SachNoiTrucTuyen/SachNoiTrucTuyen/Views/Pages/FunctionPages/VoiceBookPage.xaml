@@ -8,10 +8,22 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Resources>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_back_0.png" x:Key="Back0"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_back_1.png" x:Key="Back1"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_next_0.png" x:Key="Next0"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_next_1.png" x:Key="Next1"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_moon_0.png" x:Key="Moon0"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_moon_1.png" x:Key="Moon1"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_repeat_0.png" x:Key="Repeat0"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_repeat_1.png" x:Key="Repeat1"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_play_4.png" x:Key="Play"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_pause_3.png" x:Key="Pause"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_rw.png" x:Key="Rewind"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_fw.png" x:Key="Forward"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" x:Key="Cart"/>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*,55"
+        <Grid RowDefinitions="55,*,210"
               RowSpacing="0">
             <Frame HeightRequest="55"
                    Padding="0"
@@ -59,7 +71,7 @@
                             Margin="5,10,5,10"
                             >
                         <Image.GestureRecognizers>
-
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/ReadBookPage', Animated=True, UseModalNavigation=True}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down_load.png}"
@@ -87,6 +99,174 @@
 
                 </StackLayout>
             </Frame>
+
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+                    <Grid WidthRequest="160"
+                          Margin="0,30,0,0"
+                          HorizontalOptions="Center">
+                        <StackLayout>
+                            <Image Source="https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0"
+                            Aspect="AspectFill"
+                            HeightRequest="210"
+                            WidthRequest="140" 
+                            HorizontalOptions="Center"
+                            Margin="10"
+                            xct:CornerRadiusEffect.CornerRadius="5"
+                            xct:ShadowEffect.Color="Gray"
+                            xct:ShadowEffect.OffsetX="4"
+                            xct:ShadowEffect.OffsetY="6"
+                            xct:ShadowEffect.Opacity="1.5"
+                            xct:ShadowEffect.Radius="5"
+                            />
+                        </StackLayout>
+                        <Image Source="{StaticResource Premium}"
+                                               WidthRequest="20"
+                                               HeightRequest="20"
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Start"
+                                               Margin="15,10"
+                                               IsVisible="True"/>
+                    </Grid>
+                    <Label Text="Hãy bắt tôi nếu bạn có thể"
+                                                   MaxLines="2"
+                                                   LineBreakMode="TailTruncation"
+                                                   Margin="10,10,10,0"
+                                                   FontSize="16"
+                                                   FontFamily="RB"
+                            HorizontalOptions="Center"
+                                                    TextColor="{StaticResource nameBookColor}"/>
+                    <Label MaxLines="2"
+                                                   Margin="10,0,10,0"
+                                                   LineBreakMode="TailTruncation"
+                                                   FontSize="16"
+                                                   FontFamily="R"
+                           HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Tác giả: "/>
+                                <Span Text="Frank Abagnale"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label MaxLines="2"
+                                                   Margin="10,0,10,0"
+                                                   LineBreakMode="TailTruncation"
+                                                   FontSize="16"
+                                                   FontFamily="R"
+                           HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Giọng đọc: "/>
+                                <Span Text="Hồng Thắm"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center"
+                                 Margin="0,20,0,0">
+                        <Image Source="{StaticResource Cart}"
+                               WidthRequest="30"
+                               HeightRequest="30"/>
+
+                        <Label Margin="5,10,10,10"
+                                                   LineBreakMode="TailTruncation"
+                                                   FontSize="18"
+                                                   FontFamily="R"
+                               Text="MUA SÁCH GIẤY"
+                               TextColor="{StaticResource tabBarColor}"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Grid Grid.Row="2"
+                  RowDefinitions="*,*,*">
+                <StackLayout Grid.Row="0">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="03:17"
+                               FontSize="16"
+                               FontFamily="R"
+                               Margin="10,10,10,5"
+                               HorizontalOptions="StartAndExpand"/>
+                        <Label Text="20:54"
+                               FontSize="16"
+                               FontFamily="R"
+                               Margin="10,10,10,5"
+                               HorizontalOptions="End"/>
+                    </StackLayout>
+                    <Slider ThumbColor="{StaticResource tabBarColor}"
+                            MaximumTrackColor="{StaticResource primaryColor}"
+                            MinimumTrackColor="{StaticResource tabBarColor}">
+                        
+                    </Slider>
+                </StackLayout>
+                <Grid ColumnDefinitions="*,*,*,*,*"
+                      Grid.Row="1">
+                    <Image Source="{StaticResource Back0}"
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           Margin="20,0,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="0"/>
+                    <Image Source="{StaticResource Rewind}"
+                           WidthRequest="35"
+                           HeightRequest="35"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="1"/>
+                    <Image Source="{StaticResource Play}"
+                           WidthRequest="60"
+                           HeightRequest="60"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="2"/>
+                    <Image Source="{StaticResource Forward}"
+                           WidthRequest="35"
+                           HeightRequest="35"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="3"/>
+                    <Image Source="{StaticResource Next0}"
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           Margin="0,0,20,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="4"/>
+                </Grid>
+                <Grid ColumnDefinitions="*,*,*,*,*"
+                      Grid.Row="2">
+                    <Image Source="{StaticResource Moon0}"
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           Margin="20,0,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="0"/>
+                    <Label FontSize="28"
+                           FontFamily="RBo"
+                           TextColor="{StaticResource placeHolderColor2}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="0,1"/>
+                                <Span Text="x"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Image Source="{StaticResource Repeat0}"
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           Margin="0,0,20,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Column="4"/>
+                </Grid>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

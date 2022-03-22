@@ -17,6 +17,8 @@
     <None Remove="Resources\Font\Roboto-Regular.ttf" />
     <None Remove="Resources\Font\Roboto-Thin.ttf" />
     <None Remove="Resources\Font\Roboto-ThinItalic.ttf" />
+    <None Remove="Resources\Images\ic_back_0.png" />
+    <None Remove="Resources\Images\ic_back_1.png" />
     <None Remove="Resources\Images\ic_book_2.png" />
     <None Remove="Resources\Images\ic_book_open.png" />
     <None Remove="Resources\Images\ic_cart.png" />
@@ -25,10 +27,13 @@
     <None Remove="Resources\Images\ic_down.png" />
     <None Remove="Resources\Images\ic_down_load.png" />
     <None Remove="Resources\Images\ic_font.png" />
+    <None Remove="Resources\Images\ic_fw.png" />
     <None Remove="Resources\Images\ic_heart.png" />
     <None Remove="Resources\Images\ic_home.png" />
     <None Remove="Resources\Images\ic_mail.png" />
     <None Remove="Resources\Images\ic_messenger.png" />
+    <None Remove="Resources\Images\ic_moon_0.png" />
+    <None Remove="Resources\Images\ic_moon_1.png" />
     <None Remove="Resources\Images\ic_m_ap_0.png" />
     <None Remove="Resources\Images\ic_m_ap_1.png" />
     <None Remove="Resources\Images\ic_m_cp_0.png" />
@@ -39,11 +44,18 @@
     <None Remove="Resources\Images\ic_m_kp_1.png" />
     <None Remove="Resources\Images\ic_m_sp_0.png" />
     <None Remove="Resources\Images\ic_m_sp_1.png" />
+    <None Remove="Resources\Images\ic_next_0.png" />
+    <None Remove="Resources\Images\ic_next_1.png" />
     <None Remove="Resources\Images\ic_pause.png" />
+    <None Remove="Resources\Images\ic_pause_3.png" />
     <None Remove="Resources\Images\ic_play.png" />
     <None Remove="Resources\Images\ic_play_2.png" />
     <None Remove="Resources\Images\ic_play_3.png" />
+    <None Remove="Resources\Images\ic_play_4.png" />
     <None Remove="Resources\Images\ic_premium.png" />
+    <None Remove="Resources\Images\ic_repeat_0.png" />
+    <None Remove="Resources\Images\ic_repeat_1.png" />
+    <None Remove="Resources\Images\ic_rw.png" />
     <None Remove="Resources\Images\ic_search.png" />
     <None Remove="Resources\Images\ic_send.png" />
     <None Remove="Resources\Images\ic_share.png" />
@@ -69,6 +81,8 @@
     <EmbeddedResource Include="Resources\Font\Roboto-Regular.ttf" />
     <EmbeddedResource Include="Resources\Font\Roboto-Thin.ttf" />
     <EmbeddedResource Include="Resources\Font\Roboto-ThinItalic.ttf" />
+    <EmbeddedResource Include="Resources\Images\ic_back_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_back_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_book_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_book_open.png" />
     <EmbeddedResource Include="Resources\Images\ic_cart.png" />
@@ -77,10 +91,13 @@
     <EmbeddedResource Include="Resources\Images\ic_down.png" />
     <EmbeddedResource Include="Resources\Images\ic_down_load.png" />
     <EmbeddedResource Include="Resources\Images\ic_font.png" />
+    <EmbeddedResource Include="Resources\Images\ic_fw.png" />
     <EmbeddedResource Include="Resources\Images\ic_heart.png" />
     <EmbeddedResource Include="Resources\Images\ic_home.png" />
     <EmbeddedResource Include="Resources\Images\ic_mail.png" />
     <EmbeddedResource Include="Resources\Images\ic_messenger.png" />
+    <EmbeddedResource Include="Resources\Images\ic_moon_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_moon_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_m_ap_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_m_ap_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_m_cp_0.png" />
@@ -91,11 +108,18 @@
     <EmbeddedResource Include="Resources\Images\ic_m_kp_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_m_sp_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_m_sp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_next_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_next_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_pause.png" />
+    <EmbeddedResource Include="Resources\Images\ic_pause_3.png" />
     <EmbeddedResource Include="Resources\Images\ic_play.png" />
     <EmbeddedResource Include="Resources\Images\ic_play_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_play_3.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play_4.png" />
     <EmbeddedResource Include="Resources\Images\ic_premium.png" />
+    <EmbeddedResource Include="Resources\Images\ic_repeat_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_repeat_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_rw.png" />
     <EmbeddedResource Include="Resources\Images\ic_search.png" />
     <EmbeddedResource Include="Resources\Images\ic_send.png" />
     <EmbeddedResource Include="Resources\Images\ic_share.png" />
@@ -122,6 +146,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\DetailPages\BookDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\BookTopicDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\FunctionPages\ReadBookPage.xaml">

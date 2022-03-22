@@ -61,7 +61,7 @@
                             Margin="5,10,5,10"
                             >
                         <Image.GestureRecognizers>
-
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceBookPage', Animated=True, UseModalNavigation=True}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_font.png}"
