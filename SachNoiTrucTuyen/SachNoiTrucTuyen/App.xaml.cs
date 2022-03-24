@@ -35,6 +35,8 @@ namespace SachNoiTrucTuyen
 
         protected override async void OnInitialized()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjAwMTk2QDMxMzkyZTM0MmUzMGY1eW1PM3FpcEhLZkhtZzlwcjR2cXYyWEZIc0J2YmJ5ZGYyNFVka0Z3RVU9");
             InitializeComponent();
             await NavigationService.NavigateAsync("/SplashScreenPage");
         }
