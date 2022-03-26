@@ -29,9 +29,13 @@ namespace CustomRenderer.Droid
         protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
-            if (Control != null)
+
+            if (Xamarin.Essentials.DeviceInfo.Version.Major >= 8)
             {
-                Control.JustificationMode = JustificationMode.InterWord;
+                if (Control != null)
+                {
+                    Control.JustificationMode = JustificationMode.InterWord;
+                }
             }
         }
     }

@@ -24,8 +24,10 @@ namespace SachNoiTrucTuyen.Models
             }
         private bool _isPremium = true;
         public bool IsPremium { get => _isPremium; set => SetProperty(ref _isPremium,value); }
-        private bool _isFavorite;
-        public bool IsFavorite { get => _isFavorite; set => SetProperty(ref _isFavorite, value); }
-        
+        private bool _isHashTag;
+        public bool IsHashTag { get => _isHashTag; set => SetProperty(ref _isHashTag, value); }
+        private bool _isFavoriteAudio;
+        public bool IsFavoriteAudio { get => _isFavoriteAudio; set => SetProperty(ref _isFavoriteAudio, value); }
+
     }
 }

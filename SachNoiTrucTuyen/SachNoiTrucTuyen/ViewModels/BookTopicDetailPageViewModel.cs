@@ -18,7 +18,7 @@ namespace SachNoiTrucTuyen.ViewModels
             set => SetProperty(ref _layoutPages, value);
         }
         private string _titlePage;
-        public string TittlePage
+        public string TitlePage
         {
             get => _titlePage;
             set => SetProperty(ref _titlePage, value);
@@ -36,7 +36,10 @@ namespace SachNoiTrucTuyen.ViewModels
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             var topic = parameters.GetValue<string>("topic");
-            TittlePage = topic;
+            if (!String.IsNullOrEmpty(topic))
+            {
+                TitlePage = topic;
+            }
         }
         public void SetSource()
         {

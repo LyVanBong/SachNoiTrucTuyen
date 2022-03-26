@@ -9,8 +9,7 @@
              xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
              xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView" 
              xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
-             x:DataType="viewmodels:SearchPageViewModel"
-             >
+             x:DataType="viewmodels:SearchPageViewModel">
     <ContentPage.Resources>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
     </ContentPage.Resources>
@@ -49,7 +48,7 @@
                     </Label>
                 </Grid>
             </Frame>
-
+            
 
             <Frame Margin="10"
                    Grid.Row="1"
@@ -59,7 +58,7 @@
                    HasShadow="False"
                            HeightRequest="40"
                            CornerRadius="20">
-                <customViews:CustomEntry Placeholder="Nhập tên sách hoặc tác giả..."
+                <customViews:CustomEntry Placeholder="{Binding PlaceholderEntry}"
                                          Text="{Binding SearchContent}"
                                                  FontSize="16"
                                                  VerticalOptions="Center"
@@ -70,7 +69,8 @@
                 </customViews:CustomEntry>
             </Frame>
             <CollectionView ItemsSource="{Binding SearchResult}"
-                            Grid.Row="2">
+                            Grid.Row="2"
+                            IsVisible="{Binding IsAudioSearch, Converter={xct:InvertedBoolConverter}}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Span="2"
                                      Orientation="Vertical">
@@ -134,6 +134,39 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+
+            <ScrollView Grid.Row="2"
+                         IsVisible="{Binding IsAudioSearch}">
+            <StackLayout BindableLayout.ItemsSource="{Binding SearchAudioResult}"
+                             Spacing="10"
+                             Margin="0,0,0,20"
+                         >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="md:Audio">
+                        <StackLayout Spacing="0">
+                            <Frame HeightRequest="200"
+                                       Padding="0"
+                                       Margin="10,10,10,5"
+                                       CornerRadius="10">
+                                <Image Source="{Binding ImgAudio}"
+                                           Aspect="Fill"/>
+                            </Frame>
+                            <Label Text="{Binding TitleAudio}"
+                                                   MaxLines="2"
+                                                   LineBreakMode="TailTruncation"
+                                                   Margin="10,0,10,0"
+                                                   FontSize="18"
+                                                   FontFamily="RBo"
+                                       TextColor="{StaticResource nameAudioColor}"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
     

@@ -5,6 +5,7 @@
     <Color x:Key="primaryColor">#7963EC</Color>
     <Color x:Key="tabBarColor">#4450E2</Color>
     <Color x:Key="nameBookColor">Black</Color>
+    <Color x:Key="nameAudioColor">#555555</Color>
     <Color x:Key="placeHolderColor">#EEEEEE</Color>
     <Color x:Key="titleColor">Black</Color>
     <Color x:Key="subTitleColor">#F0F0F0</Color>

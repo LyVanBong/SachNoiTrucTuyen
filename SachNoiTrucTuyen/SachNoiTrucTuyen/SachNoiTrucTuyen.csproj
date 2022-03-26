@@ -65,6 +65,7 @@
     <None Remove="Resources\Images\ic_ttv_hp.png" />
     <None Remove="Resources\Images\ic_ttv_kp.png" />
     <None Remove="Resources\Images\ic_ttv_sp.png" />
+    <None Remove="Resources\Images\ic_youtube.png" />
     <None Remove="Resources\Images\logo.png" />
   </ItemGroup>
 
@@ -129,6 +130,7 @@
     <EmbeddedResource Include="Resources\Images\ic_ttv_hp.png" />
     <EmbeddedResource Include="Resources\Images\ic_ttv_kp.png" />
     <EmbeddedResource Include="Resources\Images\ic_ttv_sp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_youtube.png" />
     <EmbeddedResource Include="Resources\Images\logo.png" />
   </ItemGroup>
 
@@ -149,6 +151,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\DetailPages\BookTopicDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\KnowledgeTopicDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\StoryTopicDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\FunctionPages\ReadBookPage.xaml">

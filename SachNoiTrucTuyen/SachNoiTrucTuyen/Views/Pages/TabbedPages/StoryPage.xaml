@@ -3,6 +3,219 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="SachNoiTrucTuyen.Views.Pages.TabbedPages.StoryPage">
-  
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     Margin="0,10,0,0">
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_ttv_sp.png}"
+                   WidthRequest="20"
+                   HeightRequest="20"
+                   VerticalOptions="Center"
+                   Margin="0,0,0,8"/>
+            <Label Text="Tiểu sử"
+                   FontSize="20"
+                   FontFamily="RBo"
+                   HorizontalOptions="StartAndExpand"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,5"
+                   TextColor="{StaticResource primaryColor}"/>
+
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_search.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    HorizontalOptions="End"
+                    Margin="0,0,15,10"
+                    >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SearchPage', Animated=True, UseModalNavigation=True}">
+                        <TapGestureRecognizer.CommandParameter>
+                            <prism:NavigationParameter Key="TypePage" Value="storyPage"/>
+                        </TapGestureRecognizer.CommandParameter>
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_mail.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="28"
+                    HeightRequest="28"
+                    HorizontalOptions="End"
+                    Margin="0,0,15,10"
+                    >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MailPage', Animated=True, UseModalNavigation=True}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_play.png" x:Key="Play"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_pause.png" x:Key="Pause"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" x:Key="BookOpen"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_close.png" x:Key="Close"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <!--Type 2-->
+        <DataTemplate x:Key="ListContent" x:DataType="md:LayoutPageModel">
+            <ViewCell>
+                <ScrollView Orientation="Horizontal"
+                                HorizontalScrollBarVisibility="Never"
+                            Margin="0,10"
+                            >
+                    <Grid>
+                        <buttons:SfChipGroup ItemsSource="{Binding ListContent}"
+                                                 HeightRequest="100"
+                                                 ChipPadding="0,0,8,8"
+                                                 Type="Choice"
+                                                 WidthRequest="2100"
+                                                 ChoiceMode="SingleOrNone"
+                                                 ChipBackgroundColor="Transparent">
+
+                            <buttons:SfChipGroup.ChipLayout>
+                                <FlexLayout 
+						                HorizontalOptions="Start" 
+						                VerticalOptions="Center" 
+						                Direction="Row" 
+                                        Padding="10,5"
+						                Wrap="Wrap"
+						                JustifyContent="Start"
+						                AlignContent="Start" 
+						                AlignItems="Start"/>
+                            </buttons:SfChipGroup.ChipLayout>
+                            <buttons:SfChipGroup.ItemTemplate>
+                                <DataTemplate x:DataType="x:String">
+
+                                    <buttons:SfChip Text="{Binding .}"
+                                                            IsCheckable="True"
+                                                            x:Name="chip"
+                                                        Padding="15,10"
+                                                        TextColor="White"
+                                                        FontFamily="R"
+                                                        xct:CornerRadiusEffect.CornerRadius="15"
+                                                        Command="{prism:NavigateTo 'NavigationPage/StoryTopicDetailPage', Animated=True, UseModalNavigation=True}"
+                                                        >
+                                        <buttons:SfChip.BackgroundGradient>
+                                            <gradient:SfLinearGradientBrush>
+                                                <gradient:SfLinearGradientBrush.GradientStops>
+                                                    <gradient:SfGradientStop Color="{StaticResource tabBarColor}" Offset="0.0" />
+                                                    <gradient:SfGradientStop Color="{StaticResource primaryColor}" Offset="1.0" />
+                                                </gradient:SfLinearGradientBrush.GradientStops>
+                                            </gradient:SfLinearGradientBrush>
+                                        </buttons:SfChip.BackgroundGradient>
+                                        <buttons:SfChip.Triggers>
+                                            <Trigger TargetType="buttons:SfChip" Property="IsChecked" Value="True">
+                                                <Setter Property="BackgroundGradient">
+                                                    <Setter.Value>
+                                                        <gradient:SfLinearGradientBrush>
+                                                            <gradient:SfLinearGradientBrush.GradientStops>
+                                                                <gradient:SfGradientStop Color="Gold" Offset="0.0" />
+                                                                <gradient:SfGradientStop Color="Gold" Offset="1.0" />
+                                                            </gradient:SfLinearGradientBrush.GradientStops>
+                                                        </gradient:SfLinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="TextColor" Value="{StaticResource titleColor}"/>
+                                            </Trigger>
+                                        </buttons:SfChip.Triggers>
+
+                                        <buttons:SfChip.CommandParameter>
+                                            <prism:NavigationParameter Key="topic" Value="{Binding .}"/>
+                                        </buttons:SfChip.CommandParameter>
+                                    </buttons:SfChip>
+
+
+
+                                </DataTemplate>
+                            </buttons:SfChipGroup.ItemTemplate>
+                        </buttons:SfChipGroup>
+                    </Grid>
+                </ScrollView>
+            </ViewCell>
+        </DataTemplate>
+        <!--Type 3-->
+        <DataTemplate x:Key="ListAudio" x:DataType="md:LayoutPageModel">
+            <ViewCell>
+                <StackLayout BindableLayout.ItemsSource="{Binding ListAudio}"
+                             Spacing="10"
+                             Margin="0,0,0,20">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="md:Audio">
+                            <StackLayout Spacing="0">
+                                <Frame HeightRequest="200"
+                                       Padding="0"
+                                       Margin="10,10,10,5"
+                                       CornerRadius="10">
+                                    <Image Source="{Binding ImgAudio}"
+                                           Aspect="Fill"/>
+                                </Frame>
+                                <Label Text="{Binding TitleAudio}"
+                                                   MaxLines="2"
+                                                   LineBreakMode="TailTruncation"
+                                                   Margin="10,0,10,0"
+                                                   FontSize="18"
+                                                   FontFamily="RBo"
+                                       TextColor="{StaticResource nameAudioColor}"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+        <customViews:ItemLayoutMenu x:Key="LayoutTemplate"
+                                    ListContent="{StaticResource ListContent}"
+                                    ListAudio="{StaticResource ListAudio}"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+        <ListView ItemsSource="{Binding LayoutPages}"
+                      ItemTemplate="{StaticResource LayoutTemplate}"
+                      HasUnevenRows="True"
+                  VerticalScrollBarVisibility="Never"
+                      SeparatorVisibility="None"
+                      SelectionMode="None">
+
+        </ListView>
+        <Frame HeightRequest="50"
+                   Padding="0"
+                   Margin="20,10"
+                   VerticalOptions="End"
+                   CornerRadius="10"
+                   BackgroundColor="{StaticResource placeHolderColor}">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{StaticResource BookOpen}"
+                           WidthRequest="32"
+                           HeightRequest="32"
+                           VerticalOptions="Center"
+                           Margin="10,0,5,0"/>
+                <Label Text="Huyền thoại về Cholesterol"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="16"
+                           LineBreakMode="TailTruncation"
+                           TextColor="{StaticResource nameBookColor}"/>
+                <Image Source="{StaticResource Play}"
+                           WidthRequest="20"
+                           HeightRequest="20"
+                           VerticalOptions="Center"
+                           Margin="10,0,15,0"/>
+                <Image Source="{StaticResource Close}"
+                           WidthRequest="20"
+                           HeightRequest="20"
+                           VerticalOptions="Center"
+                           Margin="0,0,15,0"/>
+            </StackLayout>
+
+
+        </Frame>
+
+
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

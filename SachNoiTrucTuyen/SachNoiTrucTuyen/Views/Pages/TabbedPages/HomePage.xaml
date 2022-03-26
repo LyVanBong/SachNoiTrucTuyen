@@ -162,7 +162,8 @@
                                Margin="15,0"
                                FontFamily="RBo"
                                TextColor="{StaticResource titleColor}"/>
-                    <ScrollView Orientation="Horizontal">
+                    <ScrollView Orientation="Horizontal"
+                                HorizontalScrollBarVisibility="Never">
                         <Grid>
                             <buttons:SfChipGroup ItemsSource="{Binding ListContent}"
                                                  HeightRequest="100"

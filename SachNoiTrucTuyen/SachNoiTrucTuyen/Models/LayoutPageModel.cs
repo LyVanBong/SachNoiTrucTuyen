@@ -15,6 +15,7 @@ namespace SachNoiTrucTuyen.Models
         public string Image { get; set; }
         //
         public ObservableCollection<Book> ListBook { get; set; }
+        public ObservableCollection<Audio> ListAudio { get; set; }
         public string[] ListContent { get; set; }
     }
 }

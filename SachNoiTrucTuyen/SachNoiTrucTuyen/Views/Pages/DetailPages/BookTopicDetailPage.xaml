@@ -30,7 +30,7 @@
                                 <TapGestureRecognizer Command="{prism:GoBack}"/>
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="{Binding TittlePage}"
+                        <Label Text="{Binding TitlePage}"
                            HorizontalOptions="Center"
                            FontFamily="R"
                            TextColor="Black"

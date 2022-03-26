@@ -128,6 +128,96 @@ namespace SachNoiTrucTuyen
             },
 
         };
+        public static ObservableCollection<Audio> Storys = new ObservableCollection<Audio>()
+        {
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/p6t9cu8o51kcyz1/1-20210412102024.jpg?dl=0",
+                TitleAudio = "Sukhoi Corp - \"Ông Trùm\" sản xuất máy bay chiến đấu Nga",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/ytmb165o97c040a/2-20210412102024.jpg?dl=0",
+                TitleAudio = "Jim Rogers - Huyền thoại đầu tư, từng \"mù tịt\" về chứng khoán",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/bq9ve73pt0ftgrt/3-20210412102024.jpg?dl=0",
+                TitleAudio = "Lê Viết Nam - \"Ông vua cáp treo\", người sáng lập tập đoàn Sun Group",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/gjsh22xm5t96r4g/4-20210412102024.jpg?dl=0",
+                TitleAudio = "Đào Hoa Bích - Góa phụ mù chữ trở thành tỷ phú nhờ \"ớt chưng dầu\"",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/lt7x3z21z7bsivf/5-20210412102024.jpg?dl=0",
+                TitleAudio = "Austin Russell - Tỷ phú tự thân trẻ tuổi nhất thế giới",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/0t7ml7taqkgo650/6-20210412102024.jpg?dl=0",
+                TitleAudio = "Antoni Gaudi - \"Kiến trúc sư của chúa\", cha đẻ của 7 di sản văn hóa TG",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/jqvrll8jcnvu6yl/10-20210412102025.jpg?dl=0",
+                TitleAudio = "Peter Drucker - \"Cha đẻ\" của quản trị học hiện đại",
+                IsFavoriteAudio = false
+            }
+        };
+        public static ObservableCollection<Audio> Knowledges = new ObservableCollection<Audio>()
+        {
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/p6t9cu8o51kcyz1/1-20210412102024.jpg?dl=0",
+                TitleAudio = "Sukhoi Corp - \"Ông Trùm\" sản xuất máy bay chiến đấu Nga",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/ytmb165o97c040a/2-20210412102024.jpg?dl=0",
+                TitleAudio = "Jim Rogers - Huyền thoại đầu tư, từng \"mù tịt\" về chứng khoán",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/bq9ve73pt0ftgrt/3-20210412102024.jpg?dl=0",
+                TitleAudio = "Lê Viết Nam - \"Ông vua cáp treo\", người sáng lập tập đoàn Sun Group",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/gjsh22xm5t96r4g/4-20210412102024.jpg?dl=0",
+                TitleAudio = "Đào Hoa Bích - Góa phụ mù chữ trở thành tỷ phú nhờ \"ớt chưng dầu\"",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/lt7x3z21z7bsivf/5-20210412102024.jpg?dl=0",
+                TitleAudio = "Austin Russell - Tỷ phú tự thân trẻ tuổi nhất thế giới",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/0t7ml7taqkgo650/6-20210412102024.jpg?dl=0",
+                TitleAudio = "Antoni Gaudi - \"Kiến trúc sư của chúa\", cha đẻ của 7 di sản văn hóa TG",
+                IsFavoriteAudio = false
+            },
+            new Audio()
+            {
+                ImgAudio="https://dl.dropboxusercontent.com/s/jqvrll8jcnvu6yl/10-20210412102025.jpg?dl=0",
+                TitleAudio = "Peter Drucker - \"Cha đẻ\" của quản trị học hiện đại",
+                IsFavoriteAudio = false
+            }
+        };
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
@@ -150,6 +240,8 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<VoiceBookPage, VoiceBookPageViewModel>();
             containerRegistry.RegisterForNavigation<VoiceVideoPage, VoiceVideoPageViewModel>();
             containerRegistry.RegisterForNavigation<BookTopicDetailPage, BookTopicDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<StoryTopicDetailPage, StoryTopicDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<KnowledgeTopicDetailPage, KnowledgeTopicDetailPageViewModel>();
         }
     }
 }
