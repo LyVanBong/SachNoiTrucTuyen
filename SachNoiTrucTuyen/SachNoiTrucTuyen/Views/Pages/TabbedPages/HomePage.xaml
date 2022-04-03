@@ -41,10 +41,10 @@
                     </TapGestureRecognizer>
                 </Image.GestureRecognizers>
             </Image>
-            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_mail.png}"
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_bell.png}"
                     VerticalOptions="Center"
-                    WidthRequest="28"
-                    HeightRequest="28"
+                    WidthRequest="25"
+                    HeightRequest="25"
                     HorizontalOptions="End"
                     Margin="0,0,15,10"
                     >

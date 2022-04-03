@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:WelcomePageViewModel"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:customViews ="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+             x:Class="SachNoiTrucTuyen.Views.Pages.WelcomePage">
+    <Grid RowDefinitions="*,100"
+          RowSpacing="0">
+        <CarouselView x:Name="carouselView"
+                      Grid.Row="0"
+                      ItemsSource="{Binding ItemWelcomePages}"
+                      IndicatorView="{x:Reference welcomeIndicator}"
+                      ItemsUpdatingScrollMode="KeepItemsInView"
+                      Loop="False"
+                      Position="{Binding Position}"
+                      PositionChangedCommand="{Binding PositionChangedCommand}"
+                      PositionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=Position}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="md:ItemWelcomePage">
+                    <Grid RowSpacing="0"
+                          RowDefinitions="1.5*,2.3*,3*">
+                        <StackLayout Spacing="0"
+                                     Grid.Row="0"
+                                     VerticalOptions="Center">
+                            <Label Text="{Binding Title}"
+                                       FontFamily="RBo"
+                                       TextColor="{StaticResource welcomeTitleColor}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       FontSize="32"
+                                       Margin="10,0,10,0"
+                                       />
+                            <Label Text="{Binding SubTitle}"
+                                       FontFamily="RBo"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       FontSize="18"
+                                       Margin="20,0"
+                                       HorizontalTextAlignment="Center"
+                                       />
+                        </StackLayout>
+                       
+                        <Image Grid.Row="1"
+                               Aspect="AspectFit"
+                                       Source="{Binding Image}"
+                                       >
+
+                        </Image>
+                        <Frame CornerRadius="20"
+                               Grid.Row="2"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                                       Margin="20,10"
+                               HasShadow="False"
+                                       BackgroundColor="{StaticResource placeHolderColor}">
+                            <customViews:CustomLabel Text="{Binding Description}"
+                                                             FontSize="18"
+                                                     VerticalOptions="Center"
+                                                     LineHeight="1.15"
+                                                     xct:ShadowEffect.Color="Transparent"
+                                                     
+                                                             FontFamily="R"
+                                                             TextColor="{StaticResource nameBookColor}"
+                                                             >
+
+                            </customViews:CustomLabel>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        
+        
+        <StackLayout Grid.Row="1">
+            <IndicatorView
+                           IndicatorColor="{StaticResource placeHolderColor}"
+                           SelectedIndicatorColor="{StaticResource tabBarColor}"
+                           IndicatorSize="8"
+                           IndicatorsShape="Circle"
+                           x:Name="welcomeIndicator">
+                
+            </IndicatorView>
+            <Button HeightRequest="55"
+                    BackgroundColor="{StaticResource tabBarColor}"
+                    Margin="15,10"
+                    Text="Tiếp theo"
+                    FontFamily="R"
+                    TextTransform="None"
+                    TextColor="White"
+                    FontSize="Body"
+                    Command="{Binding SwipeViewCommand}"
+                    CommandParameter="{x:Reference carouselView}"
+                    CornerRadius="40">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference carouselView}, Path=Position}" Value="2">
+                        <Setter Property="Text" Value="Bắt đầu!"/>
+                    </DataTrigger>
+                </Button.Triggers>
+                
+            </Button>
+        </StackLayout>
+    </Grid>
+</ContentPage>

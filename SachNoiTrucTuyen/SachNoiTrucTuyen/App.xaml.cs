@@ -38,7 +38,7 @@ namespace SachNoiTrucTuyen
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjAwMTk2QDMxMzkyZTM0MmUzMGY1eW1PM3FpcEhLZkhtZzlwcjR2cXYyWEZIc0J2YmJ5ZGYyNFVka0Z3RVU9");
             InitializeComponent();
-            await NavigationService.NavigateAsync("/SplashScreenPage");
+            await NavigationService.NavigateAsync("/WelcomePage");
         }
 
         public static ObservableCollection<Book> Books = new ObservableCollection<Book>()
@@ -242,6 +242,11 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<BookTopicDetailPage, BookTopicDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<StoryTopicDetailPage, StoryTopicDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<KnowledgeTopicDetailPage, KnowledgeTopicDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginAndSignupPage, LoginAndSignupPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<SignupPage, SignupPageViewModel>();
+            containerRegistry.RegisterForNavigation<NotificationPage, NotificationPageViewModel>();
         }
     }
 }
