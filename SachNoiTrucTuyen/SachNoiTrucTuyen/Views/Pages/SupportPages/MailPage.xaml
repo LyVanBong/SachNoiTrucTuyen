@@ -10,33 +10,7 @@
              x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.MailPage">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <Grid HeightRequest="55">
-                <Frame HeightRequest="55"
-                   Padding="0"
-                   CornerRadius="0">
-                    <Grid>
-                        <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:GoBack}"/>
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <Label Text="Hộp thư"
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
-
-                        </Label>
-                    </Grid>
-                </Frame>
-            </Grid>
+            
             
             <Grid VerticalOptions="StartAndExpand">
                 <StackLayout BackgroundColor="{StaticResource placeHolderColor}">

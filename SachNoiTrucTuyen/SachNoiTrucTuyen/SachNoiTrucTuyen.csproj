@@ -19,8 +19,6 @@
     <None Remove="Resources\Font\Roboto-ThinItalic.ttf" />
     <None Remove="Resources\Images\ic_back_0.png" />
     <None Remove="Resources\Images\ic_back_1.png" />
-    <None Remove="Resources\Images\ic_bell.png" />
-    <None Remove="Resources\Images\ic_bell_1.png" />
     <None Remove="Resources\Images\ic_book_2.png" />
     <None Remove="Resources\Images\ic_book_open.png" />
     <None Remove="Resources\Images\ic_btn_fb.png" />
@@ -50,6 +48,8 @@
     <None Remove="Resources\Images\ic_m_sp_1.png" />
     <None Remove="Resources\Images\ic_next_0.png" />
     <None Remove="Resources\Images\ic_next_1.png" />
+    <None Remove="Resources\Images\ic_notify.png" />
+    <None Remove="Resources\Images\ic_notify_1.png" />
     <None Remove="Resources\Images\ic_pause.png" />
     <None Remove="Resources\Images\ic_pause_3.png" />
     <None Remove="Resources\Images\ic_play.png" />
@@ -57,6 +57,7 @@
     <None Remove="Resources\Images\ic_play_3.png" />
     <None Remove="Resources\Images\ic_play_4.png" />
     <None Remove="Resources\Images\ic_premium.png" />
+    <None Remove="Resources\Images\ic_readed.png" />
     <None Remove="Resources\Images\ic_repeat_0.png" />
     <None Remove="Resources\Images\ic_repeat_1.png" />
     <None Remove="Resources\Images\ic_rw.png" />
@@ -91,8 +92,6 @@
     <EmbeddedResource Include="Resources\Font\Roboto-ThinItalic.ttf" />
     <EmbeddedResource Include="Resources\Images\ic_back_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_1.png" />
-    <EmbeddedResource Include="Resources\Images\ic_bell.png" />
-    <EmbeddedResource Include="Resources\Images\ic_bell_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_book_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_book_open.png" />
     <EmbeddedResource Include="Resources\Images\ic_btn_fb.png" />
@@ -122,6 +121,8 @@
     <EmbeddedResource Include="Resources\Images\ic_m_sp_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_next_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_next_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_notify.png" />
+    <EmbeddedResource Include="Resources\Images\ic_notify_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_pause.png" />
     <EmbeddedResource Include="Resources\Images\ic_pause_3.png" />
     <EmbeddedResource Include="Resources\Images\ic_play.png" />
@@ -129,6 +130,7 @@
     <EmbeddedResource Include="Resources\Images\ic_play_3.png" />
     <EmbeddedResource Include="Resources\Images\ic_play_4.png" />
     <EmbeddedResource Include="Resources\Images\ic_premium.png" />
+    <EmbeddedResource Include="Resources\Images\ic_readed.png" />
     <EmbeddedResource Include="Resources\Images\ic_repeat_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_repeat_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_rw.png" />

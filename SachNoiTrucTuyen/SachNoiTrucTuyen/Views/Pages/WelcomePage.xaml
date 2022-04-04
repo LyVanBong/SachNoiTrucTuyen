@@ -5,6 +5,7 @@
              xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:WelcomePageViewModel"
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+             NavigationPage.HasNavigationBar="False"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:customViews ="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
              x:Class="SachNoiTrucTuyen.Views.Pages.WelcomePage">

@@ -12,7 +12,7 @@ namespace SachNoiTrucTuyen.ViewModels
     {
         public SplashScreenPageViewModel(INavigationService navigation)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(5), () => { navigation.NavigateAsync("NavigationPage/MainPage"); return false; });
+            Device.StartTimer(TimeSpan.FromSeconds(5), () => { navigation.NavigateAsync("NavigationPage/WelcomePage"); return false; });
         }
     }
 }

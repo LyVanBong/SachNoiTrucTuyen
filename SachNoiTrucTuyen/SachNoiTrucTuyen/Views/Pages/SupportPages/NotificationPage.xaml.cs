@@ -2,7 +2,7 @@
 
 namespace SachNoiTrucTuyen.Views.Pages.SupportPages
 {
-    public partial class NotificationPage : TabbedPage
+    public partial class NotificationPage : ContentPage
     {
         public NotificationPage()
         {

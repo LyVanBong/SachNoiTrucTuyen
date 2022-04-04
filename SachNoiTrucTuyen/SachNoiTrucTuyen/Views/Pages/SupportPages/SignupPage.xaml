@@ -136,7 +136,7 @@
                        CornerRadius="40"
                    HeightRequest="53"
                        HasShadow="False"
-                   IsEnabled="False"
+                   IsEnabled="{Binding IsEnabled}"
                    x:Name="frbtnSignup"
                            Margin="35,10,30,0"
                        BackgroundColor="{StaticResource plpColor}">

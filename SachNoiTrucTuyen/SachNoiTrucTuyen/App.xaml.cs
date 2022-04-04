@@ -38,7 +38,7 @@ namespace SachNoiTrucTuyen
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjAwMTk2QDMxMzkyZTM0MmUzMGY1eW1PM3FpcEhLZkhtZzlwcjR2cXYyWEZIc0J2YmJ5ZGYyNFVka0Z3RVU9");
             InitializeComponent();
-            await NavigationService.NavigateAsync("/WelcomePage");
+            await NavigationService.NavigateAsync("/SplashScreenPage");
         }
 
         public static ObservableCollection<Book> Books = new ObservableCollection<Book>()
@@ -217,6 +217,17 @@ namespace SachNoiTrucTuyen
                 TitleAudio = "Peter Drucker - \"Cha đẻ\" của quản trị học hiện đại",
                 IsFavoriteAudio = false
             }
+        };
+
+        public static ObservableCollection<Notification> Notifications = new ObservableCollection<Notification>()
+        {
+            new Notification() {Title = "Sách khuyên đọc", Description = "Kỷ luật không cứng nhắc - Phương pháp xoa dịu và phát triển trí não của trẻ", Time = System.DateTime.Now, IsActive = false},
+            new Notification() {Title = "Sách khuyên đọc", Description = "Những kẻ khốn khổ nơi công sở - Làm sao để nơi làm việc trở nên thông minh hơn", Time = System.DateTime.Now, IsActive = false},
+            new Notification() {Title = "Sách mới phát hành", Description = "Những cô gái Radium - Góc khuất về ngành công nghiệp phóng xạ của Mỹ", Time = System.DateTime.Now, IsActive = true},
+            new Notification() {Title = "Sách khuyên đọc", Description = "Huyền thoại về Cholesterol - Những lầm tưởng về Cholesterol và bệnh tim mạch", Time = System.DateTime.Now, IsActive = true},
+            new Notification() {Title = "Sách mới phát hành", Description = "Câu chuyện cơ thể con người - Tiến hóa, sức khỏe và bệnh tật", Time = System.DateTime.Now, IsActive = true},
+            new Notification() {Title = "Kiến thức tinh gọn", Description = "Phân tích sự sụp đổ của \"đại gia\" năng lượng Hoa Kỳ những năm 1990", Time = System.DateTime.Now, IsActive = true},
+            new Notification() {Title = "Tiểu sử doanh nhân", Description = "Chàng trai Ấn Độ bỏ học lập nên chuỗi khách sạn trị giá 10 tỷ USD", Time = System.DateTime.Now, IsActive = true}
         };
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

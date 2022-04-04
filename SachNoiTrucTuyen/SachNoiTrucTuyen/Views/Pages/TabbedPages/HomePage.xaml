@@ -41,7 +41,7 @@
                     </TapGestureRecognizer>
                 </Image.GestureRecognizers>
             </Image>
-            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_bell.png}"
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_notify.png}"
                     VerticalOptions="Center"
                     WidthRequest="25"
                     HeightRequest="25"
@@ -49,7 +49,7 @@
                     Margin="0,0,15,10"
                     >
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MailPage', Animated=True, UseModalNavigation=True}"/>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/NotificationPage', Animated=True, UseModalNavigation=True}"/>
                 </Image.GestureRecognizers>
             </Image>
         </StackLayout>
