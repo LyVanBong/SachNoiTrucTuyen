@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+             xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+             x:DataType="viewmodels:UserPageViewModel"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+             x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.UserPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*"
+              RowSpacing="0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="0,1">
+                    <GradientStop Color="#e7f0fd"
+                                  Offset="0.18"/>
+                    <GradientStop Color="#accbee"
+                                  Offset="0.5"/>
+                    <GradientStop Color="#9795f0"
+                                  Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Frame HeightRequest="55"
+                   Padding="0"
+                   Grid.Row="0"
+                   CornerRadius="0">
+                <Grid>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Margin="15,10,15,10"
+                            >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label 
+                           HorizontalOptions="Center"
+                           FontFamily="R"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           FontSize="16">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Thông tin cá nhân"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+                    </Label>
+                </Grid>
+            </Frame>
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+                    <Grid HeightRequest="180"
+                          WidthRequest="180"
+                          HorizontalOptions="Center"
+                          Margin="0,30,0,10">
+                        <Image WidthRequest="180"
+                               HeightRequest="180"
+                               Source="{Binding User.Avatar}"
+                               Aspect="AspectFill"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               xct:CornerRadiusEffect.CornerRadius="100">
+                        </Image>
+                        <Image WidthRequest="60"
+                               HeightRequest="60"
+                               Source="{Binding User.Armorial.Avatar}"
+                               HorizontalOptions="End"
+                               VerticalOptions="End">
+                        </Image>
+                    </Grid>
+                    <Label Text="{Binding User.Name}"
+                           FontSize="25"
+                           TextColor="{StaticResource nameBookColor}"
+                           HorizontalOptions="Center"
+                           FontFamily="RBo"/>
+                    <Button WidthRequest="180"
+                            HorizontalOptions="Center"
+                            CornerRadius="40"
+                            Margin="0,10,0,0"
+                            Text="Theo dõi"
+                            FontFamily="RBo"
+                            FontSize="18"
+                            TextColor="White"
+                            TextTransform="None">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="{StaticResource tabBarColor}" Offset="0.0" />
+                                    <GradientStop Color="{StaticResource primaryColor}" Offset="1.0" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Frame Margin="10"
+                           HeightRequest="50"
+                           Padding="0"
+                           HasShadow="False"
+                           CornerRadius="40"
+                           HorizontalOptions="Center">
+                        <StackLayout HorizontalOptions="Center"
+                                     Orientation="Horizontal"
+                                     Margin="20,10">
+                            <Image HeightRequest="40"
+                               WidthRequest="40"
+                                   Source="{Binding User.Armorial.Avatar}"/>
+                            <Label Text="{Binding User.Armorial.Name}"
+                                   FontSize="18"
+                                   TextColor="{StaticResource nameBookColor}"
+                                   FontFamily="RBo"/>
+                        </StackLayout>
+                        
+                    </Frame>
+                    <Label Text="Giới thiệu bản thân"
+                           FontSize="18"
+                           TextColor="{StaticResource nameBookColor}"
+                           HorizontalOptions="Start"
+                           Margin="10,10,0,0"
+                           FontFamily="RBo"/>
+                    <Frame BackgroundColor="{StaticResource placeHolderColor}"
+                           Margin="10,0"
+                           Padding="10"
+                           CornerRadius="15"
+                           HasShadow="False">
+                        <customViews:CustomLabel Text = "{Binding User.Description}"
+                                                 FontSize="16"
+                                                 FontFamily="R"
+                                                 TextColor="{StaticResource nameBookColor}"
+                                                 >
+                        </customViews:CustomLabel>
+                    </Frame>
+                    <Label Text="Thành tích"
+                           FontSize="18"
+                           TextColor="{StaticResource nameBookColor}"
+                           HorizontalOptions="Start"
+                           Margin="10,10,0,0"
+                           FontFamily="RBo"/>
+                    <Frame BackgroundColor="LightGray"
+                           Margin="10,0"
+                           Padding="0"
+                           CornerRadius="15"
+                           HasShadow="False">
+                        <Grid RowDefinitions="45,45,45,45"
+                              RowSpacing="1"
+                              >
+                            <StackLayout Orientation="Horizontal"
+                                         Grid.Row="0"
+                                         Grid.Column="0"
+                                         BackgroundColor="{StaticResource placeHolderColor}">
+                                <Label Text="Lượt theo dõi"
+                                       HorizontalOptions="Start"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                                <Label Text="{Binding User.AmountFollow}"
+                                       HorizontalOptions="EndAndExpand"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         BackgroundColor="{StaticResource placeHolderColor}">
+                                <Label Text="Bài viết"
+                                       HorizontalOptions="Start"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                                <Label Text="{Binding User.AmountPost}"
+                                       HorizontalOptions="EndAndExpand"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal"
+                                         Grid.Row="2"
+                                         Grid.Column="0"
+                                         BackgroundColor="{StaticResource placeHolderColor}">
+                                <Label Text="Lượt like"
+                                       HorizontalOptions="Start"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                                <Label Text="{Binding User.AmountLike}"
+                                       HorizontalOptions="EndAndExpand"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal"
+                                         Grid.Row="3    "
+                                         Grid.Column="0"
+                                         BackgroundColor="{StaticResource placeHolderColor}">
+                                <Label Text="Điểm mini game"
+                                       HorizontalOptions="Start"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       />
+                                <Label
+                                       HorizontalOptions="EndAndExpand"
+                                       FontSize="16"
+                                       TextColor="{StaticResource nameBookColor}"
+                                       Margin="10"
+                                       >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding User.ScoreInGame}"/>
+                                            <Span Text="/"/>
+                                            <Span Text="{Binding User.ScoreOfGame}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                    <Frame BackgroundColor="{StaticResource tabBarColor}"
+                               HeightRequest="45"
+                               CornerRadius="30"
+                               Padding="0"
+                               Margin="10"
+                               VerticalOptions="Start"
+                               HasShadow="False">
+                        <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+
+
+                            <Label Margin="0,10,10,10"
+                                                   LineBreakMode="TailTruncation"
+                                                   FontSize="16"
+                                                   FontFamily="RBo"
+                               Text="Bài viết đã đăng"
+                               TextColor="{StaticResource bgColor}"
+                               VerticalOptions="Center"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

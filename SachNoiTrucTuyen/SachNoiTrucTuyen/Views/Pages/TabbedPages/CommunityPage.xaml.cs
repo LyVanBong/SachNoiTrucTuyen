@@ -2,9 +2,9 @@
 
 namespace SachNoiTrucTuyen.Views.Pages.TabbedPages
 {
-    public partial class CollectionPage : ContentPage
+    public partial class CommunityPage : ContentPage
     {
-        public CollectionPage()
+        public CommunityPage()
         {
             InitializeComponent();
         }

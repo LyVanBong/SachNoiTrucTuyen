@@ -51,11 +51,11 @@
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="Tuyển tập" IconImageSource="{StaticResource CollectionUnselected}"
+        <NavigationPage Title="Cộng đồng" IconImageSource="{StaticResource CollectionUnselected}"
                         BarBackgroundColor="{StaticResource bgColor}"
                         BackgroundColor="{StaticResource bgColor}">
             <x:Arguments>
-                <tabbedPages:CollectionPage/>
+                <tabbedPages:CommunityPage/>
 
             </x:Arguments>
         </NavigationPage>

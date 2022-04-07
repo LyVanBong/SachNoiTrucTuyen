@@ -8,6 +8,7 @@ using SachNoiTrucTuyen.Views.Pages.DetailPages;
 using SachNoiTrucTuyen.Views.Pages.FunctionPages;
 using SachNoiTrucTuyen.Views.Pages.SupportPages;
 using SachNoiTrucTuyen.Views.Pages.TabbedPages;
+using System;
 using System.Collections.ObjectModel;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
@@ -38,9 +39,197 @@ namespace SachNoiTrucTuyen
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjAwMTk2QDMxMzkyZTM0MmUzMGY1eW1PM3FpcEhLZkhtZzlwcjR2cXYyWEZIc0J2YmJ5ZGYyNFVka0Z3RVU9");
             InitializeComponent();
-            await NavigationService.NavigateAsync("/SplashScreenPage");
+            await NavigationService.NavigateAsync("/MainPage");
         }
 
+        public static ObservableCollection<Post> Posts = new ObservableCollection<Post>()
+        {
+            new Post()
+            {
+                TypePost = 0,
+                UserId = 2,
+                NameUser = "Phan Tùng",
+                Comments = new ObservableCollection<Comment>()
+                {
+                    new Comment()
+                    {
+                        Id = 213,
+                        Status = 1123,
+                        Name = "Thanh Tú Nguyễn",
+                        Avatar = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                        Date = DateTime.Now,
+                        Content = "Rất vui được hợp tác với team :))))",
+                        ReplyComment = new ObservableCollection<Comment>()
+
+                    }
+                    ,
+                    new Comment()
+                    {
+                        Id = 23,
+                        Status = 1123,
+                        Name = "Duyên Nguyễn",
+                        Avatar = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                        Date = DateTime.Now,
+                        Content = "Sách hay quá!!!!",
+                        ReplyComment = new ObservableCollection<Comment>()
+                    }
+                    ,
+                    new Comment()
+                    {
+                        Id = 213,
+                        Status = 1123,
+                        Name = "Đức Giang",
+                        Avatar = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                        Date = DateTime.Now,
+                        Content = "Xúc động quá nè.........",
+                        ReplyComment = new ObservableCollection<Comment>()
+
+                    }
+                },
+                NumberLike = 82,
+                Created = DateTime.Now,
+                Content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                Avatar = "https://kenh14cdn.com/2019/5/6/e4-1556804137280996840619-15571599881272003882952.jpg",
+                Image = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                Id = 1123
+
+            },
+            new Post()
+            {
+                TypePost = 1,
+                UserId = 1,
+                NameUser= "Diệu Thuần",
+                Created = DateTime.Now,
+                Content = "Vivamus egestas ut felis id accumsan. Morbi pellentesque ligula vel augue vehicula, ac varius nisl pharetra. Nunc egestas rutrum posuere. Nullam lectus odio, porta ac consequat id, elementum eget erat. Quisque eu odio sit amet enim convallis gravida. Phasellus posuere ex eget orci ornare pulvinar. Nulla eu dolor tristique, condimentum purus vitae, malesuada sem. Nam id erat in lorem tempor porta. Nam imperdiet luctus arcu, eget pretium felis aliquet vel. Sed ac ex sed sem scelerisque rutrum quis ut metus. Quisque euismod ac dui ut malesuada.",
+                Avatar = "https://media.tadicdn.com/media/image/s/tdtp/id/610cee400df9386a46462317.jpeg_640x",
+                Choices = new ObservableCollection<ChooseItem>()
+                {
+                    new ChooseItem()
+                    {   
+                        Status = 1124,
+                        Name = "Kênh Youtube Người Nổi Tiếng",
+                        Persent = 45,
+                    },
+                    new ChooseItem()
+                    {
+                        Status = 1124,
+                        Name = "Kênh Youtube Người Thành Công",
+                        Persent = 15,
+                    },
+                    new ChooseItem()
+                    {
+                        Status = 1124,
+                        Name = "Kênh Youtube Sách Tinh Gọn",
+                        Persent = 15,
+                    },
+                    new ChooseItem()
+                    {
+                        Status = 1124,
+                        Name = "Bạn bè giới thiệu",
+                        Persent = 30,
+                    }
+                }
+                ,
+                Id = 1124,
+                NumberLike = 12,
+                Comments = new ObservableCollection<Comment>()
+                {
+                    new Comment()
+                    {
+                        Avatar = "https://media.tadicdn.com/media/image/s/tdtp/id/610cee400df9386a46462317.jpeg_640x",
+                        Id = 12,
+                        Name = "Diệu Thuần",
+                        Date = DateTime.Now,
+                        Status = 1124,
+                        Content = "Cảm ơn các bạn đã tham gia khảo sát giúp team nhé.",
+                        ReplyComment = new ObservableCollection<Comment>()
+                    }
+                }
+            }
+        };
+
+        public static ObservableCollection<Post> EveryOnePosts = new ObservableCollection<Post>()
+        {
+            new Post()
+            {
+                TypePost = 0,
+                UserId  = 2,
+                NameUser = "Phan Tùng",
+                Comments = new ObservableCollection<Comment>()
+                {
+                    new Comment()
+                    {
+                        Id = 213,
+                        Status = 2125,
+                        Name = "Thanh Tú Nguyễn",
+                        Avatar = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                        Date = DateTime.Now,
+                        Content = "Thú vị!",
+                        ReplyComment = new ObservableCollection<Comment>()
+
+                    }
+                    ,
+                    new Comment()
+                    {
+                        Id = 23,
+                        Status = 2125,
+                        Name = "Duyên Nguyễn",
+                        Avatar = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                        Date = DateTime.Now,
+                        Content = "Sách hay quá!!!!",
+                        ReplyComment = new ObservableCollection<Comment>()
+
+                    }
+
+
+                },
+                NumberLike = 82,
+                Created = DateTime.Now,
+                Content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                Avatar = "https://kenh14cdn.com/2019/5/6/e4-1556804137280996840619-15571599881272003882952.jpg",
+                Image = "https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0",
+                Id = 2125,
+                TypeItemInPost = 0
+
+            },
+            new Post()
+            {
+                TypePost = 0,
+                NameUser= "Diệu Thuần",
+                UserId = 1,
+                Created = DateTime.Now,
+                Content = "Vivamus egestas ut felis id accumsan. Morbi pellentesque ligula vel augue vehicula, ac varius nisl pharetra. Nunc egestas rutrum posuere. Nullam lectus odio, porta ac consequat id, elementum eget erat. Quisque eu odio sit amet enim convallis gravida. Phasellus posuere ex eget orci ornare pulvinar. Nulla eu dolor tristique, condimentum purus vitae, malesuada sem. Nam id erat in lorem tempor porta. Nam imperdiet luctus arcu, eget pretium felis aliquet vel. Sed ac ex sed sem scelerisque rutrum quis ut metus. Quisque euismod ac dui ut malesuada.",
+                Avatar = "https://media.tadicdn.com/media/image/s/tdtp/id/610cee400df9386a46462317.jpeg_640x",
+                Id = 2126,
+                NumberLike = 12,
+                Comments = new ObservableCollection<Comment>()
+                {
+                    new Comment()
+                    {
+                        Id = 213,
+                        Status = 2125,
+                        Name = "Đức Giang",
+                        Avatar = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+                        Date = DateTime.Now,
+                        Content = "Xúc động quá nè.........",
+                        ReplyComment = new ObservableCollection<Comment>()
+
+                    },
+                    new Comment()
+                    {
+                        Avatar = "https://media.tadicdn.com/media/image/s/tdtp/id/610cee400df9386a46462317.jpeg_640x",
+                        Id = 12,
+                        Name = "Diệu Thuần",
+                        Date = DateTime.Now,
+                        Status = 2126,
+                        Content = "Cảm ơn các bạn đã tham gia khảo sát giúp team nhé.",
+                        ReplyComment = new ObservableCollection<Comment>()
+                    }
+                },
+                Image = "https://dl.dropboxusercontent.com/s/bq9ve73pt0ftgrt/3-20210412102024.jpg?dl=0",
+                TypeItemInPost = 1
+            }
+        };
         public static ObservableCollection<Book> Books = new ObservableCollection<Book>()
         {
             new Book()
@@ -230,6 +419,82 @@ namespace SachNoiTrucTuyen
             new Notification() {Title = "Tiểu sử doanh nhân", Description = "Chàng trai Ấn Độ bỏ học lập nên chuỗi khách sạn trị giá 10 tỷ USD", Time = System.DateTime.Now, IsActive = true}
         };
 
+        public static ObservableCollection<Armorial> Armorials = new ObservableCollection<Armorial>()
+        {
+            new Armorial() 
+            {   
+                Id = 1,
+                Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_a_b.png"),
+                Name = "Huy hiệu đồng",
+                Contidion = "10 bài viết \n10 lượt theo dõi "
+            },
+            new Armorial()
+            {
+                Id = 2,
+                Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_a_s.png"),
+                Name = "Huy hiệu bạc",
+                Contidion = "50 bài viết \n50 lượt theo dõi "
+            },
+            new Armorial()
+            {
+                Id = 3,
+                Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_a_g.png"),
+                Name = "Huy hiệu vàng",
+                Contidion = "100 bài viết \n100 lượt theo dõi"
+            },
+            new Armorial()
+            {
+                Id = 4,
+                Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_a_d.png"),
+                Name = "Huy hiệu kim cương",
+                Contidion = "500 bài viết \n500 lượt theo dõi "
+            },
+            new Armorial()
+            {
+                Id = 5,
+                Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_a_p.png"),
+                Name = "Partner NNT Studio",
+                Contidion = "Đối tác chính thức của NNT Studio"
+            },
+            new Armorial()
+            {
+                Id = 6,
+                Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.logo.png"),
+                Name = "Admin NNT Studio",
+                Contidion = "Quản trị viên ứng dụng sách tinh gọn"
+            }
+        };
+        public static ObservableCollection<User> Users = new ObservableCollection<User>()
+        {
+            new User ()
+            {
+                Id = 1,
+                Name = "Diệu Thuần",
+                Avatar = "https://media.tadicdn.com/media/image/s/tdtp/id/610cee400df9386a46462317.jpeg_640x",
+                IdA = 6,
+                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                AmountFollow = 110,
+                AmountLike = 2123,
+                AmountPost = 20,
+                ScoreInGame = 75,
+                ScoreOfGame = 100,
+
+            },
+            new User ()
+            {
+                Id = 2,
+                Name = "Phan Tùng",
+                Avatar = "https://kenh14cdn.com/2019/5/6/e4-1556804137280996840619-15571599881272003882952.jpg",
+                IdA = 1,
+                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                AmountFollow = 110,
+                AmountLike = 2123,
+                AmountPost = 20,
+                ScoreInGame = 75,
+                ScoreOfGame = 100,
+
+            }
+        };
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
@@ -242,10 +507,14 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<StoryPage, StoryPageViewModel>();
             containerRegistry.RegisterForNavigation<KnowledgePage, KnowledgePageViewModel>();
-            containerRegistry.RegisterForNavigation<CollectionPage, CollectionPageViewModel>();
+            containerRegistry.RegisterForNavigation<CommunityPage, CommunityPageViewModel>();
             containerRegistry.RegisterForNavigation<AccountPage, AccountPageViewModel>();
             containerRegistry.RegisterForNavigation<MailPage, MailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
+            containerRegistry.RegisterForNavigation<ArmorialPage, ArmorialPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserPage, UserPageViewModel >();
+            containerRegistry.RegisterForNavigation<FindUserPage, FindUserPageViewModel>();
+            containerRegistry.RegisterForNavigation<PostCommentPage, PostCommentPageViewModel>();
             containerRegistry.RegisterForNavigation<BookDetailPage, BookDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<ReadBookPage, ReadBookPageViewModel>();
             containerRegistry.RegisterForNavigation<VoiceBookPage, VoiceBookPageViewModel>();

@@ -17,6 +17,11 @@
     <None Remove="Resources\Font\Roboto-Regular.ttf" />
     <None Remove="Resources\Font\Roboto-Thin.ttf" />
     <None Remove="Resources\Font\Roboto-ThinItalic.ttf" />
+    <None Remove="Resources\Images\ic_a_b.png" />
+    <None Remove="Resources\Images\ic_a_d.png" />
+    <None Remove="Resources\Images\ic_a_g.png" />
+    <None Remove="Resources\Images\ic_a_p.png" />
+    <None Remove="Resources\Images\ic_a_s.png" />
     <None Remove="Resources\Images\ic_back_0.png" />
     <None Remove="Resources\Images\ic_back_1.png" />
     <None Remove="Resources\Images\ic_book_2.png" />
@@ -25,13 +30,18 @@
     <None Remove="Resources\Images\ic_btn_google.png" />
     <None Remove="Resources\Images\ic_cart.png" />
     <None Remove="Resources\Images\ic_close.png" />
+    <None Remove="Resources\Images\ic_comment.png" />
+    <None Remove="Resources\Images\ic_correct.png" />
     <None Remove="Resources\Images\ic_document.png" />
     <None Remove="Resources\Images\ic_down.png" />
     <None Remove="Resources\Images\ic_down_load.png" />
+    <None Remove="Resources\Images\ic_failed.png" />
     <None Remove="Resources\Images\ic_font.png" />
     <None Remove="Resources\Images\ic_fw.png" />
     <None Remove="Resources\Images\ic_heart.png" />
     <None Remove="Resources\Images\ic_home.png" />
+    <None Remove="Resources\Images\ic_like_0.png" />
+    <None Remove="Resources\Images\ic_like_1.png" />
     <None Remove="Resources\Images\ic_mail.png" />
     <None Remove="Resources\Images\ic_messenger.png" />
     <None Remove="Resources\Images\ic_moon_0.png" />
@@ -90,6 +100,11 @@
     <EmbeddedResource Include="Resources\Font\Roboto-Regular.ttf" />
     <EmbeddedResource Include="Resources\Font\Roboto-Thin.ttf" />
     <EmbeddedResource Include="Resources\Font\Roboto-ThinItalic.ttf" />
+    <EmbeddedResource Include="Resources\Images\ic_a_b.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_d.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_g.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_p.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_s.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_book_2.png" />
@@ -98,13 +113,18 @@
     <EmbeddedResource Include="Resources\Images\ic_btn_google.png" />
     <EmbeddedResource Include="Resources\Images\ic_cart.png" />
     <EmbeddedResource Include="Resources\Images\ic_close.png" />
+    <EmbeddedResource Include="Resources\Images\ic_comment.png" />
+    <EmbeddedResource Include="Resources\Images\ic_correct.png" />
     <EmbeddedResource Include="Resources\Images\ic_document.png" />
     <EmbeddedResource Include="Resources\Images\ic_down.png" />
     <EmbeddedResource Include="Resources\Images\ic_down_load.png" />
+    <EmbeddedResource Include="Resources\Images\ic_failed.png" />
     <EmbeddedResource Include="Resources\Images\ic_font.png" />
     <EmbeddedResource Include="Resources\Images\ic_fw.png" />
     <EmbeddedResource Include="Resources\Images\ic_heart.png" />
     <EmbeddedResource Include="Resources\Images\ic_home.png" />
+    <EmbeddedResource Include="Resources\Images\ic_like_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_like_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_mail.png" />
     <EmbeddedResource Include="Resources\Images\ic_messenger.png" />
     <EmbeddedResource Include="Resources\Images\ic_moon_0.png" />
@@ -160,8 +180,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Pages\DetailPages\PostCommentPage.xaml.cs">
+      <DependentUpon>PostCommentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pages\LoginAndSignupPage.xaml.cs">
       <DependentUpon>LoginAndSignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\ArmorialPage.xaml.cs">
+      <DependentUpon>ArmorialPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\SupportPages\NotificationPage.xaml.cs">
       <DependentUpon>NotificationPage.xaml</DependentUpon>
@@ -169,8 +198,14 @@
     <Compile Update="Views\Pages\SupportPages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pages\SupportPages\FindUserPage.xaml.cs">
+      <DependentUpon>FindUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pages\SupportPages\SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\TabbedPages\CommunityPage.xaml.cs">
+      <DependentUpon>CommunityPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
@@ -212,9 +247,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\TabbedPages\AccountPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\TabbedPages\CollectionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\TabbedPages\HomePage.xaml">
