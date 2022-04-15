@@ -51,6 +51,17 @@
                     <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/NotificationPage', Animated=True, UseModalNavigation=True}"/>
                 </Image.GestureRecognizers>
             </Image>
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_set.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="25"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    Margin="0,0,15,10"
+                    >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SettingPage', Animated=True, UseModalNavigation=True}"/>
+                </Image.GestureRecognizers>
+            </Image>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Resources>

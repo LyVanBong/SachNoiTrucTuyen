@@ -52,6 +52,17 @@
                     <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/NotificationPage', Animated=True, UseModalNavigation=True}"/>
                 </Image.GestureRecognizers>
             </Image>
+            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_set.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="25"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    Margin="0,0,15,10"
+                    >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SettingPage', Animated=True, UseModalNavigation=True}"/>
+                </Image.GestureRecognizers>
+            </Image>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Resources>
@@ -70,6 +81,9 @@
                            CornerRadius="10">
                     <Image Source="{Binding Image}"
                                Aspect="Fill"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PremiumPage', UseModalNavigation=True, Animated=False}"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
             </ViewCell>
         </DataTemplate>
@@ -77,11 +91,33 @@
         <DataTemplate x:Key="ListBook" x:DataType="md:LayoutPageModel">
             <ViewCell>
                 <StackLayout Spacing="5">
+                    <StackLayout Orientation="Horizontal">
                         <Label Text="{Binding Title}"
                                FontSize="18"
                                Margin="15,0"
                                FontFamily="RBo"
+                               HorizontalOptions="StartAndExpand"
                                TextColor="{StaticResource titleColor}"/>
+                        <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_play_3.png}"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,10,0"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/CollectionAudioPage',Animated=True,UseModalNavigation=True}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_tag.png}"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="0,0,10,0"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center">
+                            
+                        </Image>
+                    </StackLayout>
+                        
                         <CollectionView x:Name="listBook"
                                         HeightRequest="330"
                                         ItemsSource="{Binding ListBook}">
@@ -162,6 +198,7 @@
                                Margin="15,0"
                                FontFamily="RBo"
                                TextColor="{StaticResource titleColor}"/>
+                    
                     <ScrollView Orientation="Horizontal"
                                 HorizontalScrollBarVisibility="Never">
                         <Grid>

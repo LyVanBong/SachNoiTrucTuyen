@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using Android.Content;
+using Prism;
 using Prism.Ioc;
 using SachNoiTrucTuyen.Models;
 using SachNoiTrucTuyen.ViewModels;
@@ -10,6 +11,7 @@ using SachNoiTrucTuyen.Views.Pages.SupportPages;
 using SachNoiTrucTuyen.Views.Pages.TabbedPages;
 using System;
 using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
@@ -39,7 +41,9 @@ namespace SachNoiTrucTuyen
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjAwMTk2QDMxMzkyZTM0MmUzMGY1eW1PM3FpcEhLZkhtZzlwcjR2cXYyWEZIc0J2YmJ5ZGYyNFVka0Z3RVU9");
             InitializeComponent();
-            await NavigationService.NavigateAsync("/MainPage");
+            Preferences.Set("IsLogin", false);
+            Preferences.Set("IsPremium", false);
+            await NavigationService.NavigateAsync("/SplashScreenPage");
         }
 
         public static ObservableCollection<Post> Posts = new ObservableCollection<Post>()
@@ -509,6 +513,9 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<KnowledgePage, KnowledgePageViewModel>();
             containerRegistry.RegisterForNavigation<CommunityPage, CommunityPageViewModel>();
             containerRegistry.RegisterForNavigation<AccountPage, AccountPageViewModel>();
+            containerRegistry.RegisterForNavigation<CollectionAudioPage, CollectionAudioPageViewModel>();
+            containerRegistry.RegisterForNavigation<PremiumPage, PremiumPageViewModel>();
+            containerRegistry.RegisterForNavigation<SettingPage, SettingPageViewModel>();
             containerRegistry.RegisterForNavigation<MailPage, MailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
             containerRegistry.RegisterForNavigation<ArmorialPage, ArmorialPageViewModel>();

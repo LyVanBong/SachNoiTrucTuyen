@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SachNoiTrucTuyen.ViewModels
@@ -12,7 +13,19 @@ namespace SachNoiTrucTuyen.ViewModels
     {
         public SplashScreenPageViewModel(INavigationService navigation)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(5), () => { navigation.NavigateAsync("NavigationPage/WelcomePage"); return false; });
+            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            {
+                if (Preferences.Get("IsLogin", true) == true)
+                {
+                    navigation.NavigateAsync("NavigationPage/MainPage");
+                }
+                else
+                {
+                    navigation.NavigateAsync("NavigationPage/WelcomePage");
+                }
+
+                return false;
+            });
         }
     }
 }

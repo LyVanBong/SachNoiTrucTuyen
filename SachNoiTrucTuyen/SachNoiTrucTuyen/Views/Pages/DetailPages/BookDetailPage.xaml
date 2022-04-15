@@ -12,7 +12,7 @@
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_play_2.png" x:Key="Play"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_document.png" x:Key="Document"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" x:Key="Cart"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment.png" x:Key="Heart"/>
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowDefinitions="55,*"
@@ -107,7 +107,7 @@
                     </Label>
                     <StackLayout Orientation="Horizontal"
                                  HorizontalOptions="Center">
-                        <Image Source="{StaticResource Cart}"
+                        <Image Source="{StaticResource Heart}"
                                WidthRequest="30"
                                HeightRequest="30"/>
 
@@ -115,9 +115,12 @@
                                                    LineBreakMode="TailTruncation"
                                                    FontSize="18"
                                                    FontFamily="R"
-                               Text="MUA SÁCH GIẤY"
+                               Text="XEM CẢM NHẬN"
                                TextColor="{StaticResource tabBarColor}"
                                VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage?IdStt=1123',Animated=True, UseModalNavigation=True}"/>
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*"
                           Margin="10">

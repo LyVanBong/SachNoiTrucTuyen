@@ -54,6 +54,7 @@
                            Margin="35,50,35,10"
                        BackgroundColor="{StaticResource placeHolderColor}">
                     <customViews:CustomEntry 
+                        x:Name="entryUserName"
                                              Placeholder="Tên đăng nhập"
                         Text="{Binding Username}"
                             FontFamily="R"
@@ -70,9 +71,11 @@
                            Margin="35,0,35,10"
                        BackgroundColor="{StaticResource placeHolderColor}">
                     <customViews:CustomEntry 
+                        x:Name="entryPass"
                                              Placeholder="Mật khẩu"
                             FontFamily="R"
                         Text="{Binding Password}"
+                        
                                              Margin="20,3">
 
                     </customViews:CustomEntry>
@@ -110,6 +113,9 @@
                         <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
                     </Trigger>
                 </Frame.Triggers>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LoginCommand}"/>
+                </Frame.GestureRecognizers>
             </Frame>
 
         </StackLayout>

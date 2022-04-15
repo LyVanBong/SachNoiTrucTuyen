@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.VoiceBookPage"
+             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.CollectionAudioPage"
              NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:CollectionAudioPageViewModel">
     <ContentPage.Resources>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" x:Key="BookOpen"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_back_0.png" x:Key="Back0"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_back_1.png" x:Key="Back1"/>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_next_0.png" x:Key="Next0"/>
@@ -93,32 +95,40 @@
 
             <ScrollView Grid.Row="1">
                 <StackLayout>
-                    <Grid WidthRequest="160"
-                          Margin="0,20,0,0"
-                          HorizontalOptions="Center">
-                        <StackLayout>
-                            <Image Source="https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0"
-                            Aspect="AspectFill"
-                            HeightRequest="210"
-                            WidthRequest="140" 
-                            HorizontalOptions="Center"
-                            Margin="10"
-                            xct:CornerRadiusEffect.CornerRadius="5"
-                            xct:ShadowEffect.Color="Gray"
-                            xct:ShadowEffect.OffsetX="4"
-                            xct:ShadowEffect.OffsetY="6"
-                            xct:ShadowEffect.Opacity="1.5"
-                            xct:ShadowEffect.Radius="5"
-                            />
-                        </StackLayout>
-                        <Image Source="{StaticResource Premium}"
-                                               WidthRequest="20"
-                                               HeightRequest="20"
-                                               HorizontalOptions="End"
-                                               VerticalOptions="Start"
-                                               Margin="15,10"
-                                               IsVisible="True"/>
+                    <Grid HeightRequest="280">
+                        <ListView BackgroundColor="{StaticResource placeHolderColor}"
+                              ItemsSource="{Binding ListCollections}">
+                            <ListView.Header>
+                                <Label Text="Danh sách phát"
+                                   FontSize="16"
+                                   FontFamily="RBo"
+                                       Padding="10"
+                                   TextColor="{StaticResource tabBarColor}"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="md:Book">
+                                    <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{StaticResource BookOpen}"
+                                           WidthRequest="32"
+                                           HeightRequest="32"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,5,0"/>
+                                        <Label Text="{Binding TitleBook}"
+                                           VerticalOptions="CenterAndExpand"
+                                           HorizontalOptions="StartAndExpand"
+                                           FontSize="16"
+                                           FontFamily="R"
+                                           TextColor="{StaticResource nameBookColor}"
+                                           LineBreakMode="TailTruncation"/>
+                                    </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </Grid>
+                    
+                   
                     <Label Text="Hãy bắt tôi nếu bạn có thể"
                                                    MaxLines="2"
                                                    LineBreakMode="TailTruncation"

@@ -8,5 +8,11 @@ namespace SachNoiTrucTuyen.Views.Pages.SupportPages
         {
             InitializeComponent();
         }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            entryPass.Unfocus();
+            entryUserName.Unfocus();
+        }
     }
 }

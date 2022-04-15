@@ -37,8 +37,6 @@ namespace SachNoiTrucTuyen.ViewModels
             ImageSource collectionSelected = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_m_cp_1.png");
             ImageSource collectionUnSelected = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_m_cp_0.png");
 
-            ImageSource accountSelected = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_m_ap_1.png");
-            ImageSource accountUnSelected = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_m_ap_0.png");
            
             switch (index)
             {
@@ -46,37 +44,31 @@ namespace SachNoiTrucTuyen.ViewModels
                         page.Children[1].IconImageSource = storyUnSelected;
                         page.Children[2].IconImageSource = knowledgeUnSelected;
                         page.Children[3].IconImageSource = collectionUnSelected;
-                        page.Children[4].IconImageSource = accountUnSelected;
                         break;
                 case 1: page.Children[index].IconImageSource = storySelected;
                         page.Children[0].IconImageSource = homeUnSelected;
                         page.Children[2].IconImageSource = knowledgeUnSelected;
                         page.Children[3].IconImageSource = collectionUnSelected;
-                        page.Children[4].IconImageSource = accountUnSelected;
                         break;
                 case 2: page.Children[index].IconImageSource = knowledgeSelected;
                         page.Children[1].IconImageSource = storyUnSelected;
                         page.Children[0].IconImageSource = homeUnSelected;
                         page.Children[3].IconImageSource = collectionUnSelected;
-                        page.Children[4].IconImageSource = accountUnSelected;
                         break;
                 case 3: page.Children[index].IconImageSource = collectionSelected;
                         page.Children[1].IconImageSource = storyUnSelected;
                         page.Children[2].IconImageSource = knowledgeUnSelected;
                         page.Children[0].IconImageSource = homeUnSelected;
-                        page.Children[4].IconImageSource = accountUnSelected;
                         break;
                 case 4: page.Children[0].IconImageSource = homeUnSelected;
                         page.Children[1].IconImageSource = storyUnSelected;
                         page.Children[2].IconImageSource = knowledgeUnSelected;
                         page.Children[3].IconImageSource = collectionUnSelected;
-                        page.Children[4].IconImageSource = accountSelected;
                         break;
                 default: page.Children[index].IconImageSource = homeSelected;
                         page.Children[1].IconImageSource = storyUnSelected;
                         page.Children[2].IconImageSource = knowledgeUnSelected;
                         page.Children[3].IconImageSource = collectionUnSelected;
-                        page.Children[4].IconImageSource = accountUnSelected;
                         break;
                     
             }

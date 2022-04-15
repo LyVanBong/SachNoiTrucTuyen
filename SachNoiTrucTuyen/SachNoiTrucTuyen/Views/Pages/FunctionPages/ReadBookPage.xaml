@@ -10,7 +10,8 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:ReadBookPageViewModel">
     <ContentPage.Resources>
         <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" x:Key="Cart"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment_2.png" x:Key="Heart"/>
+        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_edit_comment.png" x:Key="Edit"/>
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowDefinitions="55,*,55"
@@ -103,20 +104,67 @@
                    Padding="0"
                    Grid.Row="2"
                    CornerRadius="0">
-                <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center">
-                    <Image Source="{StaticResource Cart}"
+                
+                <Grid ColumnDefinitions="*,*">
+                    <Frame 
+                                 CornerRadius="10"
+                                 Grid.Column="0"
+                        HasShadow="False"
+                           HeightRequest="40"
+                        Margin="5"
+                        
+                   Padding="5"
+                           VerticalOptions="Center"
+                        HorizontalOptions="Fill"
+                                 BackgroundColor="{StaticResource tabBarColor}">
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center">
+                            <Image Source="{StaticResource Heart}"
                                WidthRequest="30"
                                HeightRequest="30"/>
 
-                    <Label Margin="5,10,10,10"
+                            <Label Margin="5,0,0,0"
                                                    LineBreakMode="TailTruncation"
-                                                   FontSize="18"
+                                                   FontSize="14"
                                                    FontFamily="R"
-                               Text="MUA SÁCH GIẤY"
-                               TextColor="{StaticResource tabBarColor}"
+                               Text="Xem cảm nhận"
+                               TextColor="{StaticResource bgColor}"
                                VerticalOptions="Center"/>
-                </StackLayout>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage?IdStt=1123',Animated=True, UseModalNavigation=True}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame 
+                                 CornerRadius="10"
+                                 Grid.Column="1"
+                           HeightRequest="40"
+                        Margin="5"
+                        HasShadow="False"
+                        HorizontalOptions="Fill"
+                        
+                   Padding="5"
+                           VerticalOptions="Center"
+                                 BackgroundColor="{StaticResource tabBarColor}">
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center">
+                            <Image Source="{StaticResource Edit}"
+                               WidthRequest="25"
+                               HeightRequest="25"/>
+
+                            <Label Margin="5,0,0,0"
+                                                   LineBreakMode="TailTruncation"
+                                                   FontSize="14"
+                                                   FontFamily="R"
+                               Text="Viết cảm nhận"
+                               TextColor="{StaticResource bgColor}"
+                               VerticalOptions="Center"/>
+                        </StackLayout>
+                        
+                    </Frame>
+
+                </Grid>
             </Frame>
         </Grid>
     </ContentPage.Content>

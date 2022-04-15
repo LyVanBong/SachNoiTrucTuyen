@@ -30,15 +30,19 @@
     <None Remove="Resources\Images\ic_btn_google.png" />
     <None Remove="Resources\Images\ic_cart.png" />
     <None Remove="Resources\Images\ic_close.png" />
+    <None Remove="Resources\Images\ic_close_2.png" />
     <None Remove="Resources\Images\ic_comment.png" />
     <None Remove="Resources\Images\ic_correct.png" />
     <None Remove="Resources\Images\ic_document.png" />
     <None Remove="Resources\Images\ic_down.png" />
     <None Remove="Resources\Images\ic_down_load.png" />
+    <None Remove="Resources\Images\ic_edit_comment.png" />
     <None Remove="Resources\Images\ic_failed.png" />
     <None Remove="Resources\Images\ic_font.png" />
     <None Remove="Resources\Images\ic_fw.png" />
     <None Remove="Resources\Images\ic_heart.png" />
+    <None Remove="Resources\Images\ic_heart_comment.png" />
+    <None Remove="Resources\Images\ic_heart_comment_2.png" />
     <None Remove="Resources\Images\ic_home.png" />
     <None Remove="Resources\Images\ic_like_0.png" />
     <None Remove="Resources\Images\ic_like_1.png" />
@@ -67,6 +71,10 @@
     <None Remove="Resources\Images\ic_play_3.png" />
     <None Remove="Resources\Images\ic_play_4.png" />
     <None Remove="Resources\Images\ic_premium.png" />
+    <None Remove="Resources\Images\ic_p_1.png" />
+    <None Remove="Resources\Images\ic_p_2.png" />
+    <None Remove="Resources\Images\ic_p_3.png" />
+    <None Remove="Resources\Images\ic_p_4.png" />
     <None Remove="Resources\Images\ic_readed.png" />
     <None Remove="Resources\Images\ic_repeat_0.png" />
     <None Remove="Resources\Images\ic_repeat_1.png" />
@@ -74,6 +82,20 @@
     <None Remove="Resources\Images\ic_search.png" />
     <None Remove="Resources\Images\ic_send.png" />
     <None Remove="Resources\Images\ic_share.png" />
+    <None Remove="Resources\Images\ic_s_about.png" />
+    <None Remove="Resources\Images\ic_s_acc.png" />
+    <None Remove="Resources\Images\ic_s_clock.png" />
+    <None Remove="Resources\Images\ic_s_doc.png" />
+    <None Remove="Resources\Images\ic_s_doc_1.png" />
+    <None Remove="Resources\Images\ic_s_doc_2.png" />
+    <None Remove="Resources\Images\ic_s_heart.png" />
+    <None Remove="Resources\Images\ic_s_logout.png" />
+    <None Remove="Resources\Images\ic_s_pack.png" />
+    <None Remove="Resources\Images\ic_s_ques.png" />
+    <None Remove="Resources\Images\ic_s_set.png" />
+    <None Remove="Resources\Images\ic_s_showRight.png" />
+    <None Remove="Resources\Images\ic_s_soc.png" />
+    <None Remove="Resources\Images\ic_s_tag.png" />
     <None Remove="Resources\Images\ic_tag.png" />
     <None Remove="Resources\Images\ic_ttv_ap.png" />
     <None Remove="Resources\Images\ic_ttv_cp.png" />
@@ -113,15 +135,19 @@
     <EmbeddedResource Include="Resources\Images\ic_btn_google.png" />
     <EmbeddedResource Include="Resources\Images\ic_cart.png" />
     <EmbeddedResource Include="Resources\Images\ic_close.png" />
+    <EmbeddedResource Include="Resources\Images\ic_close_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_comment.png" />
     <EmbeddedResource Include="Resources\Images\ic_correct.png" />
     <EmbeddedResource Include="Resources\Images\ic_document.png" />
     <EmbeddedResource Include="Resources\Images\ic_down.png" />
     <EmbeddedResource Include="Resources\Images\ic_down_load.png" />
+    <EmbeddedResource Include="Resources\Images\ic_edit_comment.png" />
     <EmbeddedResource Include="Resources\Images\ic_failed.png" />
     <EmbeddedResource Include="Resources\Images\ic_font.png" />
     <EmbeddedResource Include="Resources\Images\ic_fw.png" />
     <EmbeddedResource Include="Resources\Images\ic_heart.png" />
+    <EmbeddedResource Include="Resources\Images\ic_heart_comment.png" />
+    <EmbeddedResource Include="Resources\Images\ic_heart_comment_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_home.png" />
     <EmbeddedResource Include="Resources\Images\ic_like_0.png" />
     <EmbeddedResource Include="Resources\Images\ic_like_1.png" />
@@ -143,6 +169,10 @@
     <EmbeddedResource Include="Resources\Images\ic_next_1.png" />
     <EmbeddedResource Include="Resources\Images\ic_notify.png" />
     <EmbeddedResource Include="Resources\Images\ic_notify_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_3.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_4.png" />
     <EmbeddedResource Include="Resources\Images\ic_pause.png" />
     <EmbeddedResource Include="Resources\Images\ic_pause_3.png" />
     <EmbeddedResource Include="Resources\Images\ic_play.png" />
@@ -157,6 +187,20 @@
     <EmbeddedResource Include="Resources\Images\ic_search.png" />
     <EmbeddedResource Include="Resources\Images\ic_send.png" />
     <EmbeddedResource Include="Resources\Images\ic_share.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_about.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_acc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_clock.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_doc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_doc_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_doc_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_heart.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_logout.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_pack.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_ques.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_set.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_showRight.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_soc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_tag.png" />
     <EmbeddedResource Include="Resources\Images\ic_tag.png" />
     <EmbeddedResource Include="Resources\Images\ic_ttv_ap.png" />
     <EmbeddedResource Include="Resources\Images\ic_ttv_cp.png" />
@@ -180,11 +224,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v10.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\Pages\DetailPages\PostCommentPage.xaml.cs">
       <DependentUpon>PostCommentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pages\FunctionPages\ReadBookPage.xaml.cs">
+      <DependentUpon>ReadBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\FunctionPages\CollectionAudioPage.xaml.cs">
+      <DependentUpon>CollectionAudioPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pages\LoginAndSignupPage.xaml.cs">
       <DependentUpon>LoginAndSignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\PremiumPage.xaml.cs">
+      <DependentUpon>PremiumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\SupportPages\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
@@ -261,6 +323,10 @@
     <EmbeddedResource Update="Views\Pages\TestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Pages\SettingChildPages\" />
   </ItemGroup>
 
 </Project>
