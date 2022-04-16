@@ -27,12 +27,12 @@ namespace SachNoiTrucTuyen.ViewModels
             {
                 new SettingItem(navigation) {Type = 0,Name = "Thông tin tài khoản"},
                 new SettingItem(navigation) {Type = 1,Name = "Thông tin cá nhân", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_acc.png"), NavigationPage = "UserPage?UserId=1"},
-                new SettingItem(navigation) {Type = 1,Name = "Quản lý gói đăng ký", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_pack.png"), NavigationPage = ""},
-                new SettingItem(navigation) {Type = 1,Name = "Liên kết mạng xã hội",  Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_soc.png"), NavigationPage = ""},
-                new SettingItem(navigation) {Type = 1,Name = "Quản lý bài viết", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_doc.png"), NavigationPage = ""},
-                new SettingItem(navigation) {Type = 1,Name = "Đã đánh dấu", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_tag.png"), NavigationPage = ""},
-                new SettingItem(navigation) {Type = 1,Name = "Audio yêu thích", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_heart.png"), NavigationPage = ""},
-                new SettingItem(navigation) {Type = 1,Name = "Nghe gần đây", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_clock.png"), NavigationPage = ""},
+                new SettingItem(navigation) {Type = 1,Name = "Quản lý gói đăng ký", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_pack.png"), NavigationPage = "PackManagerPage"},
+                new SettingItem(navigation) {Type = 1,Name = "Liên kết mạng xã hội",  Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_soc.png"), NavigationPage = "SocialManagerPage"},
+                new SettingItem(navigation) {Type = 1,Name = "Quản lý bài viết", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_doc.png"), NavigationPage = "PostManagerPage"},
+                new SettingItem(navigation) {Type = 1,Name = "Đã đánh dấu", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_tag.png"), NavigationPage = "TaggedPage"},
+                new SettingItem(navigation) {Type = 1,Name = "Audio yêu thích", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_heart.png"), NavigationPage = "FavouriteAudioPage"},
+                new SettingItem(navigation) {Type = 1,Name = "Nghe gần đây", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_clock.png"), NavigationPage = "HeardRecentlyPage"},
                 new SettingItem(navigation) {Type = 1,Name = "Đăng xuất", ShowMoreIsVisible = false, Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_logout.png"), NavigationPage = "MainPage"},
             };
             SettingAppItems = new ObservableCollection<SettingItem>()

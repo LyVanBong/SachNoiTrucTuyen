@@ -121,7 +121,7 @@
                            FontSize="16">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Tùy chỉnh"/>
+                                    <Span Text="Cài đặt"/>
                                 </FormattedString>
                             </Label.FormattedText>
 
@@ -165,7 +165,8 @@
                             
                         </ListView> 
                     </Grid>
-                    <Grid HeightRequest="350">
+                    <Grid HeightRequest="300"
+                          Margin="0,20,0,0">
                         <ListView ItemsSource="{Binding SettingAppItems}"
                                   ItemTemplate="{StaticResource SettingTemplate}"
                                   RowHeight="50"

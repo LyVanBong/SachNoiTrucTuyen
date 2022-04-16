@@ -233,6 +233,9 @@
     <Compile Update="Views\Pages\DetailPages\PostCommentPage.xaml.cs">
       <DependentUpon>PostCommentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pages\FunctionPages\FeelingPage.xaml.cs">
+      <DependentUpon>FeelingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pages\FunctionPages\ReadBookPage.xaml.cs">
       <DependentUpon>ReadBookPage.xaml</DependentUpon>
     </Compile>
@@ -241,6 +244,24 @@
     </Compile>
     <Compile Update="Views\Pages\LoginAndSignupPage.xaml.cs">
       <DependentUpon>LoginAndSignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\FavouriteAudioPage.xaml.cs">
+      <DependentUpon>FavouriteAudioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\HeardRecentlyPage.xaml.cs">
+      <DependentUpon>HeardRecentlyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\TaggedPage.xaml.cs">
+      <DependentUpon>TaggedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\PostManagerPage.xaml.cs">
+      <DependentUpon>PostManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\SocialManagerPage.xaml.cs">
+      <DependentUpon>SocialManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\PackManagerPage.xaml.cs">
+      <DependentUpon>PackManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\SupportPages\PremiumPage.xaml.cs">
       <DependentUpon>PremiumPage.xaml</DependentUpon>
@@ -265,6 +286,9 @@
     </Compile>
     <Compile Update="Views\Pages\SupportPages\SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\FunctionPages\AddFeelingPage.xaml.cs">
+      <DependentUpon>AddFeelingPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\TabbedPages\CommunityPage.xaml.cs">
       <DependentUpon>CommunityPage.xaml</DependentUpon>
@@ -323,10 +347,6 @@
     <EmbeddedResource Update="Views\Pages\TestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Pages\SettingChildPages\" />
   </ItemGroup>
 
 </Project>

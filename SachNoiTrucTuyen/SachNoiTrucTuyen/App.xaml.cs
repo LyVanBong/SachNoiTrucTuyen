@@ -7,6 +7,7 @@ using SachNoiTrucTuyen.Views;
 using SachNoiTrucTuyen.Views.Pages;
 using SachNoiTrucTuyen.Views.Pages.DetailPages;
 using SachNoiTrucTuyen.Views.Pages.FunctionPages;
+using SachNoiTrucTuyen.Views.Pages.SettingChildPages;
 using SachNoiTrucTuyen.Views.Pages.SupportPages;
 using SachNoiTrucTuyen.Views.Pages.TabbedPages;
 using System;
@@ -41,7 +42,7 @@ namespace SachNoiTrucTuyen
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjAwMTk2QDMxMzkyZTM0MmUzMGY1eW1PM3FpcEhLZkhtZzlwcjR2cXYyWEZIc0J2YmJ5ZGYyNFVka0Z3RVU9");
             InitializeComponent();
-            Preferences.Set("IsLogin", false);
+            //Preferences.Set("IsLogin", false);
             Preferences.Set("IsPremium", false);
             await NavigationService.NavigateAsync("/SplashScreenPage");
         }
@@ -513,6 +514,14 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<KnowledgePage, KnowledgePageViewModel>();
             containerRegistry.RegisterForNavigation<CommunityPage, CommunityPageViewModel>();
             containerRegistry.RegisterForNavigation<AccountPage, AccountPageViewModel>();
+            containerRegistry.RegisterForNavigation<HeardRecentlyPage, HeardRecentlyPageViewModel>();
+            containerRegistry.RegisterForNavigation<SocialManagerPage, SocialManagerPageViewModel>();
+            containerRegistry.RegisterForNavigation<TaggedPage, TaggedPageViewModel>();
+            containerRegistry.RegisterForNavigation<FavouriteAudioPage, FavouriteAudioPageViewModel>();
+            containerRegistry.RegisterForNavigation<PackManagerPage, PackManagerPageViewModel>();
+            containerRegistry.RegisterForNavigation<PostManagerPage, PostManagerPageViewModel>();
+            containerRegistry.RegisterForNavigation<FeelingPage, FeelingPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddFeelingPage, AddFeelingPageViewModel>();
             containerRegistry.RegisterForNavigation<CollectionAudioPage, CollectionAudioPageViewModel>();
             containerRegistry.RegisterForNavigation<PremiumPage, PremiumPageViewModel>();
             containerRegistry.RegisterForNavigation<SettingPage, SettingPageViewModel>();

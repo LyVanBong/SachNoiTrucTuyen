@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.PostManagerPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*"
+              RowSpacing="0">
+            <Frame HeightRequest="55"
+                   Padding="0"
+                   Grid.Row="0"
+                     
+                   CornerRadius="0">
+                <Grid>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Margin="15,10,15,10"
+                            >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label 
+                           HorizontalOptions="Center"
+                           FontFamily="R"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           FontSize="16">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Liên kết mạng xã hội"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+                    </Label>
+                </Grid>
+            </Frame>
+            <xct:TabView TabStripBackgroundColor="{StaticResource bgColor}"
+                         TabIndicatorColor="{StaticResource tabBarColor}"
+                         TabIndicatorHeight="3"
+                         Grid.Row="1"
+                         IsSwipeEnabled="False">
+                <xct:TabViewItem Text="ĐANG CHỞ DUYỆT"
+                                 FontFamily="RBo"
+                                 FontSize="14"
+                                 IsSelected="True"
+                                 TextColor="{StaticResource placeHolderColor2}"
+                                 TextColorSelected="{StaticResource tabBarColor}">
+                    <Label Text="Bạn chưa có bài viết nào"
+                               Margin="10,100"
+                           FontSize="16"
+                           TextColor="{StaticResource nameBookColor}"
+                               HorizontalOptions="Center"/>
+                </xct:TabViewItem>
+                <xct:TabViewItem Text="ĐÃ ĐĂNG"
+                                 FontFamily="RBo"
+                                 FontSize="14"
+                                 TextColor="{StaticResource placeHolderColor2}"
+                                 TextColorSelected="{StaticResource tabBarColor}">
+                    <Label Text="Bạn chưa có bài viết nào"
+                               Margin="10,100"
+                           FontSize="16"
+                           TextColor="{StaticResource nameBookColor}"
+                               HorizontalOptions="Center"/>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </Grid>
+    </ContentPage.Content>
+  
+</ContentPage>

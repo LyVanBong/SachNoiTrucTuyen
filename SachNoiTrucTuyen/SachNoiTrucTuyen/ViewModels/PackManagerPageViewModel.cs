@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
-    public class AccountPageViewModel : BindableBase
+    public class PackManagerPageViewModel : BindableBase
     {
-        public AccountPageViewModel()
+        public PackManagerPageViewModel()
         {
 
         }

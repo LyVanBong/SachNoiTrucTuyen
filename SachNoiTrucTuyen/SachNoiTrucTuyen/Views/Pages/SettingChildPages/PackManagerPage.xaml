@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.PackManagerPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*"
+              RowSpacing="0">
+            <Frame HeightRequest="55"
+                   Padding="0"
+                   Grid.Row="0"
+                     
+                   CornerRadius="0">
+                <Grid>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Margin="15,10,15,10"
+                            >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label 
+                           HorizontalOptions="Center"
+                           FontFamily="R"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           FontSize="16">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Quản lý gói đăng ký"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+                    </Label>
+                </Grid>
+            </Frame>
+            <StackLayout Grid.Row="1">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Gói hiện tại"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                    <Label Text="1 tháng Premium"
+                       FontSize="16"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                </StackLayout>
+                <BoxView HeightRequest="0.25" Background="Gray"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Ngày hết hạn"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                    <Label Text="15/05/2022"
+                       FontSize="16"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                </StackLayout>
+                <BoxView HeightRequest="0.25" Background="Gray"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Tự động gia hạn"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                    <Label Text="Có"
+                       FontSize="16"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                </StackLayout>
+                <BoxView HeightRequest="0.25" Background="Gray"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Thay đổi gói đăng ký"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Margin="10,13"/>
+                   
+                </StackLayout>
+                <BoxView HeightRequest="0.25" Background="Gray"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Khôi phục gói đăng ký"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Margin="10,10"/>
+                   
+                </StackLayout>
+                <BoxView HeightRequest="0.25" Background="Gray"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Hủy gói đăng ký"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Margin="10,10"/>
+                
+                </StackLayout>
+               
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+  
+</ContentPage>

@@ -105,6 +105,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <LinkDescription Include="LinkerSettings.xml" />
+    <Compile Include="MyEditorRenderer.cs" />
     <Compile Include="MyEntryRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

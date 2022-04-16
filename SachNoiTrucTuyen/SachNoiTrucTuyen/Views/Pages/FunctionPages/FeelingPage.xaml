@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.FeelingPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*">
+            <Frame HeightRequest="55"
+                   Padding="0"
+                   Grid.Row="0"
+                   CornerRadius="0">
+                <Grid>
+                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Margin="15,10,15,10"
+                            >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Hãy bắt tôi nếu bạn có thể"
+                           HorizontalOptions="Center"
+                           FontFamily="R"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           FontSize="16">
+
+                    </Label>
+                </Grid>
+            </Frame>
+            <ListView ItemsSource="{Binding Feelings}"
+                                  x:Name="ListEveryOnePost"
+                                  SelectionMode="None"
+                                  HasUnevenRows="True"
+                                  SeparatorVisibility="None"
+                      Grid.Row="1"
+                     >
+                
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="md:Post">
+                        <ViewCell>
+                            <Frame CornerRadius="20"
+                                               Margin="10,0,10,10"
+                                               Padding="5"
+                                               x:Name="PostItem">
+                                <StackLayout>
+                                    <Grid RowDefinitions="30,30"
+                                                      ColumnDefinitions="60,*">
+                                        <Image Source="{Binding Avatar}"
+                                                           WidthRequest="50"
+                                                           Aspect="AspectFill"
+                                                           HeightRequest="50"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center"
+                                                           Grid.Row="0"
+                                                           Grid.Column="0"
+                                                           Grid.RowSpan="2"
+                                                           xct:CornerRadiusEffect.CornerRadius="30">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/UserPage', Animated=True, UseModalNavigation=True}">
+                                                    <TapGestureRecognizer.CommandParameter>
+                                                        <prism:NavigationParameter Key="UserId" Value="{Binding UserId}"/>
+                                                    </TapGestureRecognizer.CommandParameter>
+                                                </TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label Text="{Binding NameUser}"
+                                                           FontSize="16"
+                                                           FontFamily="RBo"
+                                                           TextColor="{StaticResource nameBookColor}"
+                                                           Grid.Column="1"
+                                                           Grid.Row="0"
+                                                           VerticalOptions="End"/>
+                                        <Label Text="{Binding Created,StringFormat='{0:dd/MM/yyyy HH:mm:ss a'}"
+                                                           FontSize="14"
+                                                           FontFamily="R"
+                                                           Grid.Column="1"
+                                                           Grid.Row="1"
+                                                           VerticalOptions="Start"/>
+
+
+                                    </Grid>
+                                    <customViews:CustomLabel Margin="10,0"
+                                                                         Text="{Binding Content}"
+                                                                         FontFamily="R" 
+                                                                         LineBreakMode="TailTruncation"
+                                                                         MaxLines="5"
+                                                                         TextColor="{StaticResource nameBookColor}"
+                                                                         FontSize="16">
+                                        <customViews:CustomLabel.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsShowMore}" Value="True">
+                                                <Setter Property="LineBreakMode" Value="WordWrap"/>
+                                                <Setter Property="MaxLines" Value="20"/>
+                                            </DataTrigger>
+                                        </customViews:CustomLabel.Triggers>
+                                    </customViews:CustomLabel>
+                                    <Label Text="Đọc thêm" 
+                                                       FontSize="14"
+                                                       FontFamily="R"
+                                                       HorizontalOptions="EndAndExpand"
+                                                       Margin="10,0">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsShowMore}" Value="True">
+                                                <Setter Property="Text" Value="Thu gọn"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding BindingContext.ShowMoreCommand, Source={x:Reference ListEveryOnePost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Image Source="{Binding Image}"
+                                                       HeightRequest="200"
+                                                       Aspect="Fill"
+                                                       xct:CornerRadiusEffect.CornerRadius="10"
+                                                       Margin="10,0">
+                                        <Image.Triggers>
+                                            <DataTrigger TargetType="Image"  Binding="{Binding TypeItemInPost}" Value="0">
+                                                <Setter Property="Aspect" Value="AspectFit"/>
+                                                <Setter Property="xct:CornerRadiusEffect.CornerRadius" Value="0"/>
+                                            </DataTrigger>
+                                        </Image.Triggers>
+                                    </Image>
+                                    <StackLayout Orientation="Horizontal"
+                                                             Margin="10">
+                                        <StackLayout Orientation="Horizontal"
+                                                                 HorizontalOptions="Start"
+                                     
+                                                                 Spacing="8">
+                                            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_0.png}"
+                                                               WidthRequest="20"
+                                                               VerticalOptions="Center"
+                                                               HeightRequest="20"
+                                                               >
+                                                <Image.Triggers>
+                                                    <DataTrigger TargetType ="Image" Binding="{Binding IsLiked}" Value="True">
+                                                        <Setter Property="Source" Value="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_1.png}"/>
+                                                    </DataTrigger>
+                                                </Image.Triggers>
+
+                                            </Image>
+                                            <Label Text="{Binding NumberLike}"
+                                                               VerticalOptions="CenterAndExpand"
+                                                               FontSize="16"
+                                                               TextColor="{StaticResource nameBookColor}"
+                                                               FontFamily="R">
+
+                                            </Label>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.LikeCommand, Source={x:Reference ListEveryOnePost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}"/>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal"
+                                                                 HorizontalOptions="EndAndExpand"
+                                                                 Spacing="8">
+                                            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_comment.png}"
+                                                               WidthRequest="20"
+                                                               Margin="0,4,0,0"
+                                                               VerticalOptions="CenterAndExpand"
+                                                               HeightRequest="20"
+                                                               />
+                                            <Label Text="{Binding Comments.Count}"
+                                                               VerticalOptions="Center"
+                                                               FontSize="16"
+                                                               TextColor="{StaticResource nameBookColor}"
+                                                               FontFamily="R"
+                                                               >
+
+                                            </Label>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage', Animated=True, UseModalNavigation=True}">
+                                                    <TapGestureRecognizer.CommandParameter>
+                                                        <prism:NavigationParameter Key="IdStt" Value="{Binding Id}">
+
+                                                        </prism:NavigationParameter>
+                                                    </TapGestureRecognizer.CommandParameter>
+                                                </TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.PostClickCommand, Source={x:Reference ListEveryOnePost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+  
+</ContentPage>

@@ -119,7 +119,7 @@
                                TextColor="{StaticResource tabBarColor}"
                                VerticalOptions="Center"/>
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage?IdStt=1123',Animated=True, UseModalNavigation=True}"/>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FeelingPage',Animated=True, UseModalNavigation=True}"/>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*"

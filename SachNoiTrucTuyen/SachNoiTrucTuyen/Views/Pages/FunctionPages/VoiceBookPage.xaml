@@ -277,7 +277,7 @@
                                VerticalOptions="Center"/>
                             </StackLayout>
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage?IdStt=1123',Animated=True, UseModalNavigation=True}"/>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FeelingPage',Animated=True, UseModalNavigation=True}"/>
                             </Frame.GestureRecognizers>
                         </Frame>
 
@@ -306,7 +306,9 @@
                                TextColor="{StaticResource bgColor}"
                                VerticalOptions="Center"/>
                             </StackLayout>
-
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/AddFeelingPage',Animated=True, UseModalNavigation=True}"/>
+                            </Frame.GestureRecognizers>
                         </Frame>
 
                     </Grid>
