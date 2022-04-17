@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.SettingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:SettingPageViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <xct:ImageResource x:Key="ShowRight" Id="SachNoiTrucTuyen.Resources.Images.ic_s_showRight.png" />
+        <DataTemplate x:Key="ItemNoImage" x:DataType="md:SettingItem">
+            <ViewCell>
+                <Grid>
+                    <Label
+                        Margin="10"
+                        FontFamily="RBo"
+                        FontSize="18"
+                        Text="{Binding Name}"
+                        TextColor="{StaticResource nameBookColor}" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ItemWithImage" x:DataType="md:SettingItem">
+            <ViewCell>
+                <Grid ColumnDefinitions="50,*,50">
+                    <Image
+                        HeightRequest="32"
+                        HorizontalOptions="Center"
+                        Source="{Binding Image}"
+                        VerticalOptions="Center"
+                        WidthRequest="32" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="R"
+                        FontSize="16"
+                        Text="{Binding Name}"
+                        TextColor="{StaticResource nameBookColor}"
+                        VerticalOptions="Center" />
+
+                    <Image
+                        Grid.Column="2"
+                        HeightRequest="25"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource ShowRight}"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigationPageCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ItemWithSubName" x:DataType="md:SettingItem">
+            <ViewCell>
+                <Grid ColumnDefinitions="50,*,50">
+                    <Image
+                        HeightRequest="32"
+                        HorizontalOptions="Center"
+                        Source="{Binding Image}"
+                        VerticalOptions="Center"
+                        WidthRequest="32" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="R"
+                        FontSize="16"
+                        Text="{Binding Name}"
+                        TextColor="{StaticResource nameBookColor}"
+                        VerticalOptions="Center" />
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Text="{Binding SubName}"
+                        TextColor="{StaticResource nameBookColor}"
+                        VerticalOptions="Center" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <customViews:SettingItemDataTemplateSelector
+            x:Key="SettingTemplate"
+            ItemNoImage="{StaticResource ItemNoImage}"
+            ItemWithImage="{StaticResource ItemWithImage}"
+            ItemWithSubName="{StaticResource ItemWithSubName}" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
+                <Grid>
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Cài đặt" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+            <ScrollView
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalScrollBarVisibility="Never">
+                <StackLayout>
+                    <Frame
+                        Margin="10"
+                        Padding="0"
+                        BackgroundColor="{StaticResource tabBarColor}"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        HeightRequest="45"
+                        IsVisible="{Binding IsUserLogin, Converter={xct:InvertedBoolConverter}}"
+                        VerticalOptions="Start">
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+
+                            <Label
+                                Margin="0,10,10,10"
+                                FontFamily="RBo"
+                                FontSize="16"
+                                LineBreakMode="TailTruncation"
+                                Text="Đăng nhập"
+                                TextColor="{StaticResource bgColor}"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/LoginPage', Animated=True, UseModalNavigation=True}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    <Grid HeightRequest="450" IsVisible="{Binding IsUserLogin}">
+                        <ListView
+                            ItemTemplate="{StaticResource SettingTemplate}"
+                            ItemsSource="{Binding SettingUserItems}"
+                            RowHeight="50"
+                            SelectionMode="None" />
+                    </Grid>
+                    <Grid Margin="0,20,0,0" HeightRequest="300">
+                        <ListView
+                            ItemTemplate="{StaticResource SettingTemplate}"
+                            ItemsSource="{Binding SettingAppItems}"
+                            RowHeight="50"
+                            SelectionMode="None" />
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

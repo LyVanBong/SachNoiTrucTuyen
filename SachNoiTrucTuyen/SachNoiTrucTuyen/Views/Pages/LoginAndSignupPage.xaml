@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.LoginAndSignupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <Grid>
+        <ScrollView>
+            <StackLayout Margin="0,50,0,0" HorizontalOptions="Center">
+                <Image
+                    Margin="0,0,0,5"
+                    HeightRequest="250"
+                    Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.logo.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="250" />
+                <Frame
+                    Margin="30,0"
+                    Padding="0"
+                    BackgroundColor="{StaticResource tabBarColor}"
+                    CornerRadius="40">
+                    <Grid Margin="13" ColumnDefinitions="60,*">
+                        <Image
+                            HeightRequest="30"
+                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_btn_fb.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="30" />
+                        <Label
+                            Grid.Column="1"
+                            FontFamily="R"
+                            FontSize="16"
+                            Text="Đăng nhập với Facebook"
+                            TextColor="{StaticResource bgColor}"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Frame>
+                <Frame
+                    Margin="30,10"
+                    Padding="0"
+                    BackgroundColor="{StaticResource tabBarColor}"
+                    CornerRadius="40">
+                    <Grid Margin="12" ColumnDefinitions="60,*">
+                        <Image
+                            HeightRequest="30"
+                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_btn_google.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="30" />
+                        <Label
+                            Grid.Column="1"
+                            FontFamily="R"
+                            FontSize="16"
+                            Text="Đăng nhập với Google"
+                            TextColor="{StaticResource bgColor}"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Frame>
+                <BoxView
+                    Margin="30,10"
+                    BackgroundColor="{StaticResource tabBarColor}"
+                    HeightRequest="2" />
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Text="Đăng nhập"
+                        TextColor="{StaticResource tabBarColor}"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/LoginPage', Animated=True, UseModalNavigation=True}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView
+                        Margin="10,0"
+                        BackgroundColor="{StaticResource tabBarColor}"
+                        HeightRequest="20"
+                        WidthRequest="2" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Text="Đăng ký"
+                        TextColor="{StaticResource tabBarColor}"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SignupPage', Animated=True, UseModalNavigation=True}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <Label
+            Margin="0,30,30,30"
+            FontFamily="R"
+            FontSize="16"
+            HorizontalOptions="End"
+            Text="Bỏ qua"
+            TextColor="{StaticResource nameAudioColor}"
+            VerticalOptions="End">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{prism:NavigateTo 'MainPage', Animated=True}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentPage>

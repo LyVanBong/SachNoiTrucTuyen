@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.FindUserPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:FindUserPageViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,60,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
+                <Grid>
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Tìm bạn " />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+
+            <Frame
+                Grid.Row="1"
+                Margin="10"
+                Padding="0"
+                BackgroundColor="{StaticResource placeHolderColor}"
+                CornerRadius="20"
+                HasShadow="False"
+                HeightRequest="40"
+                HorizontalOptions="FillAndExpand">
+                <customViews:CustomEntry
+                    Margin="15,0,0,0"
+                    FontSize="16"
+                    Placeholder="Nhập tên của bạn bè..."
+                    Text="{Binding SearchContent}"
+                    VerticalOptions="Center">
+                    <customViews:CustomEntry.Behaviors>
+                        <xct:EventToCommandBehavior Command="{Binding SearchCommand}" EventName="TextChanged" />
+                    </customViews:CustomEntry.Behaviors>
+                </customViews:CustomEntry>
+            </Frame>
+
+            <ListView
+                Grid.Row="2"
+                HasUnevenRows="True"
+                ItemsSource="{Binding UserResults}"
+                SelectionMode="None"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="md:User">
+                        <ViewCell>
+                            <Grid>
+                                <Frame
+                                    Margin="10"
+                                    Padding="0"
+                                    CornerRadius="15">
+                                    <Grid ColumnDefinitions="80,4*,3*">
+                                        <Grid
+                                            Margin="10"
+                                            HeightRequest="60"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            WidthRequest="60">
+                                            <Image
+                                                Grid.Column="0"
+                                                xct:CornerRadiusEffect.CornerRadius="60"
+                                                Aspect="AspectFill"
+                                                HeightRequest="50"
+                                                Source="{Binding Avatar}"
+                                                WidthRequest="50" />
+                                            <Image
+                                                Grid.Column="0"
+                                                Aspect="AspectFill"
+                                                HeightRequest="25"
+                                                HorizontalOptions="End"
+                                                Source="{Binding Armorial.Avatar}"
+                                                VerticalOptions="End"
+                                                WidthRequest="25" />
+                                        </Grid>
+
+                                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                            <Label
+                                                FontFamily="RBo"
+                                                FontSize="16"
+                                                Text="{Binding Name}"
+                                                TextColor="{StaticResource nameBookColor}" />
+                                            <Label
+                                                FontFamily="R"
+                                                FontSize="16"
+                                                Text="{Binding AmountFollow, StringFormat='{0} lượt theo dõi'}"
+                                                TextColor="{StaticResource nameBookColor}" />
+                                        </StackLayout>
+
+                                        <Frame
+                                            Grid.Column="2"
+                                            Margin="10"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource tabBarColor}"
+                                            CornerRadius="30"
+                                            HasShadow="False"
+                                            HeightRequest="45"
+                                            VerticalOptions="Center">
+                                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+
+                                                <Label
+                                                    FontFamily="RBo"
+                                                    FontSize="16"
+                                                    HorizontalTextAlignment="Center"
+                                                    LineBreakMode="TailTruncation"
+                                                    Text="Theo dõi"
+                                                    TextColor="{StaticResource bgColor}"
+                                                    VerticalOptions="Center" />
+                                            </StackLayout>
+                                            <Frame.GestureRecognizers />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

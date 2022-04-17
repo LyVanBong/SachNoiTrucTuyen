@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.TabbedPages.CommunityPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:CommunityPageViewModel">
+    <NavigationPage.TitleView>
+        <StackLayout Margin="0,10,0,0" Orientation="Horizontal">
+            <Image
+                Margin="0,0,0,5"
+                HeightRequest="20"
+                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_ttv_cp.png}"
+                VerticalOptions="Center"
+                WidthRequest="20" />
+            <Label
+                Margin="0,0,0,5"
+                FontAttributes="Bold"
+                FontFamily="RBo"
+                FontSize="20"
+                HorizontalOptions="StartAndExpand"
+                Text="Cộng đồng"
+                TextColor="{StaticResource primaryColor}" />
+
+            <Image
+                Margin="0,0,15,10"
+                HeightRequest="20"
+                HorizontalOptions="End"
+                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_search.png}"
+                VerticalOptions="Center"
+                WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SearchPage', Animated=True, UseModalNavigation=True}">
+                        <TapGestureRecognizer.CommandParameter>
+                            <prism:NavigationParameter Key="TypePage" Value="homePage" />
+                        </TapGestureRecognizer.CommandParameter>
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image
+                Margin="0,0,15,10"
+                HeightRequest="25"
+                HorizontalOptions="End"
+                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_notify.png}"
+                VerticalOptions="Center"
+                WidthRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/NotificationPage', Animated=True, UseModalNavigation=True}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image
+                Margin="0,0,15,10"
+                HeightRequest="25"
+                HorizontalOptions="End"
+                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_set.png}"
+                VerticalOptions="Center"
+                WidthRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/SettingPage', Animated=True, UseModalNavigation=True}" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <DataTemplate x:Key="PostWithImage" x:DataType="md:Post">
+            <ViewCell>
+                <Frame
+                    x:Name="PostItem"
+                    Margin="10,0,10,10"
+                    Padding="5"
+                    CornerRadius="20">
+                    <StackLayout>
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="30,30">
+                            <Image
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                xct:CornerRadiusEffect.CornerRadius="30"
+                                Aspect="AspectFill"
+                                HeightRequest="50"
+                                HorizontalOptions="Center"
+                                Source="{Binding Avatar}"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/UserPage', Animated=True, UseModalNavigation=True}">
+                                        <TapGestureRecognizer.CommandParameter>
+                                            <prism:NavigationParameter Key="UserId" Value="{Binding UserId}" />
+                                        </TapGestureRecognizer.CommandParameter>
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontFamily="RBo"
+                                FontSize="16"
+                                Text="{Binding NameUser}"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="End" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontFamily="R"
+                                FontSize="14"
+                                Text="{Binding Created, StringFormat='{0:dd/MM/yyyy HH:mm:ss a'}"
+                                VerticalOptions="Start" />
+                        </Grid>
+                        <customViews:CustomLabel
+                            Margin="10,0"
+                            FontFamily="R"
+                            FontSize="16"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="5"
+                            Text="{Binding Content}"
+                            TextColor="{StaticResource nameBookColor}">
+                            <customViews:CustomLabel.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsShowMore}"
+                                    TargetType="Label"
+                                    Value="True">
+                                    <Setter Property="LineBreakMode" Value="WordWrap" />
+                                    <Setter Property="MaxLines" Value="20" />
+                                </DataTrigger>
+                            </customViews:CustomLabel.Triggers>
+                        </customViews:CustomLabel>
+                        <Label
+                            Margin="10,0"
+                            FontFamily="R"
+                            FontSize="14"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Đọc thêm">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsShowMore}"
+                                    TargetType="Label"
+                                    Value="True">
+                                    <Setter Property="Text" Value="Thu gọn" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.ShowMoreCommand, Source={x:Reference ListPost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image
+                            Margin="10,0"
+                            Aspect="AspectFill"
+                            HeightRequest="250"
+                            Source="{Binding Image}" />
+                        <StackLayout Margin="10" Orientation="Horizontal">
+                            <StackLayout
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal"
+                                Spacing="8">
+                                <Image
+                                    HeightRequest="20"
+                                    Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_0.png}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20">
+                                    <Image.Triggers>
+                                        <DataTrigger
+                                            Binding="{Binding IsLiked}"
+                                            TargetType="Image"
+                                            Value="True">
+                                            <Setter Property="Source" Value="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_1.png}" />
+                                        </DataTrigger>
+                                    </Image.Triggers>
+                                </Image>
+                                <Label
+                                    FontFamily="R"
+                                    FontSize="16"
+                                    Text="{Binding NumberLike}"
+                                    TextColor="{StaticResource nameBookColor}"
+                                    VerticalOptions="CenterAndExpand" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.LikeCommand, Source={x:Reference ListPost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout
+                                HorizontalOptions="EndAndExpand"
+                                Orientation="Horizontal"
+                                Spacing="8">
+                                <Image
+                                    Margin="0,4,0,0"
+                                    HeightRequest="20"
+                                    Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_comment.png}"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="20" />
+                                <Label
+                                    FontFamily="R"
+                                    FontSize="16"
+                                    Text="{Binding Comments.Count}"
+                                    TextColor="{StaticResource nameBookColor}"
+                                    VerticalOptions="Center" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage', Animated=True, UseModalNavigation=True}">
+                                        <TapGestureRecognizer.CommandParameter>
+                                            <prism:NavigationParameter Key="IdStt" Value="{Binding Id}" />
+                                        </TapGestureRecognizer.CommandParameter>
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ViewCell>
+        </DataTemplate>
+        <DataTemplate x:Key="PostWithListChoices" x:DataType="md:Post">
+            <ViewCell>
+                <Frame
+                    x:Name="PostItem"
+                    Margin="10,0,10,10"
+                    Padding="5"
+                    CornerRadius="20">
+                    <StackLayout>
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="30,30">
+                            <Image
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                xct:CornerRadiusEffect.CornerRadius="30"
+                                Aspect="AspectFill"
+                                HeightRequest="50"
+                                HorizontalOptions="Center"
+                                Source="{Binding Avatar}"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/UserPage', Animated=True, UseModalNavigation=True}">
+                                        <TapGestureRecognizer.CommandParameter>
+                                            <prism:NavigationParameter Key="UserId" Value="{Binding UserId}" />
+                                        </TapGestureRecognizer.CommandParameter>
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontFamily="RBo"
+                                FontSize="16"
+                                Text="{Binding NameUser}"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="End" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontFamily="R"
+                                FontSize="14"
+                                Text="{Binding Created, StringFormat='{0:dd/MM/yyyy HH:mm:ss a'}"
+                                VerticalOptions="Start" />
+                        </Grid>
+                        <customViews:CustomLabel
+                            Margin="10,0"
+                            FontFamily="R"
+                            FontSize="16"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="5"
+                            Text="{Binding Content}"
+                            TextColor="{StaticResource nameBookColor}">
+                            <customViews:CustomLabel.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsShowMore}"
+                                    TargetType="Label"
+                                    Value="True">
+                                    <Setter Property="LineBreakMode" Value="WordWrap" />
+                                    <Setter Property="MaxLines" Value="20" />
+                                </DataTrigger>
+                            </customViews:CustomLabel.Triggers>
+                        </customViews:CustomLabel>
+                        <Label
+                            Margin="10,0"
+                            FontFamily="R"
+                            FontSize="14"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Đọc thêm">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsShowMore}"
+                                    TargetType="Label"
+                                    Value="True">
+                                    <Setter Property="Text" Value="Thu gọn" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.ShowMoreCommand, Source={x:Reference ListPost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <StackLayout x:Name="ListChoose" BindableLayout.ItemsSource="{Binding Choices}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="md:ChooseItem">
+                                    <Grid x:Name="ChooseItem" ColumnDefinitions="*,Auto">
+                                        <Frame
+                                            Grid.Column="0"
+                                            Margin="5,2"
+                                            Padding="12"
+                                            BorderColor="{StaticResource nameBookColor}"
+                                            CornerRadius="10"
+                                            HasShadow="False"
+                                            HorizontalOptions="Fill">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="R"
+                                                    FontSize="14"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding Name}"
+                                                    TextColor="{StaticResource nameBookColor}" />
+                                                <Label
+                                                    FontFamily="RBo"
+                                                    FontSize="14"
+                                                    IsVisible="{Binding IsPersentVisible}"
+                                                    Text="{Binding Persent, StringFormat='{0} %'}"
+                                                    TextColor="{StaticResource nameBookColor}" />
+                                            </StackLayout>
+                                            <Frame.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding IsChoosed}"
+                                                    TargetType="Frame"
+                                                    Value="True">
+                                                    <Setter Property="BackgroundColor" Value="LightGreen" />
+                                                </DataTrigger>
+                                            </Frame.Triggers>
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.SelectChooseCommand, Source={x:Reference ListChoose}}" CommandParameter="{Binding Source={x:Reference ChooseItem}, Path=BindingContext}" />
+                                            </Frame.GestureRecognizers>
+                                        </Frame>
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Margin="0,0,10,0"
+                                            IsVisible="{Binding IsClicked}"
+                                            Orientation="Horizontal">
+                                            <Image
+                                                HeightRequest="28"
+                                                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_correct.png}"
+                                                WidthRequest="28">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding BindingContext.ChooseSelectedCommand, Source={x:Reference ListChoose}}" CommandParameter="{Binding Source={x:Reference ChooseItem}, Path=BindingContext}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image
+                                                HeightRequest="28"
+                                                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_failed.png}"
+                                                WidthRequest="28">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding BindingContext.ClearSelectedCommand, Source={x:Reference ListChoose}}" CommandParameter="{Binding Source={x:Reference ChooseItem}, Path=BindingContext}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <StackLayout Margin="10" Orientation="Horizontal">
+                            <StackLayout
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal"
+                                Spacing="8">
+                                <Image
+                                    HeightRequest="20"
+                                    Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_0.png}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20">
+                                    <Image.Triggers>
+                                        <DataTrigger
+                                            Binding="{Binding IsLiked}"
+                                            TargetType="Image"
+                                            Value="True">
+                                            <Setter Property="Source" Value="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_1.png}" />
+                                        </DataTrigger>
+                                    </Image.Triggers>
+                                </Image>
+                                <Label
+                                    FontFamily="R"
+                                    FontSize="16"
+                                    Text="{Binding NumberLike}"
+                                    TextColor="{StaticResource nameBookColor}"
+                                    VerticalOptions="CenterAndExpand" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.LikeCommand, Source={x:Reference ListPost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout
+                                HorizontalOptions="EndAndExpand"
+                                Orientation="Horizontal"
+                                Spacing="8">
+                                <Image
+                                    Margin="0,4,0,0"
+                                    HeightRequest="20"
+                                    Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_comment.png}"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="20" />
+                                <Label
+                                    FontFamily="R"
+                                    FontSize="16"
+                                    Text="{Binding Comments.Count}"
+                                    TextColor="{StaticResource nameBookColor}"
+                                    VerticalOptions="Center" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage', Animated=True, UseModalNavigation=True}">
+                                        <TapGestureRecognizer.CommandParameter>
+                                            <prism:NavigationParameter Key="IdStt" Value="{Binding Id}" />
+                                        </TapGestureRecognizer.CommandParameter>
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ViewCell>
+        </DataTemplate>
+        <customViews:TypePostDataTemplateSelector
+            x:Key="PostTemplate"
+            PostWithImage="{StaticResource PostWithImage}"
+            PostWithListChoose="{StaticResource PostWithListChoices}" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <xct:TabView
+                IsSwipeEnabled="False"
+                TabIndicatorColor="{StaticResource tabBarColor}"
+                TabIndicatorHeight="3"
+                TabStripBackgroundColor="{StaticResource bgColor}">
+                <xct:TabViewItem
+                    FontFamily="RBo"
+                    FontSize="14"
+                    IsSelected="True"
+                    Text="NTT"
+                    TextColor="{StaticResource placeHolderColor2}"
+                    TextColorSelected="Gray">
+
+                    <StackLayout BackgroundColor="{StaticResource placeHolderColor}" Spacing="0">
+
+                        <ListView
+                            x:Name="ListPost"
+                            HasUnevenRows="True"
+                            ItemTemplate="{StaticResource PostTemplate}"
+                            ItemsSource="{Binding Posts}"
+                            SelectionMode="None"
+                            SeparatorVisibility="None"
+                            VerticalScrollBarVisibility="Never">
+                            <ListView.Header>
+                                <ScrollView
+                                    Margin="0,10,0,0"
+                                    HorizontalScrollBarVisibility="Never"
+                                    Orientation="Horizontal">
+                                    <buttons:SfChipGroup
+                                        ChipBackgroundColor="Transparent"
+                                        ChipPadding="0,0,8,8"
+                                        ChoiceMode="Single"
+                                        HeightRequest="60"
+                                        ItemsSource="{Binding Topics}"
+                                        Type="Choice"
+                                        WidthRequest="720">
+
+                                        <buttons:SfChipGroup.ChipLayout>
+                                            <FlexLayout
+                                                Padding="10,5"
+                                                AlignContent="Start"
+                                                AlignItems="Start"
+                                                Direction="Row"
+                                                HorizontalOptions="Start"
+                                                JustifyContent="Start"
+                                                VerticalOptions="Center"
+                                                Wrap="Wrap" />
+                                        </buttons:SfChipGroup.ChipLayout>
+                                        <buttons:SfChipGroup.ItemTemplate>
+                                            <DataTemplate x:DataType="x:String">
+
+                                                <buttons:SfChip
+                                                    x:Name="chip"
+                                                    Padding="15,10"
+                                                    xct:CornerRadiusEffect.CornerRadius="5"
+                                                    BackgroundColor="White"
+                                                    FontFamily="R"
+                                                    IsCheckable="True"
+                                                    Text="{Binding .}"
+                                                    TextColor="{StaticResource nameBookColor}">
+
+                                                    <buttons:SfChip.Triggers>
+                                                        <Trigger TargetType="buttons:SfChip" Property="IsChecked" Value="True">
+                                                            <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                                        </Trigger>
+                                                    </buttons:SfChip.Triggers>
+                                                </buttons:SfChip>
+                                            </DataTemplate>
+                                        </buttons:SfChipGroup.ItemTemplate>
+                                    </buttons:SfChipGroup>
+                                </ScrollView>
+                            </ListView.Header>
+                        </ListView>
+                    </StackLayout>
+                </xct:TabViewItem>
+                <xct:TabViewItem
+                    FontFamily="RBo"
+                    FontSize="14"
+                    Text="MỌI NGƯỜI"
+                    TextColor="{StaticResource placeHolderColor2}"
+                    TextColorSelected="Gray">
+                    <StackLayout BackgroundColor="{StaticResource placeHolderColor}" Spacing="0">
+
+                        <ListView
+                            x:Name="ListEveryOnePost"
+                            HasUnevenRows="True"
+                            ItemsSource="{Binding EveryOnePosts}"
+                            SelectionMode="None"
+                            SeparatorVisibility="None">
+                            <ListView.Header>
+                                <ScrollView
+                                    Margin="0,10,0,0"
+                                    HorizontalScrollBarVisibility="Never"
+                                    Orientation="Horizontal">
+                                    <buttons:SfChipGroup
+                                        ChipBackgroundColor="Transparent"
+                                        ChipPadding="0,0,8,8"
+                                        ChoiceMode="Single"
+                                        HeightRequest="60"
+                                        ItemsSource="{Binding Topics}"
+                                        Type="Choice"
+                                        WidthRequest="720">
+
+                                        <buttons:SfChipGroup.ChipLayout>
+                                            <FlexLayout
+                                                Padding="10,5"
+                                                AlignContent="Start"
+                                                AlignItems="Start"
+                                                Direction="Row"
+                                                HorizontalOptions="Start"
+                                                JustifyContent="Start"
+                                                VerticalOptions="Center"
+                                                Wrap="Wrap" />
+                                        </buttons:SfChipGroup.ChipLayout>
+                                        <buttons:SfChipGroup.ItemTemplate>
+                                            <DataTemplate x:DataType="x:String">
+
+                                                <buttons:SfChip
+                                                    x:Name="chip"
+                                                    Padding="15,10"
+                                                    xct:CornerRadiusEffect.CornerRadius="5"
+                                                    BackgroundColor="White"
+                                                    FontFamily="R"
+                                                    IsCheckable="True"
+                                                    Text="{Binding .}"
+                                                    TextColor="{StaticResource nameBookColor}">
+
+                                                    <buttons:SfChip.Triggers>
+                                                        <Trigger TargetType="buttons:SfChip" Property="IsChecked" Value="True">
+                                                            <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                                        </Trigger>
+                                                    </buttons:SfChip.Triggers>
+                                                </buttons:SfChip>
+                                            </DataTemplate>
+                                        </buttons:SfChipGroup.ItemTemplate>
+                                    </buttons:SfChipGroup>
+                                </ScrollView>
+                            </ListView.Header>
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="md:Post">
+                                    <ViewCell>
+                                        <Frame
+                                            x:Name="PostItem"
+                                            Margin="10,0,10,10"
+                                            Padding="5"
+                                            CornerRadius="20">
+                                            <StackLayout>
+                                                <Grid ColumnDefinitions="60,*" RowDefinitions="30,30">
+                                                    <Image
+                                                        Grid.Row="0"
+                                                        Grid.RowSpan="2"
+                                                        Grid.Column="0"
+                                                        xct:CornerRadiusEffect.CornerRadius="30"
+                                                        Aspect="AspectFill"
+                                                        HeightRequest="50"
+                                                        HorizontalOptions="Center"
+                                                        Source="{Binding Avatar}"
+                                                        VerticalOptions="Center"
+                                                        WidthRequest="50">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/UserPage', Animated=True, UseModalNavigation=True}">
+                                                                <TapGestureRecognizer.CommandParameter>
+                                                                    <prism:NavigationParameter Key="UserId" Value="{Binding UserId}" />
+                                                                </TapGestureRecognizer.CommandParameter>
+                                                            </TapGestureRecognizer>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        FontFamily="RBo"
+                                                        FontSize="16"
+                                                        Text="{Binding NameUser}"
+                                                        TextColor="{StaticResource nameBookColor}"
+                                                        VerticalOptions="End" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        FontFamily="R"
+                                                        FontSize="14"
+                                                        Text="{Binding Created, StringFormat='{0:dd/MM/yyyy HH:mm:ss a'}"
+                                                        VerticalOptions="Start" />
+                                                </Grid>
+                                                <customViews:CustomLabel
+                                                    Margin="10,0"
+                                                    FontFamily="R"
+                                                    FontSize="16"
+                                                    LineBreakMode="TailTruncation"
+                                                    MaxLines="5"
+                                                    Text="{Binding Content}"
+                                                    TextColor="{StaticResource nameBookColor}">
+                                                    <customViews:CustomLabel.Triggers>
+                                                        <DataTrigger
+                                                            Binding="{Binding IsShowMore}"
+                                                            TargetType="Label"
+                                                            Value="True">
+                                                            <Setter Property="LineBreakMode" Value="WordWrap" />
+                                                            <Setter Property="MaxLines" Value="20" />
+                                                        </DataTrigger>
+                                                    </customViews:CustomLabel.Triggers>
+                                                </customViews:CustomLabel>
+                                                <Label
+                                                    Margin="10,0"
+                                                    FontFamily="R"
+                                                    FontSize="14"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Text="Đọc thêm">
+                                                    <Label.Triggers>
+                                                        <DataTrigger
+                                                            Binding="{Binding IsShowMore}"
+                                                            TargetType="Label"
+                                                            Value="True">
+                                                            <Setter Property="Text" Value="Thu gọn" />
+                                                        </DataTrigger>
+                                                    </Label.Triggers>
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding BindingContext.ShowMoreCommand, Source={x:Reference ListPost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                                <Image
+                                                    Margin="10,0"
+                                                    xct:CornerRadiusEffect.CornerRadius="10"
+                                                    Aspect="Fill"
+                                                    HeightRequest="200"
+                                                    Source="{Binding Image}">
+                                                    <Image.Triggers>
+                                                        <DataTrigger
+                                                            Binding="{Binding TypeItemInPost}"
+                                                            TargetType="Image"
+                                                            Value="0">
+                                                            <Setter Property="Aspect" Value="AspectFit" />
+                                                            <Setter Property="xct:CornerRadiusEffect.CornerRadius" Value="0" />
+                                                        </DataTrigger>
+                                                    </Image.Triggers>
+                                                </Image>
+                                                <StackLayout Margin="10" Orientation="Horizontal">
+                                                    <StackLayout
+                                                        HorizontalOptions="Start"
+                                                        Orientation="Horizontal"
+                                                        Spacing="8">
+                                                        <Image
+                                                            HeightRequest="20"
+                                                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_0.png}"
+                                                            VerticalOptions="Center"
+                                                            WidthRequest="20">
+                                                            <Image.Triggers>
+                                                                <DataTrigger
+                                                                    Binding="{Binding IsLiked}"
+                                                                    TargetType="Image"
+                                                                    Value="True">
+                                                                    <Setter Property="Source" Value="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_like_1.png}" />
+                                                                </DataTrigger>
+                                                            </Image.Triggers>
+                                                        </Image>
+                                                        <Label
+                                                            FontFamily="R"
+                                                            FontSize="16"
+                                                            Text="{Binding NumberLike}"
+                                                            TextColor="{StaticResource nameBookColor}"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding BindingContext.LikeCommand, Source={x:Reference ListEveryOnePost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                                                        </StackLayout.GestureRecognizers>
+                                                    </StackLayout>
+                                                    <StackLayout
+                                                        HorizontalOptions="EndAndExpand"
+                                                        Orientation="Horizontal"
+                                                        Spacing="8">
+                                                        <Image
+                                                            Margin="0,4,0,0"
+                                                            HeightRequest="20"
+                                                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_comment.png}"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="20" />
+                                                        <Label
+                                                            FontFamily="R"
+                                                            FontSize="16"
+                                                            Text="{Binding Comments.Count}"
+                                                            TextColor="{StaticResource nameBookColor}"
+                                                            VerticalOptions="Center" />
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage', Animated=True, UseModalNavigation=True}">
+                                                                <TapGestureRecognizer.CommandParameter>
+                                                                    <prism:NavigationParameter Key="IdStt" Value="{Binding Id}" />
+                                                                </TapGestureRecognizer.CommandParameter>
+                                                            </TapGestureRecognizer>
+                                                        </StackLayout.GestureRecognizers>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.PostClickCommand, Source={x:Reference ListEveryOnePost}}" CommandParameter="{Binding Source={x:Reference PostItem}, Path=BindingContext}" />
+                                            </Frame.GestureRecognizers>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </xct:TabViewItem>
+                <xct:TabViewItem
+                    FontFamily="RBo"
+                    FontSize="14"
+                    Text="THEO DÕI"
+                    TextColor="{StaticResource placeHolderColor2}"
+                    TextColorSelected="Gray">
+                    <Grid>
+                        <Frame
+                            Margin="10"
+                            Padding="0"
+                            BackgroundColor="{StaticResource tabBarColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="45"
+                            VerticalOptions="Start">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+
+                                <Label
+                                    Margin="0,10,10,10"
+                                    FontFamily="RBo"
+                                    FontSize="16"
+                                    LineBreakMode="TailTruncation"
+                                    Text="Tìm bạn để theo dõi"
+                                    TextColor="{StaticResource bgColor}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FindUserPage', Animated=True, UseModalNavigation=True}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </Grid>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,9 +5,348 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Font\Roboto-Black.ttf" />
+    <None Remove="Resources\Font\Roboto-BlackItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Bold.ttf" />
+    <None Remove="Resources\Font\Roboto-BoldItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Italic.ttf" />
+    <None Remove="Resources\Font\Roboto-Light.ttf" />
+    <None Remove="Resources\Font\Roboto-LightItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Medium.ttf" />
+    <None Remove="Resources\Font\Roboto-MediumItalic.ttf" />
+    <None Remove="Resources\Font\Roboto-Regular.ttf" />
+    <None Remove="Resources\Font\Roboto-Thin.ttf" />
+    <None Remove="Resources\Font\Roboto-ThinItalic.ttf" />
+    <None Remove="Resources\Images\ic_a_b.png" />
+    <None Remove="Resources\Images\ic_a_d.png" />
+    <None Remove="Resources\Images\ic_a_g.png" />
+    <None Remove="Resources\Images\ic_a_p.png" />
+    <None Remove="Resources\Images\ic_a_s.png" />
+    <None Remove="Resources\Images\ic_back_0.png" />
+    <None Remove="Resources\Images\ic_back_1.png" />
+    <None Remove="Resources\Images\ic_book_2.png" />
+    <None Remove="Resources\Images\ic_book_open.png" />
+    <None Remove="Resources\Images\ic_btn_fb.png" />
+    <None Remove="Resources\Images\ic_btn_google.png" />
+    <None Remove="Resources\Images\ic_cart.png" />
+    <None Remove="Resources\Images\ic_close.png" />
+    <None Remove="Resources\Images\ic_close_2.png" />
+    <None Remove="Resources\Images\ic_comment.png" />
+    <None Remove="Resources\Images\ic_correct.png" />
+    <None Remove="Resources\Images\ic_document.png" />
+    <None Remove="Resources\Images\ic_down.png" />
+    <None Remove="Resources\Images\ic_down_load.png" />
+    <None Remove="Resources\Images\ic_edit_comment.png" />
+    <None Remove="Resources\Images\ic_failed.png" />
+    <None Remove="Resources\Images\ic_font.png" />
+    <None Remove="Resources\Images\ic_fw.png" />
+    <None Remove="Resources\Images\ic_heart.png" />
+    <None Remove="Resources\Images\ic_heart_comment.png" />
+    <None Remove="Resources\Images\ic_heart_comment_2.png" />
+    <None Remove="Resources\Images\ic_home.png" />
+    <None Remove="Resources\Images\ic_like_0.png" />
+    <None Remove="Resources\Images\ic_like_1.png" />
+    <None Remove="Resources\Images\ic_mail.png" />
+    <None Remove="Resources\Images\ic_messenger.png" />
+    <None Remove="Resources\Images\ic_moon_0.png" />
+    <None Remove="Resources\Images\ic_moon_1.png" />
+    <None Remove="Resources\Images\ic_m_ap_0.png" />
+    <None Remove="Resources\Images\ic_m_ap_1.png" />
+    <None Remove="Resources\Images\ic_m_cp_0.png" />
+    <None Remove="Resources\Images\ic_m_cp_1.png" />
+    <None Remove="Resources\Images\ic_m_hp_0.png" />
+    <None Remove="Resources\Images\ic_m_hp_1.png" />
+    <None Remove="Resources\Images\ic_m_kp_0.png" />
+    <None Remove="Resources\Images\ic_m_kp_1.png" />
+    <None Remove="Resources\Images\ic_m_sp_0.png" />
+    <None Remove="Resources\Images\ic_m_sp_1.png" />
+    <None Remove="Resources\Images\ic_next_0.png" />
+    <None Remove="Resources\Images\ic_next_1.png" />
+    <None Remove="Resources\Images\ic_notify.png" />
+    <None Remove="Resources\Images\ic_notify_1.png" />
+    <None Remove="Resources\Images\ic_pause.png" />
+    <None Remove="Resources\Images\ic_pause_3.png" />
+    <None Remove="Resources\Images\ic_play.png" />
+    <None Remove="Resources\Images\ic_play_2.png" />
+    <None Remove="Resources\Images\ic_play_3.png" />
+    <None Remove="Resources\Images\ic_play_4.png" />
+    <None Remove="Resources\Images\ic_premium.png" />
+    <None Remove="Resources\Images\ic_p_1.png" />
+    <None Remove="Resources\Images\ic_p_2.png" />
+    <None Remove="Resources\Images\ic_p_3.png" />
+    <None Remove="Resources\Images\ic_p_4.png" />
+    <None Remove="Resources\Images\ic_readed.png" />
+    <None Remove="Resources\Images\ic_repeat_0.png" />
+    <None Remove="Resources\Images\ic_repeat_1.png" />
+    <None Remove="Resources\Images\ic_rw.png" />
+    <None Remove="Resources\Images\ic_search.png" />
+    <None Remove="Resources\Images\ic_send.png" />
+    <None Remove="Resources\Images\ic_share.png" />
+    <None Remove="Resources\Images\ic_s_about.png" />
+    <None Remove="Resources\Images\ic_s_acc.png" />
+    <None Remove="Resources\Images\ic_s_clock.png" />
+    <None Remove="Resources\Images\ic_s_doc.png" />
+    <None Remove="Resources\Images\ic_s_doc_1.png" />
+    <None Remove="Resources\Images\ic_s_doc_2.png" />
+    <None Remove="Resources\Images\ic_s_heart.png" />
+    <None Remove="Resources\Images\ic_s_logout.png" />
+    <None Remove="Resources\Images\ic_s_pack.png" />
+    <None Remove="Resources\Images\ic_s_ques.png" />
+    <None Remove="Resources\Images\ic_s_set.png" />
+    <None Remove="Resources\Images\ic_s_showRight.png" />
+    <None Remove="Resources\Images\ic_s_soc.png" />
+    <None Remove="Resources\Images\ic_s_tag.png" />
+    <None Remove="Resources\Images\ic_tag.png" />
+    <None Remove="Resources\Images\ic_ttv_ap.png" />
+    <None Remove="Resources\Images\ic_ttv_cp.png" />
+    <None Remove="Resources\Images\ic_ttv_hp.png" />
+    <None Remove="Resources\Images\ic_ttv_kp.png" />
+    <None Remove="Resources\Images\ic_ttv_sp.png" />
+    <None Remove="Resources\Images\ic_welcome_0.png" />
+    <None Remove="Resources\Images\ic_welcome_1.png" />
+    <None Remove="Resources\Images\ic_welcome_2.png" />
+    <None Remove="Resources\Images\ic_youtube.png" />
+    <None Remove="Resources\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Font\Roboto-Black.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-BlackItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Light.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-MediumItalic.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-Thin.ttf" />
+    <EmbeddedResource Include="Resources\Font\Roboto-ThinItalic.ttf" />
+    <EmbeddedResource Include="Resources\Images\ic_a_b.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_d.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_g.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_p.png" />
+    <EmbeddedResource Include="Resources\Images\ic_a_s.png" />
+    <EmbeddedResource Include="Resources\Images\ic_back_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_back_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_book_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_book_open.png" />
+    <EmbeddedResource Include="Resources\Images\ic_btn_fb.png" />
+    <EmbeddedResource Include="Resources\Images\ic_btn_google.png" />
+    <EmbeddedResource Include="Resources\Images\ic_cart.png" />
+    <EmbeddedResource Include="Resources\Images\ic_close.png" />
+    <EmbeddedResource Include="Resources\Images\ic_close_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_comment.png" />
+    <EmbeddedResource Include="Resources\Images\ic_correct.png" />
+    <EmbeddedResource Include="Resources\Images\ic_document.png" />
+    <EmbeddedResource Include="Resources\Images\ic_down.png" />
+    <EmbeddedResource Include="Resources\Images\ic_down_load.png" />
+    <EmbeddedResource Include="Resources\Images\ic_edit_comment.png" />
+    <EmbeddedResource Include="Resources\Images\ic_failed.png" />
+    <EmbeddedResource Include="Resources\Images\ic_font.png" />
+    <EmbeddedResource Include="Resources\Images\ic_fw.png" />
+    <EmbeddedResource Include="Resources\Images\ic_heart.png" />
+    <EmbeddedResource Include="Resources\Images\ic_heart_comment.png" />
+    <EmbeddedResource Include="Resources\Images\ic_heart_comment_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_home.png" />
+    <EmbeddedResource Include="Resources\Images\ic_like_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_like_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_mail.png" />
+    <EmbeddedResource Include="Resources\Images\ic_messenger.png" />
+    <EmbeddedResource Include="Resources\Images\ic_moon_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_moon_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_ap_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_ap_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_cp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_cp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_hp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_hp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_kp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_kp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_sp_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_m_sp_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_next_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_next_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_notify.png" />
+    <EmbeddedResource Include="Resources\Images\ic_notify_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_3.png" />
+    <EmbeddedResource Include="Resources\Images\ic_p_4.png" />
+    <EmbeddedResource Include="Resources\Images\ic_pause.png" />
+    <EmbeddedResource Include="Resources\Images\ic_pause_3.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play_3.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play_4.png" />
+    <EmbeddedResource Include="Resources\Images\ic_premium.png" />
+    <EmbeddedResource Include="Resources\Images\ic_readed.png" />
+    <EmbeddedResource Include="Resources\Images\ic_repeat_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_repeat_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_rw.png" />
+    <EmbeddedResource Include="Resources\Images\ic_search.png" />
+    <EmbeddedResource Include="Resources\Images\ic_send.png" />
+    <EmbeddedResource Include="Resources\Images\ic_share.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_about.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_acc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_clock.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_doc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_doc_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_doc_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_heart.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_logout.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_pack.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_ques.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_set.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_showRight.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_soc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_s_tag.png" />
+    <EmbeddedResource Include="Resources\Images\ic_tag.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_ap.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_cp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_hp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_kp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ttv_sp.png" />
+    <EmbeddedResource Include="Resources\Images\ic_welcome_0.png" />
+    <EmbeddedResource Include="Resources\Images\ic_welcome_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_welcome_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_youtube.png" />
+    <EmbeddedResource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.4.0.56" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v10.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Pages\DetailPages\PostCommentPage.xaml.cs">
+      <DependentUpon>PostCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\FunctionPages\FeelingPage.xaml.cs">
+      <DependentUpon>FeelingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\FunctionPages\ReadBookPage.xaml.cs">
+      <DependentUpon>ReadBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\FunctionPages\CollectionAudioPage.xaml.cs">
+      <DependentUpon>CollectionAudioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\LoginAndSignupPage.xaml.cs">
+      <DependentUpon>LoginAndSignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\FavouriteAudioPage.xaml.cs">
+      <DependentUpon>FavouriteAudioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\HeardRecentlyPage.xaml.cs">
+      <DependentUpon>HeardRecentlyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\TaggedPage.xaml.cs">
+      <DependentUpon>TaggedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\PostManagerPage.xaml.cs">
+      <DependentUpon>PostManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\SocialManagerPage.xaml.cs">
+      <DependentUpon>SocialManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SettingChildPages\PackManagerPage.xaml.cs">
+      <DependentUpon>PackManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\PremiumPage.xaml.cs">
+      <DependentUpon>PremiumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\ArmorialPage.xaml.cs">
+      <DependentUpon>ArmorialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\FindUserPage.xaml.cs">
+      <DependentUpon>FindUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\SupportPages\SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\FunctionPages\AddFeelingPage.xaml.cs">
+      <DependentUpon>AddFeelingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\TabbedPages\CommunityPage.xaml.cs">
+      <DependentUpon>CommunityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Themes\DayThemes\DayThemeResources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\BookDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\BookTopicDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\KnowledgeTopicDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\DetailPages\StoryTopicDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\FunctionPages\ReadBookPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\FunctionPages\VoiceBookPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\FunctionPages\VoiceVideoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\SplashScreenPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\SupportPages\MailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\SupportPages\SearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\AccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\KnowledgePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TabbedPages\StoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\TestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

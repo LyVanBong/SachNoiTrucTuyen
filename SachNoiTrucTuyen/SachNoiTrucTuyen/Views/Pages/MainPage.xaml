@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="SachNoiTrucTuyen.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:tabbedPages="clr-namespace:SachNoiTrucTuyen.Views.Pages.TabbedPages"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Name="mainPage"
+    android:TabbedPage.IsSwipePagingEnabled="False"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    x:DataType="viewmodels:MainPageViewModel"
+    BarBackgroundColor="{StaticResource tabBarColor}"
+    NavigationPage.HasNavigationBar="False"
+    SelectedTabColor="White"
+    UnselectedTabColor="#73FFFFFF">
+    <TabbedPage.Resources>
+        <xct:ImageResource x:Key="HomeUnselected" Id="SachNoiTrucTuyen.Resources.Images.ic_m_hp_0.png" />
+        <xct:ImageResource x:Key="HomeSelected" Id="SachNoiTrucTuyen.Resources.Images.ic_m_hp_1.png" />
+        <xct:ImageResource x:Key="StoryUnselected" Id="SachNoiTrucTuyen.Resources.Images.ic_m_sp_0.png" />
+        <xct:ImageResource x:Key="KnowledgeUnselected" Id="SachNoiTrucTuyen.Resources.Images.ic_m_kp_0.png" />
+        <xct:ImageResource x:Key="CollectionUnselected" Id="SachNoiTrucTuyen.Resources.Images.ic_m_cp_0.png" />
+        <xct:ImageResource x:Key="AccountUnselected" Id="SachNoiTrucTuyen.Resources.Images.ic_m_ap_0.png" />
+    </TabbedPage.Resources>
+    <TabbedPage.Children>
+        <NavigationPage
+            Title="Sách tinh gọn"
+            BackgroundColor="{StaticResource bgColor}"
+            BarBackgroundColor="{StaticResource bgColor}"
+            IconImageSource="{StaticResource HomeSelected}">
+            <x:Arguments>
+                <tabbedPages:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage
+            Title="Tiểu sử"
+            BackgroundColor="{StaticResource bgColor}"
+            BarBackgroundColor="{StaticResource bgColor}"
+            IconImageSource="{StaticResource StoryUnselected}">
+            <x:Arguments>
+                <tabbedPages:StoryPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage
+            Title="Kiến thức"
+            BackgroundColor="{StaticResource bgColor}"
+            BarBackgroundColor="{StaticResource bgColor}"
+            IconImageSource="{StaticResource KnowledgeUnselected}">
+            <x:Arguments>
+                <tabbedPages:KnowledgePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage
+            Title="Cộng đồng"
+            BackgroundColor="{StaticResource bgColor}"
+            BarBackgroundColor="{StaticResource bgColor}"
+            IconImageSource="{StaticResource CollectionUnselected}">
+            <x:Arguments>
+                <tabbedPages:CommunityPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+    <TabbedPage.Behaviors>
+        <xct:EventToCommandBehavior
+            Command="{Binding ChangePageCommand}"
+            CommandParameter="{x:Reference mainPage}"
+            EventName="CurrentPageChanged" />
+    </TabbedPage.Behaviors>
+</TabbedPage>

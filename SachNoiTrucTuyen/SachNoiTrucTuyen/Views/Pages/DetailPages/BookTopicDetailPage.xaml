@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.DetailPages.BookTopicDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:BookTopicDetailPageViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
+        <xct:ImageResource x:Key="Cart" Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <Grid HeightRequest="55">
+                <Frame
+                    Padding="0"
+                    CornerRadius="0"
+                    HeightRequest="55">
+                    <Grid>
+                        <Image
+                            Margin="15,10,15,10"
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{prism:GoBack}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label
+                            FontFamily="R"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="{Binding TitlePage}"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Frame>
+            </Grid>
+            <ListView
+                HasUnevenRows="True"
+                ItemsSource="{Binding LayoutPages}"
+                SelectionMode="None"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="md:LayoutPageModel">
+                        <ViewCell>
+                            <StackLayout Spacing="5">
+                                <Label
+                                    Margin="15,10,10,0"
+                                    FontFamily="RBo"
+                                    FontSize="18"
+                                    Text="{Binding Title}"
+                                    TextColor="{StaticResource titleColor}" />
+                                <CollectionView
+                                    x:Name="listBook"
+                                    HeightRequest="330"
+                                    ItemsSource="{Binding ListBook}">
+                                    <CollectionView.ItemsLayout>
+                                        <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="md:Book">
+                                            <StackLayout x:Name="ItemBook">
+                                                <Grid WidthRequest="160">
+
+                                                    <StackLayout
+                                                        Margin="5,0,0,0"
+                                                        HorizontalOptions="Start"
+                                                        Spacing="0"
+                                                        WidthRequest="160">
+
+                                                        <Image
+                                                            Margin="10"
+                                                            xct:CornerRadiusEffect.CornerRadius="5"
+                                                            xct:ShadowEffect.Color="Gray"
+                                                            xct:ShadowEffect.OffsetX="4"
+                                                            xct:ShadowEffect.OffsetY="6"
+                                                            xct:ShadowEffect.Opacity="1.5"
+                                                            xct:ShadowEffect.Radius="5"
+                                                            Aspect="AspectFill"
+                                                            HeightRequest="210"
+                                                            HorizontalOptions="Start"
+                                                            Source="{Binding ImgBook}"
+                                                            WidthRequest="140" />
+
+                                                        <Label
+                                                            Margin="10,0,10,0"
+                                                            FontFamily="RB"
+                                                            FontSize="16"
+                                                            LineBreakMode="TailTruncation"
+                                                            MaxLines="2"
+                                                            Text="{Binding TitleBook}"
+                                                            TextColor="{StaticResource nameBookColor}"
+                                                            WidthRequest="140" />
+                                                        <Label
+                                                            Margin="10,0,10,0"
+                                                            FontFamily="R"
+                                                            FontSize="16"
+                                                            LineBreakMode="TailTruncation"
+                                                            MaxLines="2"
+                                                            Text="{Binding AuthorBook}"
+                                                            WidthRequest="140" />
+                                                    </StackLayout>
+
+                                                    <Image
+                                                        Margin="15,10"
+                                                        HeightRequest="20"
+                                                        HorizontalOptions="End"
+                                                        IsVisible="{Binding IsPremium}"
+                                                        Source="{StaticResource Premium}"
+                                                        VerticalOptions="Start"
+                                                        WidthRequest="20" />
+                                                </Grid>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/BookDetailPage', Animated=True, UseModalNavigation=True}" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

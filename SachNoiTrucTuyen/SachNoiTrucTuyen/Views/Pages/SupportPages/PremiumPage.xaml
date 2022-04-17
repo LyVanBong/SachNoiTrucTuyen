@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.PremiumPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:PremiumPageViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+
+        <ControlTemplate x:Key="FrameRadioTemplate">
+            <Frame
+                Padding="0"
+                BackgroundColor="{StaticResource placeHolderColor}"
+                CornerRadius="20"
+                HasShadow="False"
+                HeightRequest="75"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Grid Margin="4" WidthRequest="50">
+                    <ContentPresenter />
+                </Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource tabBarColor}" />
+                                <Setter Property="HasShadow" Value="True" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource placeHolderColor}" />
+                                <Setter Property="HasShadow" Value="False" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="350,*" RowSpacing="0">
+
+        <CarouselView
+            x:Name="carouselView"
+            Grid.Row="0"
+            IndicatorView="{x:Reference welcomeIndicator}"
+            ItemsSource="{Binding ItemPremiumPages}"
+            ItemsUpdatingScrollMode="KeepItemsInView"
+            Loop="True"
+            Position="{Binding Position}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="md:ItemWelcomePage">
+                    <Grid RowDefinitions="1.5*,2.3*,Auto" RowSpacing="0">
+                        <StackLayout
+                            Grid.Row="0"
+                            Spacing="0"
+                            VerticalOptions="Center">
+                            <Label
+                                Margin="10,0,10,0"
+                                FontFamily="RBo"
+                                FontSize="32"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="{Binding Title}"
+                                TextColor="{StaticResource welcomeTitleColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding IsDescriptionOnly}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="Margin" Value="10,30,10,0" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label
+                                Margin="20,0"
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                IsVisible="{Binding IsDescriptionOnly, Converter={xct:InvertedBoolConverter}}"
+                                Text="{Binding SubTitle}"
+                                TextColor="{StaticResource nameBookColor}" />
+                        </StackLayout>
+
+                        <Image
+                            Grid.Row="1"
+                            Aspect="AspectFit"
+                            IsVisible="{Binding IsDescriptionOnly, Converter={xct:InvertedBoolConverter}}"
+                            Source="{Binding Image}" />
+                        <Frame
+                            Grid.Row="2"
+                            Margin="20,0"
+                            BackgroundColor="{StaticResource placeHolderColor}"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HorizontalOptions="Center"
+                            IsVisible="{Binding IsDescriptionOnly}"
+                            VerticalOptions="Center">
+                            <customViews:CustomLabel
+                                xct:ShadowEffect.Color="Transparent"
+                                FontFamily="R"
+                                FontSize="18"
+                                LineHeight="1.15"
+                                Text="{Binding Description}"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <Image
+            Margin="20"
+            HeightRequest="20"
+            HorizontalOptions="End"
+            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_close_2.png}"
+            VerticalOptions="Start"
+            WidthRequest="20">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{prism:GoBack}" />
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout Grid.Row="1">
+            <IndicatorView
+                x:Name="welcomeIndicator"
+                Margin="20"
+                IndicatorColor="{StaticResource placeHolderColor}"
+                IndicatorSize="8"
+                IndicatorsShape="Circle"
+                SelectedIndicatorColor="{StaticResource tabBarColor}" />
+            <Grid
+                Margin="10"
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="10">
+                <RadioButton
+                    x:Name="rd99"
+                    Grid.Column="0"
+                    ClassId="rd99"
+                    ControlTemplate="{StaticResource FrameRadioTemplate}"
+                    HorizontalOptions="Fill"
+                    IsChecked="True"
+                    TextColor="{StaticResource nameBookColor}"
+                    VerticalOptions="Center">
+                    <RadioButton.Content>
+                        <StackLayout VerticalOptions="Center">
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="99.000 đ"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rd99}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="1 tháng"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rd99}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+                    </RadioButton.Content>
+                    <RadioButton.Triggers>
+                        <Trigger TargetType="RadioButton" Property="IsChecked" Value="True">
+                            <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                        </Trigger>
+                    </RadioButton.Triggers>
+                    <RadioButton.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RadioCheckedCommand}" CommandParameter="{Binding Source={x:Reference rd99}}" />
+                    </RadioButton.GestureRecognizers>
+                </RadioButton>
+                <RadioButton
+                    x:Name="rd249"
+                    Grid.Column="1"
+                    ClassId="rd249"
+                    ControlTemplate="{StaticResource FrameRadioTemplate}"
+                    HorizontalOptions="Fill"
+                    TextColor="{StaticResource nameBookColor}"
+                    VerticalOptions="Center">
+                    <RadioButton.Content>
+                        <StackLayout VerticalOptions="Center">
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="249.000 đ"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rd249}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="3 tháng"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rd249}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+                    </RadioButton.Content>
+                    <RadioButton.Triggers>
+                        <Trigger TargetType="RadioButton" Property="IsChecked" Value="True">
+                            <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                        </Trigger>
+                    </RadioButton.Triggers>
+                    <RadioButton.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RadioCheckedCommand}" CommandParameter="{Binding Source={x:Reference rd249}}" />
+                    </RadioButton.GestureRecognizers>
+                </RadioButton>
+                <RadioButton
+                    x:Name="rd699"
+                    Grid.Column="2"
+                    ClassId="rd699"
+                    ControlTemplate="{StaticResource FrameRadioTemplate}"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center">
+                    <RadioButton.Content>
+                        <StackLayout VerticalOptions="Center">
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="699.000 đ"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rd699}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="1 năm"
+                                TextColor="{StaticResource nameBookColor}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rd699}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource bgColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+                    </RadioButton.Content>
+
+                    <RadioButton.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RadioCheckedCommand}" CommandParameter="{Binding Source={x:Reference rd699}}" />
+                    </RadioButton.GestureRecognizers>
+                </RadioButton>
+            </Grid>
+            <Label
+                FontFamily="RBo"
+                FontSize="18"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Description}"
+                TextColor="{StaticResource nameBookColor}" />
+            <Label
+                FontFamily="R"
+                FontSize="18"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                Text="Tự động gia hạn, có thể hủy bất cứ lúc nào."
+                TextColor="{StaticResource nameBookColor}" />
+
+            <Frame
+                Margin="10"
+                Padding="0"
+                BackgroundColor="{StaticResource tabBarColor}"
+                CornerRadius="10"
+                HasShadow="False"
+                HeightRequest="55"
+                VerticalOptions="Start">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+
+                    <Label
+                        Margin="0,10,10,10"
+                        FontFamily="RBo"
+                        FontSize="18"
+                        LineBreakMode="TailTruncation"
+                        Text="Đăng ký"
+                        TextColor="{StaticResource bgColor}"
+                        VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:GoBack}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>
