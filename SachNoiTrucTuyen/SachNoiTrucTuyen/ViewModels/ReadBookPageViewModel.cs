@@ -1,18 +1,16 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Mvvm;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
     public class ReadBookPageViewModel : BindableBase
-    {   
+    {
         public string BookContent { get; set; }
+
         public ReadBookPageViewModel()
         {
             SetSourceContent();
         }
+
         public void SetSourceContent()
         {
             BookContent = "<p>Hãy bắt tôi nếu bạn có thể là một người Mỹ năm 2002 tiểu sử phim tội phạm được đạo diễn và sản xuất bởi Steven Spielberg từ một kịch bản của Jeff Nathanson.Các ngôi sao điện ảnh Leonardo DiCaprio và Tom Hanks, với Christopher Walken, Martin Sheenvà Nathalie Baye trong các vai phụ.Bộ phim dựa trên cuộc đời của Frank Abagnale, trước sinh nhật lần thứ 19 của mình, đã thực hiện thành công khuyết điểm trị giá hàng triệu đô la bằng cách giả dạng Pan American World Airways phi công, một bác sĩ Georgia và một Louisiana giáo xứ công tố viên.Tội ác lớn nhất của anh ta là kiểm tra gian lận; anh ấy trở nên có kỹ năng cao đến mức FBI sau đó quay sang anh ta để được giúp bắt những kẻ giả mạo séc khác.</p>"

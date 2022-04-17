@@ -1,74 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.FavouriteAudioPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.FavouriteAudioPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                     
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Audio yêu thích"/>
+                                <Span Text="Audio yêu thích" />
                             </FormattedString>
                         </Label.FormattedText>
-
                     </Label>
                 </Grid>
             </Frame>
             <ScrollView Grid.Row="1">
-                <StackLayout BindableLayout.ItemsSource="{Binding FavouriteAudioResult}"
-                             Spacing="10"
-                             Margin="0,0,0,20"
-                         >
+                <StackLayout
+                    Margin="0,0,0,20"
+                    BindableLayout.ItemsSource="{Binding FavouriteAudioResult}"
+                    Spacing="10">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="md:Audio">
                             <StackLayout Spacing="0">
-                                <Frame HeightRequest="200"
-                                       Padding="0"
-                                       Margin="10,10,10,5"
-                                       CornerRadius="10">
-                                    <Image Source="{Binding ImgAudio}"
-                                           Aspect="Fill"/>
+                                <Frame
+                                    Margin="10,10,10,5"
+                                    Padding="0"
+                                    CornerRadius="10"
+                                    HeightRequest="200">
+                                    <Image Aspect="Fill" Source="{Binding ImgAudio}" />
                                 </Frame>
-                                <Label Text="{Binding TitleAudio}"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="18"
-                                                   FontFamily="RBo"
-                                       TextColor="{StaticResource nameAudioColor}"/>
+                                <Label
+                                    Margin="10,0,10,0"
+                                    FontFamily="RBo"
+                                    FontSize="18"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="2"
+                                    Text="{Binding TitleAudio}"
+                                    TextColor="{StaticResource nameAudioColor}" />
                                 <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}"/>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
                         </DataTemplate>
@@ -77,5 +77,4 @@
             </ScrollView>
         </Grid>
     </ContentPage.Content>
-
 </ContentPage>

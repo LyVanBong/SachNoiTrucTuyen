@@ -1,28 +1,29 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
 using SachNoiTrucTuyen.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
     public class BookTopicDetailPageViewModel : BindableBase, INavigationAware
     {
         private ObservableCollection<LayoutPageModel> _layoutPages;
+
         public ObservableCollection<LayoutPageModel> LayoutPages
         {
             get => _layoutPages;
             set => SetProperty(ref _layoutPages, value);
         }
+
         private string _titlePage;
+
         public string TitlePage
         {
             get => _titlePage;
             set => SetProperty(ref _titlePage, value);
         }
+
         public BookTopicDetailPageViewModel()
         {
             SetSource();
@@ -41,6 +42,7 @@ namespace SachNoiTrucTuyen.ViewModels
                 TitlePage = topic;
             }
         }
+
         public void SetSource()
         {
             LayoutPages = new ObservableCollection<LayoutPageModel>()

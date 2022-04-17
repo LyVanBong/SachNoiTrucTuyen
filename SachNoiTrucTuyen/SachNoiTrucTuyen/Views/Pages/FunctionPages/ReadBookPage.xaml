@@ -1,174 +1,169 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.ReadBookPage"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:customView="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
-             BackgroundColor="LightGoldenrodYellow"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:ReadBookPageViewModel">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.ReadBookPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customView="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:ReadBookPageViewModel"
+    BackgroundColor="LightGoldenrodYellow"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment_2.png" x:Key="Heart"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_edit_comment.png" x:Key="Edit"/>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
+        <xct:ImageResource x:Key="Heart" Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment_2.png" />
+        <xct:ImageResource x:Key="Edit" Id="SachNoiTrucTuyen.Resources.Images.ic_edit_comment.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*,55"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*,55" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="StartAndExpand"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="StartAndExpand"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_home.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_home.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MainPage', Animated=True, UseModalNavigation=True}"/>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MainPage', Animated=True, UseModalNavigation=True}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_share.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_share.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
+                        <Image.GestureRecognizers />
+                    </Image>
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_play_3.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
                         <Image.GestureRecognizers>
-
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceBookPage', Animated=True, UseModalNavigation=True}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_play_3.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceBookPage', Animated=True, UseModalNavigation=True}"/>
-                        </Image.GestureRecognizers>
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_font.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
+                        <Image.GestureRecognizers />
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_font.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
-                        <Image.GestureRecognizers>
-
-                        </Image.GestureRecognizers>
+                    <Image
+                        Margin="5,10,15,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_tag.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
+                        <Image.GestureRecognizers />
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_tag.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,15,10"
-                            >
-                        <Image.GestureRecognizers>
-
-                        </Image.GestureRecognizers>
-                    </Image>
-
                 </StackLayout>
             </Frame>
             <ScrollView Grid.Row="1">
                 <customView:CustomLabel
                     Margin="5"
-                    Text="{Binding BookContent}"
                     FontSize="16"
-                    LineHeight="1"
                     LineBreakMode="WordWrap"
+                    LineHeight="1"
+                    Text="{Binding BookContent}"
                     TextColor="{StaticResource nameBookColor}"
-                       TextType="Html"/>
+                    TextType="Html" />
             </ScrollView>
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="2"
-                   CornerRadius="0">
-                
+            <Frame
+                Grid.Row="2"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
+
                 <Grid ColumnDefinitions="*,*">
-                    <Frame 
-                                 CornerRadius="10"
-                                 Grid.Column="0"
-                        HasShadow="False"
-                           HeightRequest="40"
+                    <Frame
+                        Grid.Column="0"
                         Margin="5"
-                        
-                   Padding="5"
-                           VerticalOptions="Center"
+                        Padding="5"
+                        BackgroundColor="{StaticResource tabBarColor}"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        HeightRequest="40"
                         HorizontalOptions="Fill"
-                                 BackgroundColor="{StaticResource tabBarColor}">
-                        <StackLayout Orientation="Horizontal"
-                                     HorizontalOptions="Center">
-                            <Image Source="{StaticResource Heart}"
-                               WidthRequest="30"
-                               HeightRequest="30"/>
+                        VerticalOptions="Center">
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image
+                                HeightRequest="30"
+                                Source="{StaticResource Heart}"
+                                WidthRequest="30" />
 
-                            <Label Margin="5,0,0,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="14"
-                                                   FontFamily="R"
-                               Text="Xem cảm nhận"
-                               TextColor="{StaticResource bgColor}"
-                               VerticalOptions="Center"/>
+                            <Label
+                                Margin="5,0,0,0"
+                                FontFamily="R"
+                                FontSize="14"
+                                LineBreakMode="TailTruncation"
+                                Text="Xem cảm nhận"
+                                TextColor="{StaticResource bgColor}"
+                                VerticalOptions="Center" />
                         </StackLayout>
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FeelingPage',Animated=True, UseModalNavigation=True}"/>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FeelingPage', Animated=True, UseModalNavigation=True}" />
                         </Frame.GestureRecognizers>
                     </Frame>
 
-                    <Frame 
-                                 CornerRadius="10"
-                                 Grid.Column="1"
-                           HeightRequest="40"
+                    <Frame
+                        Grid.Column="1"
                         Margin="5"
+                        Padding="5"
+                        BackgroundColor="{StaticResource tabBarColor}"
+                        CornerRadius="10"
                         HasShadow="False"
+                        HeightRequest="40"
                         HorizontalOptions="Fill"
-                        
-                   Padding="5"
-                           VerticalOptions="Center"
-                                 BackgroundColor="{StaticResource tabBarColor}">
-                        <StackLayout Orientation="Horizontal"
-                                     HorizontalOptions="Center">
-                            <Image Source="{StaticResource Edit}"
-                               WidthRequest="25"
-                               HeightRequest="25"/>
+                        VerticalOptions="Center">
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image
+                                HeightRequest="25"
+                                Source="{StaticResource Edit}"
+                                WidthRequest="25" />
 
-                            <Label Margin="5,0,0,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="14"
-                                                   FontFamily="R"
-                               Text="Viết cảm nhận"
-                               TextColor="{StaticResource bgColor}"
-                               VerticalOptions="Center"/>
+                            <Label
+                                Margin="5,0,0,0"
+                                FontFamily="R"
+                                FontSize="14"
+                                LineBreakMode="TailTruncation"
+                                Text="Viết cảm nhận"
+                                TextColor="{StaticResource bgColor}"
+                                VerticalOptions="Center" />
                         </StackLayout>
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/AddFeelingPage',Animated=True, UseModalNavigation=True}"/>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/AddFeelingPage', Animated=True, UseModalNavigation=True}" />
                         </Frame.GestureRecognizers>
                     </Frame>
-
                 </Grid>
             </Frame>
         </Grid>
     </ContentPage.Content>
-
 </ContentPage>

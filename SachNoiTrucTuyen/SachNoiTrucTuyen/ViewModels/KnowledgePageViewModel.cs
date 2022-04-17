@@ -1,16 +1,13 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using SachNoiTrucTuyen.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
     public class KnowledgePageViewModel : BindableBase
     {
         public ObservableCollection<LayoutPageModel> LayoutPages { get; private set; }
+
         public KnowledgePageViewModel()
         {
             LayoutPages = new ObservableCollection<LayoutPageModel>()
@@ -19,7 +16,5 @@ namespace SachNoiTrucTuyen.ViewModels
                 new LayoutPageModel() {Type = 3, ListAudio = App.Knowledges}
             };
         }
-
-        
     }
 }

@@ -1,21 +1,18 @@
 ﻿using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SachNoiTrucTuyen.Models
 {
     public class SettingItem
-    {   
-        public SettingItem( INavigationService navigation)
+    {
+        public SettingItem(INavigationService navigation)
         {
             NavigationPageCommand = new Command(() =>
-            {  
-                if(Type!=0 && !string.IsNullOrEmpty(NavigationPage))
-                {  
-                    if(Name != "Đăng xuất")
+            {
+                if (Type != 0 && !string.IsNullOrEmpty(NavigationPage))
+                {
+                    if (Name != "Đăng xuất")
                     {
                         navigation.NavigateAsync("NavigationPage/" + NavigationPage, null, true, true);
                     }
@@ -23,13 +20,11 @@ namespace SachNoiTrucTuyen.Models
                     {
                         Preferences.Set("IsLogin", false);
                         navigation.NavigateAsync("NavigationPage/MainPage", null, true, true);
-                    } 
-                        
-                  
+                    }
                 }
-
             });
         }
+
         public int Type { get; set; }
         public string Name { get; set; }
         public ImageSource Image { get; set; }

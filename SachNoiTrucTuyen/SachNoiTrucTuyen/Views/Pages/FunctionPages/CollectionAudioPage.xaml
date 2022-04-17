@@ -1,324 +1,331 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.CollectionAudioPage"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:CollectionAudioPageViewModel">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.CollectionAudioPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:CollectionAudioPageViewModel"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" x:Key="BookOpen"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_back_0.png" x:Key="Back0"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_back_1.png" x:Key="Back1"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_next_0.png" x:Key="Next0"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_next_1.png" x:Key="Next1"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_moon_0.png" x:Key="Moon0"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_moon_1.png" x:Key="Moon1"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_repeat_0.png" x:Key="Repeat0"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_repeat_1.png" x:Key="Repeat1"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_play_4.png" x:Key="Play"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_pause_3.png" x:Key="Pause"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_rw.png" x:Key="Rewind"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_fw.png" x:Key="Forward"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment_2.png" x:Key="Heart"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_edit_comment.png" x:Key="Edit"/>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
+        <xct:ImageResource x:Key="BookOpen" Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" />
+        <xct:ImageResource x:Key="Back0" Id="SachNoiTrucTuyen.Resources.Images.ic_back_0.png" />
+        <xct:ImageResource x:Key="Back1" Id="SachNoiTrucTuyen.Resources.Images.ic_back_1.png" />
+        <xct:ImageResource x:Key="Next0" Id="SachNoiTrucTuyen.Resources.Images.ic_next_0.png" />
+        <xct:ImageResource x:Key="Next1" Id="SachNoiTrucTuyen.Resources.Images.ic_next_1.png" />
+        <xct:ImageResource x:Key="Moon0" Id="SachNoiTrucTuyen.Resources.Images.ic_moon_0.png" />
+        <xct:ImageResource x:Key="Moon1" Id="SachNoiTrucTuyen.Resources.Images.ic_moon_1.png" />
+        <xct:ImageResource x:Key="Repeat0" Id="SachNoiTrucTuyen.Resources.Images.ic_repeat_0.png" />
+        <xct:ImageResource x:Key="Repeat1" Id="SachNoiTrucTuyen.Resources.Images.ic_repeat_1.png" />
+        <xct:ImageResource x:Key="Play" Id="SachNoiTrucTuyen.Resources.Images.ic_play_4.png" />
+        <xct:ImageResource x:Key="Pause" Id="SachNoiTrucTuyen.Resources.Images.ic_pause_3.png" />
+        <xct:ImageResource x:Key="Rewind" Id="SachNoiTrucTuyen.Resources.Images.ic_rw.png" />
+        <xct:ImageResource x:Key="Forward" Id="SachNoiTrucTuyen.Resources.Images.ic_fw.png" />
+        <xct:ImageResource x:Key="Heart" Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment_2.png" />
+        <xct:ImageResource x:Key="Edit" Id="SachNoiTrucTuyen.Resources.Images.ic_edit_comment.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*,250"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*,250" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="StartAndExpand"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="StartAndExpand"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_home.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_home.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MainPage', Animated=True, UseModalNavigation=True}"/>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/MainPage', Animated=True, UseModalNavigation=True}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_share.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
-                        <Image.GestureRecognizers>
-
-                        </Image.GestureRecognizers>
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_share.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
+                        <Image.GestureRecognizers />
                     </Image>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_book_2.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,5,10"
-                            >
+                    <Image
+                        Margin="5,10,5,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_book_2.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/ReadBookPage', Animated=True, UseModalNavigation=True}"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_heart.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="25"
-                            HeightRequest="25"
-                            HorizontalOptions="End"
-                            Margin="5,10,15,10"
-                            >
-                        <Image.GestureRecognizers>
-
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/ReadBookPage', Animated=True, UseModalNavigation=True}" />
                         </Image.GestureRecognizers>
                     </Image>
 
+                    <Image
+                        Margin="5,10,15,10"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_heart.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="25">
+                        <Image.GestureRecognizers />
+                    </Image>
                 </StackLayout>
             </Frame>
 
             <ScrollView Grid.Row="1">
                 <StackLayout>
                     <Grid HeightRequest="280">
-                        <ListView BackgroundColor="{StaticResource placeHolderColor}"
-                              ItemsSource="{Binding ListCollections}">
+                        <ListView BackgroundColor="{StaticResource placeHolderColor}" ItemsSource="{Binding ListCollections}">
                             <ListView.Header>
-                                <Label Text="Danh sách phát"
-                                   FontSize="16"
-                                   FontFamily="RBo"
-                                       Padding="10"
-                                   TextColor="{StaticResource tabBarColor}"/>
+                                <Label
+                                    Padding="10"
+                                    FontFamily="RBo"
+                                    FontSize="16"
+                                    Text="Danh sách phát"
+                                    TextColor="{StaticResource tabBarColor}" />
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="md:Book">
                                     <ViewCell>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image Source="{StaticResource BookOpen}"
-                                           WidthRequest="32"
-                                           HeightRequest="32"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,5,0"/>
-                                        <Label Text="{Binding TitleBook}"
-                                           VerticalOptions="CenterAndExpand"
-                                           HorizontalOptions="StartAndExpand"
-                                           FontSize="16"
-                                           FontFamily="R"
-                                           TextColor="{StaticResource nameBookColor}"
-                                           LineBreakMode="TailTruncation"/>
-                                    </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image
+                                                Margin="10,0,5,0"
+                                                HeightRequest="32"
+                                                Source="{StaticResource BookOpen}"
+                                                VerticalOptions="Center"
+                                                WidthRequest="32" />
+                                            <Label
+                                                FontFamily="R"
+                                                FontSize="16"
+                                                HorizontalOptions="StartAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding TitleBook}"
+                                                TextColor="{StaticResource nameBookColor}"
+                                                VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
-                    
-                   
-                    <Label Text="Hãy bắt tôi nếu bạn có thể"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,10,10,0"
-                                                   FontSize="16"
-                                                   FontFamily="RB"
-                            HorizontalOptions="Center"
-                                                    TextColor="{StaticResource nameBookColor}"/>
-                    <Label MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"
-                           HorizontalOptions="Center">
+
+                    <Label
+                        Margin="10,10,10,0"
+                        FontFamily="RB"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2"
+                        Text="Hãy bắt tôi nếu bạn có thể"
+                        TextColor="{StaticResource nameBookColor}" />
+                    <Label
+                        Margin="10,0,10,0"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Tác giả: "/>
-                                <Span Text="Frank Abagnale"/>
+                                <Span Text="Tác giả: " />
+                                <Span Text="Frank Abagnale" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
 
-                    <Label MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"
-                           HorizontalOptions="Center">
+                    <Label
+                        Margin="10,0,10,0"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Giọng đọc: "/>
-                                <Span Text="Hồng Thắm"/>
+                                <Span Text="Giọng đọc: " />
+                                <Span Text="Hồng Thắm" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    
                 </StackLayout>
             </ScrollView>
-            <Grid Grid.Row="2"
-                  RowDefinitions="60,70,60,60"
-                  RowSpacing="0">
+            <Grid
+                Grid.Row="2"
+                RowDefinitions="60,70,60,60"
+                RowSpacing="0">
                 <StackLayout Grid.Row="0">
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="03:17"
-                               FontSize="16"
-                               FontFamily="R"
-                               Margin="10,10,10,5"
-                               HorizontalOptions="StartAndExpand"/>
-                        <Label Text="20:54"
-                               FontSize="16"
-                               FontFamily="R"
-                               Margin="10,10,10,5"
-                               HorizontalOptions="End"/>
+                        <Label
+                            Margin="10,10,10,5"
+                            FontFamily="R"
+                            FontSize="16"
+                            HorizontalOptions="StartAndExpand"
+                            Text="03:17" />
+                        <Label
+                            Margin="10,10,10,5"
+                            FontFamily="R"
+                            FontSize="16"
+                            HorizontalOptions="End"
+                            Text="20:54" />
                     </StackLayout>
-                    <Slider ThumbColor="{StaticResource tabBarColor}"
-                            MaximumTrackColor="{StaticResource primaryColor}"
-                            MinimumTrackColor="{StaticResource tabBarColor}">
-                        
-                    </Slider>
+                    <Slider
+                        MaximumTrackColor="{StaticResource primaryColor}"
+                        MinimumTrackColor="{StaticResource tabBarColor}"
+                        ThumbColor="{StaticResource tabBarColor}" />
                 </StackLayout>
-                <Grid ColumnDefinitions="*,*,*,*,*"
-                      Grid.Row="1">
-                    <Image Source="{StaticResource Back0}"
-                           WidthRequest="30"
-                           HeightRequest="30"
-                           Margin="20,0,0,0"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="0"/>
-                    <Image Source="{StaticResource Rewind}"
-                           WidthRequest="35"
-                           HeightRequest="35"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="1"/>
-                    <Image Source="{StaticResource Play}"
-                           WidthRequest="60"
-                           HeightRequest="60"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="2"/>
-                    <Image Source="{StaticResource Forward}"
-                           WidthRequest="35"
-                           HeightRequest="35"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="3"/>
-                    <Image Source="{StaticResource Next0}"
-                           WidthRequest="30"
-                           HeightRequest="30"
-                           Margin="0,0,20,0"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="4"/>
+                <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*,*">
+                    <Image
+                        Grid.Column="0"
+                        Margin="20,0,0,0"
+                        HeightRequest="30"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Back0}"
+                        VerticalOptions="Center"
+                        WidthRequest="30" />
+                    <Image
+                        Grid.Column="1"
+                        HeightRequest="35"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Rewind}"
+                        VerticalOptions="Center"
+                        WidthRequest="35" />
+                    <Image
+                        Grid.Column="2"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Play}"
+                        VerticalOptions="Center"
+                        WidthRequest="60" />
+                    <Image
+                        Grid.Column="3"
+                        HeightRequest="35"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Forward}"
+                        VerticalOptions="Center"
+                        WidthRequest="35" />
+                    <Image
+                        Grid.Column="4"
+                        Margin="0,0,20,0"
+                        HeightRequest="30"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Next0}"
+                        VerticalOptions="Center"
+                        WidthRequest="30" />
                 </Grid>
-                <Grid ColumnDefinitions="*,*,*,*,*"
-                      Grid.Row="2">
-                    <Image Source="{StaticResource Moon0}"
-                           WidthRequest="25"
-                           HeightRequest="25"
-                           Margin="20,0,0,0"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="0"/>
-                    <Label FontSize="25"
-                           FontFamily="RBo"
-                           TextColor="{StaticResource placeHolderColor2}"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="2">
+                <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*,*">
+                    <Image
+                        Grid.Column="0"
+                        Margin="20,0,0,0"
+                        HeightRequest="25"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Moon0}"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="RBo"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource placeHolderColor2}"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="0,1"/>
-                                <Span Text="x"/>
+                                <Span Text="0,1" />
+                                <Span Text="x" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Image Source="{StaticResource Repeat0}"
-                           WidthRequest="25"
-                           HeightRequest="25"
-                           Margin="0,0,20,0"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Grid.Column="4"/>
-
+                    <Image
+                        Grid.Column="4"
+                        Margin="0,0,20,0"
+                        HeightRequest="25"
+                        HorizontalOptions="Center"
+                        Source="{StaticResource Repeat0}"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
                 </Grid>
-                <Frame HeightRequest="55"
-                   Padding="0"
-                       HasShadow="False"
-                   Grid.Row="3"
-                   CornerRadius="0">
+                <Frame
+                    Grid.Row="3"
+                    Padding="0"
+                    CornerRadius="0"
+                    HasShadow="False"
+                    HeightRequest="55">
                     <Grid ColumnDefinitions="*,*">
-                        <Frame 
-                                 CornerRadius="10"
-                                 Grid.Column="0"
-                        HasShadow="False"
-                           HeightRequest="40"
-                        Margin="5"
-                        
-                   Padding="5"
-                           VerticalOptions="Center"
-                        HorizontalOptions="Fill"
-                                 BackgroundColor="{StaticResource tabBarColor}">
-                            <StackLayout Orientation="Horizontal"
-                                     HorizontalOptions="Center">
-                                <Image Source="{StaticResource Heart}"
-                               WidthRequest="30"
-                               HeightRequest="30"/>
+                        <Frame
+                            Grid.Column="0"
+                            Margin="5"
+                            Padding="5"
+                            BackgroundColor="{StaticResource tabBarColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="40"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Image
+                                    HeightRequest="30"
+                                    Source="{StaticResource Heart}"
+                                    WidthRequest="30" />
 
-                                <Label Margin="5,0,0,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="14"
-                                                   FontFamily="R"
-                               Text="Xem cảm nhận"
-                               TextColor="{StaticResource bgColor}"
-                               VerticalOptions="Center"/>
+                                <Label
+                                    Margin="5,0,0,0"
+                                    FontFamily="R"
+                                    FontSize="14"
+                                    LineBreakMode="TailTruncation"
+                                    Text="Xem cảm nhận"
+                                    TextColor="{StaticResource bgColor}"
+                                    VerticalOptions="Center" />
                             </StackLayout>
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage?IdStt=1123',Animated=True, UseModalNavigation=True}"/>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/PostCommentPage?IdStt=1123', Animated=True, UseModalNavigation=True}" />
                             </Frame.GestureRecognizers>
                         </Frame>
 
-                        <Frame 
-                                 CornerRadius="10"
-                                 Grid.Column="1"
-                           HeightRequest="40"
-                        Margin="5"
-                        HasShadow="False"
-                        HorizontalOptions="Fill"
-                        
-                   Padding="5"
-                           VerticalOptions="Center"
-                                 BackgroundColor="{StaticResource tabBarColor}">
-                            <StackLayout Orientation="Horizontal"
-                                     HorizontalOptions="Center">
-                                <Image Source="{StaticResource Edit}"
-                               WidthRequest="25"
-                               HeightRequest="25"/>
+                        <Frame
+                            Grid.Column="1"
+                            Margin="5"
+                            Padding="5"
+                            BackgroundColor="{StaticResource tabBarColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="40"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Image
+                                    HeightRequest="25"
+                                    Source="{StaticResource Edit}"
+                                    WidthRequest="25" />
 
-                                <Label Margin="5,0,0,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="14"
-                                                   FontFamily="R"
-                               Text="Viết cảm nhận"
-                               TextColor="{StaticResource bgColor}"
-                               VerticalOptions="Center"/>
+                                <Label
+                                    Margin="5,0,0,0"
+                                    FontFamily="R"
+                                    FontSize="14"
+                                    LineBreakMode="TailTruncation"
+                                    Text="Viết cảm nhận"
+                                    TextColor="{StaticResource bgColor}"
+                                    VerticalOptions="Center" />
                             </StackLayout>
-
                         </Frame>
-
                     </Grid>
                 </Frame>
             </Grid>

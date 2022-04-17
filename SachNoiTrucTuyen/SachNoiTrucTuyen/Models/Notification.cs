@@ -1,7 +1,5 @@
 ﻿using Prism.Mvvm;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SachNoiTrucTuyen.Models
 {
@@ -12,16 +10,19 @@ namespace SachNoiTrucTuyen.Models
         public bool IsActive { get => _isActive; set => SetProperty(ref _isActive, value); }
         public string Description { get; set; }
         private DateTime _time;
-        public DateTime Time 
-        { 
-            get => _time; 
+
+        public DateTime Time
+        {
+            get => _time;
             set
             {
                 StrTime = SetTime(DateTime.Now, value);
                 SetProperty(ref _time, value);
             }
         }
+
         public string StrTime { get; set; }
+
         public string SetTime(DateTime time, DateTime now)
         {
             double sc = now.Subtract(time).TotalSeconds;
@@ -36,7 +37,7 @@ namespace SachNoiTrucTuyen.Models
             {
                 return sc + " giây trước";
             }
-            else if(sc >= 60 && mn < 60)
+            else if (sc >= 60 && mn < 60)
             {
                 return mn + " phút trước";
             }
@@ -48,7 +49,7 @@ namespace SachNoiTrucTuyen.Models
             {
                 return day + " ngày trước";
             }
-            else 
+            else
             {
                 return time.ToString("dd/MM/yyyy HH:mm:ss");
             }

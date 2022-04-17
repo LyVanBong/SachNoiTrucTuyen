@@ -1,12 +1,9 @@
 ﻿using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SachNoiTrucTuyen.Models
 {
     public class ChooseItem : BindableBase
-    {   
+    {
         public int Status { get; set; }
         public string Name { get; set; }
         public double Persent { get; set; }

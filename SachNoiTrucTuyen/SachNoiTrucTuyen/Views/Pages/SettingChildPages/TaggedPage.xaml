@@ -1,117 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.TaggedPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.TaggedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                     
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Đã đánh dấu"/>
+                                <Span Text="Đã đánh dấu" />
                             </FormattedString>
                         </Label.FormattedText>
-
                     </Label>
                 </Grid>
             </Frame>
-            <CollectionView ItemsSource="{Binding TaggedResult}"
-                            Grid.Row="1">
+            <CollectionView Grid.Row="1" ItemsSource="{Binding TaggedResult}">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Span="2"
-                                     Orientation="Vertical">
-
-                    </GridItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
 
                     <DataTemplate x:DataType="md:Book">
                         <StackLayout>
-                            <Grid WidthRequest="160"
-                                  HorizontalOptions="Center">
+                            <Grid HorizontalOptions="Center" WidthRequest="160">
 
-                                <StackLayout Spacing="0"
-                                                     WidthRequest="160" 
-                                                     Margin="5,0,0,0"
-                                                     HorizontalOptions="Start">
+                                <StackLayout
+                                    Margin="5,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Spacing="0"
+                                    WidthRequest="160">
 
-                                    <Image Source="{Binding ImgBook}"
-                                                    Aspect="AspectFill"
-                                                    HeightRequest="210"
-                                                    WidthRequest="140" 
-                                                    HorizontalOptions="Start"
-                                                    Margin="10"
-                                                    xct:CornerRadiusEffect.CornerRadius="5"
-                                                    xct:ShadowEffect.Color="Gray"
-                                                    xct:ShadowEffect.OffsetX="4"
-                                                    xct:ShadowEffect.OffsetY="6"
-                                                    xct:ShadowEffect.Opacity="1.5"
-                                                    xct:ShadowEffect.Radius="5"
-                                                    />
+                                    <Image
+                                        Margin="10"
+                                        xct:CornerRadiusEffect.CornerRadius="5"
+                                        xct:ShadowEffect.Color="Gray"
+                                        xct:ShadowEffect.OffsetX="4"
+                                        xct:ShadowEffect.OffsetY="6"
+                                        xct:ShadowEffect.Opacity="1.5"
+                                        xct:ShadowEffect.Radius="5"
+                                        Aspect="AspectFill"
+                                        HeightRequest="210"
+                                        HorizontalOptions="Start"
+                                        Source="{Binding ImgBook}"
+                                        WidthRequest="140" />
 
-                                    <Label Text="{Binding TitleBook}"
-                                                   WidthRequest="140"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="16"
-                                                   FontFamily="RB"
-                   
-                                                    TextColor="{StaticResource nameBookColor}"/>
-                                    <Label Text="{Binding AuthorBook}"
-                                                   WidthRequest="140"
-                                                   MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"/>
+                                    <Label
+                                        Margin="10,0,10,0"
+                                        FontFamily="RB"
+                                        FontSize="16"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="2"
+                                        Text="{Binding TitleBook}"
+                                        TextColor="{StaticResource nameBookColor}"
+                                        WidthRequest="140" />
+                                    <Label
+                                        Margin="10,0,10,0"
+                                        FontFamily="R"
+                                        FontSize="16"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="2"
+                                        Text="{Binding AuthorBook}"
+                                        WidthRequest="140" />
                                 </StackLayout>
 
-                                <Image Source="{StaticResource Premium}"
-                                               WidthRequest="20"
-                                               HeightRequest="20"
-                                               HorizontalOptions="End"
-                                               VerticalOptions="Start"
-                                               Margin="15,10"
-                                               IsVisible="{Binding IsPremium}"/>
-
+                                <Image
+                                    Margin="15,10"
+                                    HeightRequest="20"
+                                    HorizontalOptions="End"
+                                    IsVisible="{Binding IsPremium}"
+                                    Source="{StaticResource Premium}"
+                                    VerticalOptions="Start"
+                                    WidthRequest="20" />
                             </Grid>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
         </Grid>
     </ContentPage.Content>
-  
 </ContentPage>

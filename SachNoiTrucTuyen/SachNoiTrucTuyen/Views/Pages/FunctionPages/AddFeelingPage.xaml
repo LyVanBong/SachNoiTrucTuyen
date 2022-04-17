@@ -1,74 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:AddFeelingPageViewModel"
-             x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.AddFeelingPage">
-    <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-        <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                     
-                   CornerRadius="0">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.FunctionPages.AddFeelingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:AddFeelingPageViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="55,*" RowSpacing="0">
+        <Frame
+            Grid.Row="0"
+            Padding="0"
+            CornerRadius="0"
+            HeightRequest="55">
             <Grid>
-                <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                <Image
+                    Margin="15,10,15,10"
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                    VerticalOptions="Center"
+                    WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{prism:GoBack}"/>
+                        <TapGestureRecognizer Command="{prism:GoBack}" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16"> 
+                <Label
+                    FontFamily="R"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    VerticalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Thêm cảm nhận"/>
+                            <Span Text="Thêm cảm nhận" />
                         </FormattedString>
                     </Label.FormattedText>
-
                 </Label>
-               
             </Grid>
         </Frame>
         <StackLayout Grid.Row="1">
-            <customViews:CustomEditor VerticalOptions="FillAndExpand"
-                                             Placeholder="Nhập nội dung bài viết(Tối thiểu 100 từ)"
-                                     Text="{Binding Content}">
-
-            </customViews:CustomEditor>
-            <Frame HeightRequest="40"
-                           VerticalOptions="End">
-                <Label Text="Chưa đủ 100 từ"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                       FontSize="18"
-                               TextColor="{StaticResource nameBookColor}">
+            <customViews:CustomEditor
+                Placeholder="Nhập nội dung bài viết(Tối thiểu 100 từ)"
+                Text="{Binding Content}"
+                VerticalOptions="FillAndExpand" />
+            <Frame HeightRequest="40" VerticalOptions="End">
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="Chưa đủ 100 từ"
+                    TextColor="{StaticResource nameBookColor}"
+                    VerticalOptions="Center">
                     <Label.Triggers>
-                        <DataTrigger TargetType="Label" Binding="{Binding IsFullCharacter}" Value="True">
-                            <Setter Property="Text" Value="Đăng bài"/>
-                            <Setter Property="TextColor" Value="{StaticResource bgColor}"/>
+                        <DataTrigger
+                            Binding="{Binding IsFullCharacter}"
+                            TargetType="Label"
+                            Value="True">
+                            <Setter Property="Text" Value="Đăng bài" />
+                            <Setter Property="TextColor" Value="{StaticResource bgColor}" />
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>
                 <Frame.Triggers>
-                    <DataTrigger TargetType="Frame" Binding="{Binding IsFullCharacter}" Value="True">
-                        <Setter Property="BackgroundColor" Value="{StaticResource tabBarColor}"/>
+                    <DataTrigger
+                        Binding="{Binding IsFullCharacter}"
+                        TargetType="Frame"
+                        Value="True">
+                        <Setter Property="BackgroundColor" Value="{StaticResource tabBarColor}" />
                     </DataTrigger>
                 </Frame.Triggers>
             </Frame>
         </StackLayout>
     </Grid>
-
 </ContentPage>

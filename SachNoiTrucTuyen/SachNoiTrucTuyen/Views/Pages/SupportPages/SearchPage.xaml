@@ -1,173 +1,171 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.SearchPage"
-              NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView" 
-             xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
-             x:DataType="viewmodels:SearchPageViewModel">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.SearchPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:SearchPageViewModel"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,60,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,60,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Tìm kiếm "/>
-                                <Span Text="{Binding TypePage}"/>
+                                <Span Text="Tìm kiếm " />
+                                <Span Text="{Binding TypePage}" />
                             </FormattedString>
                         </Label.FormattedText>
-
                     </Label>
                 </Grid>
             </Frame>
-            
 
-            <Frame Margin="10"
-                   Grid.Row="1"
-                           HorizontalOptions="FillAndExpand"
-                           Padding="0"
-                   BackgroundColor="{StaticResource placeHolderColor}"
-                   HasShadow="False"
-                           HeightRequest="40"
-                           CornerRadius="20">
-                <customViews:CustomEntry Placeholder="{Binding PlaceholderEntry}"
-                                         Text="{Binding SearchContent}"
-                                                 FontSize="16"
-                                                 VerticalOptions="Center"
-                                                 Margin="15,0,0,0">
+            <Frame
+                Grid.Row="1"
+                Margin="10"
+                Padding="0"
+                BackgroundColor="{StaticResource placeHolderColor}"
+                CornerRadius="20"
+                HasShadow="False"
+                HeightRequest="40"
+                HorizontalOptions="FillAndExpand">
+                <customViews:CustomEntry
+                    Margin="15,0,0,0"
+                    FontSize="16"
+                    Placeholder="{Binding PlaceholderEntry}"
+                    Text="{Binding SearchContent}"
+                    VerticalOptions="Center">
                     <customViews:CustomEntry.Behaviors>
-                        <xct:EventToCommandBehavior EventName="TextChanged" Command="{Binding SearchCommand}"/>
+                        <xct:EventToCommandBehavior Command="{Binding SearchCommand}" EventName="TextChanged" />
                     </customViews:CustomEntry.Behaviors>
                 </customViews:CustomEntry>
             </Frame>
-            <CollectionView ItemsSource="{Binding SearchResult}"
-                            Grid.Row="2"
-                            IsVisible="{Binding IsAudioSearch, Converter={xct:InvertedBoolConverter}}">
+            <CollectionView
+                Grid.Row="2"
+                IsVisible="{Binding IsAudioSearch, Converter={xct:InvertedBoolConverter}}"
+                ItemsSource="{Binding SearchResult}">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Span="2"
-                                     Orientation="Vertical">
-
-                    </GridItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
 
                     <DataTemplate x:DataType="md:Book">
                         <StackLayout>
-                            <Grid WidthRequest="160"
-                                  HorizontalOptions="Center">
+                            <Grid HorizontalOptions="Center" WidthRequest="160">
 
-                                <StackLayout Spacing="0"
-                                                     WidthRequest="160" 
-                                                     Margin="5,0,0,0"
-                                                     HorizontalOptions="Start">
+                                <StackLayout
+                                    Margin="5,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Spacing="0"
+                                    WidthRequest="160">
 
-                                    <Image Source="{Binding ImgBook}"
-                                                    Aspect="AspectFill"
-                                                    HeightRequest="210"
-                                                    WidthRequest="140" 
-                                                    HorizontalOptions="Start"
-                                                    Margin="10"
-                                                    xct:CornerRadiusEffect.CornerRadius="5"
-                                                    xct:ShadowEffect.Color="Gray"
-                                                    xct:ShadowEffect.OffsetX="4"
-                                                    xct:ShadowEffect.OffsetY="6"
-                                                    xct:ShadowEffect.Opacity="1.5"
-                                                    xct:ShadowEffect.Radius="5"
-                                                    />
+                                    <Image
+                                        Margin="10"
+                                        xct:CornerRadiusEffect.CornerRadius="5"
+                                        xct:ShadowEffect.Color="Gray"
+                                        xct:ShadowEffect.OffsetX="4"
+                                        xct:ShadowEffect.OffsetY="6"
+                                        xct:ShadowEffect.Opacity="1.5"
+                                        xct:ShadowEffect.Radius="5"
+                                        Aspect="AspectFill"
+                                        HeightRequest="210"
+                                        HorizontalOptions="Start"
+                                        Source="{Binding ImgBook}"
+                                        WidthRequest="140" />
 
-                                    <Label Text="{Binding TitleBook}"
-                                                   WidthRequest="140"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="16"
-                                                   FontFamily="RB"
-                   
-                                                    TextColor="{StaticResource nameBookColor}"/>
-                                    <Label Text="{Binding AuthorBook}"
-                                                   WidthRequest="140"
-                                                   MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"/>
+                                    <Label
+                                        Margin="10,0,10,0"
+                                        FontFamily="RB"
+                                        FontSize="16"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="2"
+                                        Text="{Binding TitleBook}"
+                                        TextColor="{StaticResource nameBookColor}"
+                                        WidthRequest="140" />
+                                    <Label
+                                        Margin="10,0,10,0"
+                                        FontFamily="R"
+                                        FontSize="16"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="2"
+                                        Text="{Binding AuthorBook}"
+                                        WidthRequest="140" />
                                 </StackLayout>
 
-                                <Image Source="{StaticResource Premium}"
-                                               WidthRequest="20"
-                                               HeightRequest="20"
-                                               HorizontalOptions="End"
-                                               VerticalOptions="Start"
-                                               Margin="15,10"
-                                               IsVisible="{Binding IsPremium}"/>
-
+                                <Image
+                                    Margin="15,10"
+                                    HeightRequest="20"
+                                    HorizontalOptions="End"
+                                    IsVisible="{Binding IsPremium}"
+                                    Source="{StaticResource Premium}"
+                                    VerticalOptions="Start"
+                                    WidthRequest="20" />
                             </Grid>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-
-            <ScrollView Grid.Row="2"
-                         IsVisible="{Binding IsAudioSearch}">
-            <StackLayout BindableLayout.ItemsSource="{Binding SearchAudioResult}"
-                             Spacing="10"
-                             Margin="0,0,0,20"
-                         >
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="md:Audio">
-                        <StackLayout Spacing="0">
-                            <Frame HeightRequest="200"
-                                       Padding="0"
-                                       Margin="10,10,10,5"
-                                       CornerRadius="10">
-                                <Image Source="{Binding ImgAudio}"
-                                           Aspect="Fill"/>
-                            </Frame>
-                            <Label Text="{Binding TitleAudio}"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="18"
-                                                   FontFamily="RBo"
-                                       TextColor="{StaticResource nameAudioColor}"/>
+            <ScrollView Grid.Row="2" IsVisible="{Binding IsAudioSearch}">
+                <StackLayout
+                    Margin="0,0,0,20"
+                    BindableLayout.ItemsSource="{Binding SearchAudioResult}"
+                    Spacing="10">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="md:Audio">
+                            <StackLayout Spacing="0">
+                                <Frame
+                                    Margin="10,10,10,5"
+                                    Padding="0"
+                                    CornerRadius="10"
+                                    HeightRequest="200">
+                                    <Image Aspect="Fill" Source="{Binding ImgAudio}" />
+                                </Frame>
+                                <Label
+                                    Margin="10,0,10,0"
+                                    FontFamily="RBo"
+                                    FontSize="18"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="2"
+                                    Text="{Binding TitleAudio}"
+                                    TextColor="{StaticResource nameAudioColor}" />
                                 <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}"/>
+                                    <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
             </ScrollView>
         </Grid>
     </ContentPage.Content>
-    
 </ContentPage>

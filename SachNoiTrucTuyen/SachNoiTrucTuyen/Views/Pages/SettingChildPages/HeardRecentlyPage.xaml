@@ -1,83 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.HeardRecentlyPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.HeardRecentlyPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" x:Key="BookOpen"/>
+        <xct:ImageResource x:Key="BookOpen" Id="SachNoiTrucTuyen.Resources.Images.ic_book_open.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                     
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Nghe gần đây"/>
+                                <Span Text="Nghe gần đây" />
                             </FormattedString>
                         </Label.FormattedText>
-
                     </Label>
                 </Grid>
             </Frame>
             <StackLayout Grid.Row="1">
-                <StackLayout Padding="0,10"
-                              BindableLayout.ItemsSource="{Binding ListRecents}">
-                    
+                <StackLayout Padding="0,10" BindableLayout.ItemsSource="{Binding ListRecents}">
+
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="md:Book">
-                           
-                                <StackLayout Spacing="10"
-                                             HeightRequest="100">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image Source="{StaticResource BookOpen}"
-                                           WidthRequest="32"
-                                           HeightRequest="32"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,5,0"/>
-                                        <Label Text="{Binding TitleBook}"
-                                           VerticalOptions="CenterAndExpand"
-                                           HorizontalOptions="StartAndExpand"
-                                           FontSize="16"
-                                           FontFamily="R"
-                                           TextColor="{StaticResource nameBookColor}"
-                                           LineBreakMode="TailTruncation"/>
-                                    </StackLayout>
-                                    <BoxView HeightRequest="0.15" Color="Gray"/>
+
+                            <StackLayout HeightRequest="100" Spacing="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image
+                                        Margin="10,0,5,0"
+                                        HeightRequest="32"
+                                        Source="{StaticResource BookOpen}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="32" />
+                                    <Label
+                                        FontFamily="R"
+                                        FontSize="16"
+                                        HorizontalOptions="StartAndExpand"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding TitleBook}"
+                                        TextColor="{StaticResource nameBookColor}"
+                                        VerticalOptions="CenterAndExpand" />
                                 </StackLayout>
-                                
-                            
+                                <BoxView HeightRequest="0.15" Color="Gray" />
+                            </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
-
             </StackLayout>
         </Grid>
     </ContentPage.Content>
-  
 </ContentPage>

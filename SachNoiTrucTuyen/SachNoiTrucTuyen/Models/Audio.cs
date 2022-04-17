@@ -1,13 +1,10 @@
 ﻿using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SachNoiTrucTuyen.Models
 {
     public class Audio : BindableBase
     {
-        public string ImgAudio{ get; set; }
+        public string ImgAudio { get; set; }
         public string TitleAudio { get; set; }
         public string AuthorAudio { get; set; }
         public double LongAudio { get; set; }

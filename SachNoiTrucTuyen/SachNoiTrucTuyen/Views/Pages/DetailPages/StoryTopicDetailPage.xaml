@@ -1,44 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
-             xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" 
-             x:DataType="viewmodels:StoryTopicDetailPageViewModel"
-             x:Class="SachNoiTrucTuyen.Views.Pages.DetailPages.StoryTopicDetailPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.DetailPages.StoryTopicDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:StoryTopicDetailPageViewModel"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" x:Key="Cart"/>
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
+        <xct:ImageResource x:Key="Cart" Id="SachNoiTrucTuyen.Resources.Images.ic_cart.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <Grid HeightRequest="55">
-                <Frame HeightRequest="55"
-                   Padding="0"
-                   CornerRadius="0">
+                <Frame
+                    Padding="0"
+                    CornerRadius="0"
+                    HeightRequest="55">
                     <Grid>
-                        <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
+                        <Image
+                            Margin="15,10,15,10"
                             HeightRequest="20"
                             HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:GoBack}"/>
+                                <TapGestureRecognizer Command="{prism:GoBack}" />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="{Binding TitlePage}"
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
-
-                        </Label>
+                        <Label
+                            FontFamily="R"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="{Binding TitlePage}"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
                     </Grid>
                 </Frame>
             </Grid>
@@ -46,22 +47,23 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="md:Audio">
                         <StackLayout Spacing="0">
-                            <Frame HeightRequest="200"
-                                       Padding="0"
-                                       Margin="10,10,10,5"
-                                       CornerRadius="10">
-                                <Image Source="{Binding ImgAudio}"
-                                           Aspect="Fill"/>
+                            <Frame
+                                Margin="10,10,10,5"
+                                Padding="0"
+                                CornerRadius="10"
+                                HeightRequest="200">
+                                <Image Aspect="Fill" Source="{Binding ImgAudio}" />
                             </Frame>
-                            <Label Text="{Binding TitleAudio}"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="18"
-                                                   FontFamily="RBo"
-                                       TextColor="{StaticResource nameAudioColor}"/>
+                            <Label
+                                Margin="10,0,10,0"
+                                FontFamily="RBo"
+                                FontSize="18"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="2"
+                                Text="{Binding TitleAudio}"
+                                TextColor="{StaticResource nameAudioColor}" />
                             <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}"/>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceVideoPage', Animated=True, UseModalNavigation=True}" />
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                     </DataTemplate>

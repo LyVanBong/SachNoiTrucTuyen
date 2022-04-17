@@ -1,8 +1,4 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Mvvm;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
@@ -10,6 +6,7 @@ namespace SachNoiTrucTuyen.ViewModels
     {
         private string _username;
         private string _password;
+
         public string Username
         {
             get => _username;
@@ -26,6 +23,7 @@ namespace SachNoiTrucTuyen.ViewModels
                 SetProperty(ref _username, value);
             }
         }
+
         public string Password
         {
             get => _password;
@@ -42,15 +40,17 @@ namespace SachNoiTrucTuyen.ViewModels
                 SetProperty(ref _password, value);
             }
         }
+
         private bool _isEnabled;
+
         public bool IsEnabled
         {
             get => _isEnabled;
             set => SetProperty(ref _isEnabled, value);
         }
+
         public SignupPageViewModel()
         {
-
         }
     }
 }

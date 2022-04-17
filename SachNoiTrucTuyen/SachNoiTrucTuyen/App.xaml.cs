@@ -1,5 +1,4 @@
-﻿using Android.Content;
-using Prism;
+﻿using Prism;
 using Prism.Ioc;
 using SachNoiTrucTuyen.Models;
 using SachNoiTrucTuyen.ViewModels;
@@ -16,6 +15,7 @@ using Xamarin.Essentials;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
+
 [assembly: ExportFont("Roboto-Black.ttf", Alias = "RB")]
 [assembly: ExportFont("Roboto-BlackItalic.ttf", Alias = "RBI")]
 [assembly: ExportFont("Roboto-Bold.ttf", Alias = "RBo")]
@@ -28,6 +28,7 @@ using Xamarin.Forms;
 [assembly: ExportFont("Roboto-Regular.ttf", Alias = "R")]
 [assembly: ExportFont("Roboto-Thin.ttf", Alias = "RT")]
 [assembly: ExportFont("Roboto-ThinItalic.ttf", Alias = "RTI")]
+
 namespace SachNoiTrucTuyen
 {
     public partial class App
@@ -65,7 +66,6 @@ namespace SachNoiTrucTuyen
                         Date = DateTime.Now,
                         Content = "Rất vui được hợp tác với team :))))",
                         ReplyComment = new ObservableCollection<Comment>()
-
                     }
                     ,
                     new Comment()
@@ -88,7 +88,6 @@ namespace SachNoiTrucTuyen
                         Date = DateTime.Now,
                         Content = "Xúc động quá nè.........",
                         ReplyComment = new ObservableCollection<Comment>()
-
                     }
                 },
                 NumberLike = 82,
@@ -97,7 +96,6 @@ namespace SachNoiTrucTuyen
                 Avatar = "https://kenh14cdn.com/2019/5/6/e4-1556804137280996840619-15571599881272003882952.jpg",
                 Image = "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
                 Id = 1123
-
             },
             new Post()
             {
@@ -110,7 +108,7 @@ namespace SachNoiTrucTuyen
                 Choices = new ObservableCollection<ChooseItem>()
                 {
                     new ChooseItem()
-                    {   
+                    {
                         Status = 1124,
                         Name = "Kênh Youtube Người Nổi Tiếng",
                         Persent = 45,
@@ -171,7 +169,6 @@ namespace SachNoiTrucTuyen
                         Date = DateTime.Now,
                         Content = "Thú vị!",
                         ReplyComment = new ObservableCollection<Comment>()
-
                     }
                     ,
                     new Comment()
@@ -183,10 +180,7 @@ namespace SachNoiTrucTuyen
                         Date = DateTime.Now,
                         Content = "Sách hay quá!!!!",
                         ReplyComment = new ObservableCollection<Comment>()
-
                     }
-
-
                 },
                 NumberLike = 82,
                 Created = DateTime.Now,
@@ -195,7 +189,6 @@ namespace SachNoiTrucTuyen
                 Image = "https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0",
                 Id = 2125,
                 TypeItemInPost = 0
-
             },
             new Post()
             {
@@ -218,7 +211,6 @@ namespace SachNoiTrucTuyen
                         Date = DateTime.Now,
                         Content = "Xúc động quá nè.........",
                         ReplyComment = new ObservableCollection<Comment>()
-
                     },
                     new Comment()
                     {
@@ -235,6 +227,7 @@ namespace SachNoiTrucTuyen
                 TypeItemInPost = 1
             }
         };
+
         public static ObservableCollection<Book> Books = new ObservableCollection<Book>()
         {
             new Book()
@@ -243,85 +236,85 @@ namespace SachNoiTrucTuyen
                 TitleBook = "Bí quyết hạnh phúc của sư thầy",
                 AuthorBook = "Gelong Thubten"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/z8nsimy1av2zd42/hanh-dong-bang-suc-manh-20210412074657.jpg?dl=0",
                 TitleBook = "Hành động bằng sức mạnh",
                 AuthorBook = "Deborad Gruenfeld"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0",
                 TitleBook = "Hãy bắt tôi nếu có thể",
                 AuthorBook = "Frank Abagnale",
                 IsPremium = false
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/2n3vivoujq6thqg/loi-nguyen-cua-su-to-lon-20210412074657.jpg?dl=0",
                 TitleBook = "Lời nguyền của sự to lớn",
                 AuthorBook = "Tim Wu"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/lp9hmx94fif37ub/nha-lanh-dao-linh-hoat-20210412074657.jpg?dl=0",
                 TitleBook = "Nhà lãnh đạo linh hoạt",
                 AuthorBook = "Simon Hayward",
                 IsPremium = false
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/eg0kjss8oyrdzex/phuong-trinh-dai-so-cua-hanh-phuc-update-20210414083233.jpg?dl=0",
                 TitleBook = "Phương trình đại số của hạnh phúc",
                 AuthorBook = "Scott Galloway"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/275jjju11hrlsvx/suc-manh-cua-thoi-quen-20210412081444.jpg?dl=0",
                 TitleBook = "Súc mạnh của thói quen",
                 AuthorBook = "Charles Duhigg",
                 IsPremium = false
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/khidq2q6ihg2xa7/thai-do-phan-anh-kha-nang-lanh-dao-20210412081444.jpg?dl=0",
                 TitleBook = "Thái độ phản ánh khả năng lãnh đạo",
                 AuthorBook = "Leo Hamblin"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/w7fvqu685dn04zv/tham-hoa-chernobyl-20210412081444.jpg?dl=0",
                 TitleBook = "Thảm họa Chernobyl",
                 AuthorBook = "Serhii Plokhi"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/unairj46gyqen79/that-lung-buoc-bung-20210412081444.jpg?dl=0",
                 TitleBook = "Thắt lưng buộc bụng",
                 AuthorBook = "Alberto Alesina, Carlo Faverro, Francesco Giavazzi",
                 IsPremium = false
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/jah5t0jvxroii1s/thay-doi-de-thich-nghi-20210412081444.jpg?dl=0",
                 TitleBook = "Thay dổi để thích nghi",
                 AuthorBook = "Tim Harford"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/91hrpn5mmhyfdth/tieu-chuan-bitcoin-20210414083221.jpg?dl=0",
                 TitleBook = "Tiêu chuẩn Bitcoin",
                 AuthorBook = "Saifedean Ammous"
             },
-            new Book() 
+            new Book()
             {
                 ImgBook="https://dl.dropboxusercontent.com/s/a3cb9izjduksyx5/trieu-phu-moi-ngay-20210412081444.jpg?dl=00",
                 TitleBook = "Triệu phú mỗi ngày",
                 AuthorBook = "Cris Hogan",
                 IsPremium = false
             },
-
         };
+
         public static ObservableCollection<Audio> Storys = new ObservableCollection<Audio>()
         {
             new Audio()
@@ -367,6 +360,7 @@ namespace SachNoiTrucTuyen
                 IsFavoriteAudio = false
             }
         };
+
         public static ObservableCollection<Audio> Knowledges = new ObservableCollection<Audio>()
         {
             new Audio()
@@ -426,8 +420,8 @@ namespace SachNoiTrucTuyen
 
         public static ObservableCollection<Armorial> Armorials = new ObservableCollection<Armorial>()
         {
-            new Armorial() 
-            {   
+            new Armorial()
+            {
                 Id = 1,
                 Avatar = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_a_b.png"),
                 Name = "Huy hiệu đồng",
@@ -469,6 +463,7 @@ namespace SachNoiTrucTuyen
                 Contidion = "Quản trị viên ứng dụng sách tinh gọn"
             }
         };
+
         public static ObservableCollection<User> Users = new ObservableCollection<User>()
         {
             new User ()
@@ -483,7 +478,6 @@ namespace SachNoiTrucTuyen
                 AmountPost = 20,
                 ScoreInGame = 75,
                 ScoreOfGame = 100,
-
             },
             new User ()
             {
@@ -497,15 +491,14 @@ namespace SachNoiTrucTuyen
                 AmountPost = 20,
                 ScoreInGame = 75,
                 ScoreOfGame = 100,
-
             }
         };
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-           
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SplashScreenPage, SplashScreenPageViewModel>();
@@ -528,7 +521,7 @@ namespace SachNoiTrucTuyen
             containerRegistry.RegisterForNavigation<MailPage, MailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
             containerRegistry.RegisterForNavigation<ArmorialPage, ArmorialPageViewModel>();
-            containerRegistry.RegisterForNavigation<UserPage, UserPageViewModel >();
+            containerRegistry.RegisterForNavigation<UserPage, UserPageViewModel>();
             containerRegistry.RegisterForNavigation<FindUserPage, FindUserPageViewModel>();
             containerRegistry.RegisterForNavigation<PostCommentPage, PostCommentPageViewModel>();
             containerRegistry.RegisterForNavigation<BookDetailPage, BookDetailPageViewModel>();

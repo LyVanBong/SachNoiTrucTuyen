@@ -1,109 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.SocialManagerPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SettingChildPages.SocialManagerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                     
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Liên kết mạng xã hội"/>
+                                <Span Text="Liên kết mạng xã hội" />
                             </FormattedString>
                         </Label.FormattedText>
-
                     </Label>
                 </Grid>
             </Frame>
             <StackLayout Grid.Row="1">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_btn_fb.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_btn_fb.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label Text="Liên kết tài khoản Facebook"
-                       FontSize="16"
-                       HorizontalOptions="StartAndExpand"
-                       VerticalOptions="Center"
-                       Margin="10,13"/>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_showRight.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{prism:GoBack}"/>
-                    </Image.GestureRecognizers>
+                    <Label
+                        Margin="10,13"
+                        FontSize="16"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Liên kết tài khoản Facebook"
+                        VerticalOptions="Center" />
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_showRight.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
+                        </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
-                <BoxView HeightRequest="0.25" Background="Gray"/>
+                <BoxView Background="Gray" HeightRequest="0.25" />
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_btn_google.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_btn_google.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label Text="Test Bbyte"
-                       FontSize="16"
-                       HorizontalOptions="StartAndExpand"
-                       VerticalOptions="Center"
-                       Margin="10,13"/>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_showRight.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Label
+                        Margin="10,13"
+                        FontSize="16"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Test Bbyte"
+                        VerticalOptions="Center" />
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_s_showRight.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
-
             </StackLayout>
         </Grid>
     </ContentPage.Content>
-  
 </ContentPage>

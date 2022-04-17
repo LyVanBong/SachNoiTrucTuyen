@@ -1,90 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com" 
-             prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
-             x:DataType="viewmodels:ArmorialPageViewModel"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.ArmorialPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.ArmorialPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:ArmorialPageViewModel">
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label 
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Huy hiệu người dùng"/>
+                                <Span Text="Huy hiệu người dùng" />
                             </FormattedString>
                         </Label.FormattedText>
-
                     </Label>
                 </Grid>
             </Frame>
-            <ListView ItemsSource="{Binding Armorials}"
-                      Grid.Row="1"
-                      SelectionMode="None"
-                  HasUnevenRows="True"
-                  SeparatorVisibility="None">
+            <ListView
+                Grid.Row="1"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Armorials}"
+                SelectionMode="None"
+                SeparatorVisibility="None">
                 <ListView.Background>
-                    <LinearGradientBrush StartPoint="0,0"
-                                     EndPoint="1,1">
-                        <GradientStop Color="#97d9e1"
-                                  Offset="0.2"/>
-                        <GradientStop Color="#d9afd9"
-                                  Offset="0.75"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.2" Color="#97d9e1" />
+                        <GradientStop Offset="0.75" Color="#d9afd9" />
                     </LinearGradientBrush>
                 </ListView.Background>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="md:Armorial">
                         <ViewCell>
                             <Grid>
-                                <Frame Margin="10"
-                                   CornerRadius="10"
-                                   Padding="20"
-                                   HasShadow="False"
-                                   BackgroundColor="#50FFFFFF">
+                                <Frame
+                                    Margin="10"
+                                    Padding="20"
+                                    BackgroundColor="#50FFFFFF"
+                                    CornerRadius="10"
+                                    HasShadow="False">
                                     <Grid ColumnDefinitions="2.5*,4*">
-                                        <Frame Grid.Column="0"
-                                           WidthRequest="50"
-                                           HeightRequest="50"
-                                           CornerRadius="20"
-                                           HasShadow="False"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center">
-                                            <Image Source="{Binding Avatar}"/>
+                                        <Frame
+                                            Grid.Column="0"
+                                            CornerRadius="20"
+                                            HasShadow="False"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            WidthRequest="50">
+                                            <Image Source="{Binding Avatar}" />
                                         </Frame>
-                                        <StackLayout Grid.Column="1"
-                                                 VerticalOptions="Center">
-                                            <Label Text="{Binding Name}"
-                                               FontSize="16"
-                                               FontFamily="RBo"
-                                               TextColor="{StaticResource nameBookColor}"/>
-                                            <Label Text="{Binding Contidion}"
-                                               FontSize="16"
-                                               FontFamily="R"
-                                               TextColor="{StaticResource nameBookColor}"/>
+                                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                            <Label
+                                                FontFamily="RBo"
+                                                FontSize="16"
+                                                Text="{Binding Name}"
+                                                TextColor="{StaticResource nameBookColor}" />
+                                            <Label
+                                                FontFamily="R"
+                                                FontSize="16"
+                                                Text="{Binding Contidion}"
+                                                TextColor="{StaticResource nameBookColor}" />
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

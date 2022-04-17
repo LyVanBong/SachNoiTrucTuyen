@@ -1,80 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.MailPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.MailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            
-            
+
             <Grid VerticalOptions="StartAndExpand">
                 <StackLayout BackgroundColor="{StaticResource placeHolderColor}">
-                    <Label Text="Bạn hãy để lại lời nhắn bên dưới, hoạc chat qua messenger của Sách Tinh Gọn."
-                           FontSize="18"
-                           FontFamily="R"
-                           HorizontalTextAlignment="Center"
-                           Margin="10">
-                        
-                    </Label>
-                    <Frame HorizontalOptions="Center"
-                           Padding="0"
-                           WidthRequest="220"
-                           HeightRequest="50"
-                           HasShadow="False"
-                           CornerRadius="10"
-                           Margin="0,0,0,20">
+                    <Label
+                        Margin="10"
+                        FontFamily="R"
+                        FontSize="18"
+                        HorizontalTextAlignment="Center"
+                        Text="Bạn hãy để lại lời nhắn bên dưới, hoạc chat qua messenger của Sách Tinh Gọn." />
+                    <Frame
+                        Margin="0,0,0,20"
+                        Padding="0"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        WidthRequest="220">
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_messenger.png}"
-                                    VerticalOptions="Center"
-                                    WidthRequest="30"
-                                    HeightRequest="30"
-                                    HorizontalOptions="Start"
-                                    Margin="15,7.5,5,10"
-                                    >
-                            </Image>
-                            <Label Text="Chat qua messenger"
-                                   FontSize="16"
-                                   VerticalOptions="Center"
-                                   TextColor="Black"
-                                   FontFamily="RBo"/>
+                            <Image
+                                Margin="15,7.5,5,10"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_messenger.png}"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                            <Label
+                                FontFamily="RBo"
+                                FontSize="16"
+                                Text="Chat qua messenger"
+                                TextColor="Black"
+                                VerticalOptions="Center" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
             </Grid>
-            <Frame HeightRequest="65"
-                   BackgroundColor="{StaticResource primaryColor}"
-                   Padding="0"
-                   CornerRadius="0">
+            <Frame
+                Padding="0"
+                BackgroundColor="{StaticResource primaryColor}"
+                CornerRadius="0"
+                HeightRequest="65">
                 <StackLayout Orientation="Horizontal">
-                    <Frame Margin="10"
-                           HorizontalOptions="FillAndExpand"
-                           Padding="0"
-                           HeightRequest="40"
-                           HasShadow="False"
-                           CornerRadius="20">
-                        <customViews:CustomEntry Placeholder="Nhập nội dung..."
-                                                 FontSize="16"
-                                                 VerticalOptions="Center"
-                                                 Margin="15,0,0,0">
-                            
-                        </customViews:CustomEntry>
+                    <Frame
+                        Margin="10"
+                        Padding="0"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand">
+                        <customViews:CustomEntry
+                            Margin="15,0,0,0"
+                            FontSize="16"
+                            Placeholder="Nhập nội dung..."
+                            VerticalOptions="Center" />
                     </Frame>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_send.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            HorizontalOptions="End"
-                            Margin="0,10,15,10"
-                            >
-                    </Image>
+                    <Image
+                        Margin="0,10,15,10"
+                        HeightRequest="30"
+                        HorizontalOptions="End"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_send.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="30" />
                 </StackLayout>
             </Frame>
-           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

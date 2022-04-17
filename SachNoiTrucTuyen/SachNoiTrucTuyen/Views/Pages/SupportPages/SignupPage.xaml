@@ -1,167 +1,166 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:SignupPageViewModel"
-             x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.SignupPage">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.SupportPages.SignupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:SignupPageViewModel"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <Grid HeightRequest="55">
-                <Frame HeightRequest="55"
-                   Padding="0"
-                   CornerRadius="0">
+                <Frame
+                    Padding="0"
+                    CornerRadius="0"
+                    HeightRequest="55">
                     <Grid>
-                        <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
+                        <Image
+                            Margin="15,10,15,10"
                             HeightRequest="20"
                             HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                            Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                            VerticalOptions="Center"
+                            WidthRequest="20">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:GoBack}"/>
+                                <TapGestureRecognizer Command="{prism:GoBack}" />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="Đăng ký"
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
-
-                        </Label>
+                        <Label
+                            FontFamily="R"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Đăng ký"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
                     </Grid>
                 </Frame>
             </Grid>
             <StackLayout Margin="0,50,0,0">
-                <Label Text="ĐĂNG KÝ TÀI KHOẢN MỚI"
-                   HorizontalOptions="Center"
-                   FontSize="22"
-                   FontFamily="RBo"
-                   TextColor="{StaticResource tabBarColor}">
-
-                </Label>
-                <Grid ColumnDefinitions="30,*"
-                      RowDefinitions="Auto,Auto,Auto,Auto"
-                      RowSpacing="10"
-                      Margin="0,50,0,0">
-                    <Label Text="*"
-                           Grid.Row="0"
-                           Grid.Column="0"
-                           HorizontalOptions="End"
-                           FontSize="22"
-                           VerticalOptions="Center"
-                           FontFamily="RBo"
-                           TextColor="Red">
-                    </Label>
-                    <Frame Padding="0"
-                           Grid.Row="0"
-                           Grid.Column="1"
-                       CornerRadius="40"
-                       HasShadow="False"
-                           Margin="0,0,30,0"
-                       BackgroundColor="{StaticResource placeHolderColor}">
-                        <customViews:CustomEntry 
-                                             Placeholder="Tên đăng nhập"
-                            Text="{Binding Username}"
+                <Label
+                    FontFamily="RBo"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    Text="ĐĂNG KÝ TÀI KHOẢN MỚI"
+                    TextColor="{StaticResource tabBarColor}" />
+                <Grid
+                    Margin="0,50,0,0"
+                    ColumnDefinitions="30,*"
+                    RowDefinitions="Auto,Auto,Auto,Auto"
+                    RowSpacing="10">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontFamily="RBo"
+                        FontSize="22"
+                        HorizontalOptions="End"
+                        Text="*"
+                        TextColor="Red"
+                        VerticalOptions="Center" />
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,30,0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeHolderColor}"
+                        CornerRadius="40"
+                        HasShadow="False">
+                        <customViews:CustomEntry
+                            Margin="20,3"
                             FontFamily="R"
-                                             Margin="20,3">
-
-                        </customViews:CustomEntry>
+                            Placeholder="Tên đăng nhập"
+                            Text="{Binding Username}" />
                     </Frame>
-                    <Label Text="*"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           HorizontalOptions="End"
-                           FontSize="22"
-                           VerticalOptions="Center"
-                           FontFamily="RBo"
-                           TextColor="Red">
-                    </Label>
-                    <Frame Padding="0"
-                           Grid.Row="1"
-                           Grid.Column="1"
-                       CornerRadius="40"
-                       HasShadow="False"
-                           Margin="0,0,30,0"
-                       BackgroundColor="{StaticResource placeHolderColor}">
-                        <customViews:CustomEntry 
-                                             Placeholder="Mật khẩu"
-                            Text="{Binding Password}"
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontFamily="RBo"
+                        FontSize="22"
+                        HorizontalOptions="End"
+                        Text="*"
+                        TextColor="Red"
+                        VerticalOptions="Center" />
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,30,0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeHolderColor}"
+                        CornerRadius="40"
+                        HasShadow="False">
+                        <customViews:CustomEntry
+                            Margin="20,3"
                             FontFamily="R"
-                                             Margin="20,3">
-
-                        </customViews:CustomEntry>
+                            Placeholder="Mật khẩu"
+                            Text="{Binding Password}" />
                     </Frame>
-                    <Frame Padding="0"
-                           Grid.Row="2"
-                           Grid.Column="1"
-                       CornerRadius="40"
-                       HasShadow="False"
-                           Margin="0,0,30,0"
-                       BackgroundColor="{StaticResource placeHolderColor}">
-                        <customViews:CustomEntry 
-                                             Placeholder="Email"
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,0,30,0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeHolderColor}"
+                        CornerRadius="40"
+                        HasShadow="False">
+                        <customViews:CustomEntry
+                            Margin="20,3"
+                            FontFamily="R"
                             Keyboard="Email"
-                            FontFamily="R"
-                                             Margin="20,3">
-
-                        </customViews:CustomEntry>
+                            Placeholder="Email" />
                     </Frame>
-                    <Frame Padding="0"
-                           Grid.Row="3"
-                           Grid.Column="1"
-                       CornerRadius="40"
-                       HasShadow="False"
-                           Margin="0,0,30,0"
-                       BackgroundColor="{StaticResource placeHolderColor}">
-                        <customViews:CustomEntry 
-                                             Placeholder="Điện thoại"
-                            Keyboard="Numeric"
+                    <Frame
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="0,0,30,0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeHolderColor}"
+                        CornerRadius="40"
+                        HasShadow="False">
+                        <customViews:CustomEntry
+                            Margin="20,3"
                             FontFamily="R"
-                                             Margin="20,3">
-
-                        </customViews:CustomEntry>
+                            Keyboard="Numeric"
+                            Placeholder="Điện thoại" />
                     </Frame>
                 </Grid>
-                
             </StackLayout>
-            <Frame Padding="0"
-                           Grid.Row="3"
-                           Grid.Column="1"
-                       CornerRadius="40"
-                   HeightRequest="53"
-                       HasShadow="False"
-                   IsEnabled="{Binding IsEnabled}"
-                   x:Name="frbtnSignup"
-                           Margin="35,10,30,0"
-                       BackgroundColor="{StaticResource plpColor}">
+            <Frame
+                x:Name="frbtnSignup"
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="35,10,30,0"
+                Padding="0"
+                BackgroundColor="{StaticResource plpColor}"
+                CornerRadius="40"
+                HasShadow="False"
+                HeightRequest="53"
+                IsEnabled="{Binding IsEnabled}">
                 <Label
-                                             Text="Đăng ký"
-                            FontFamily="RBo"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
+                    Margin="20,3"
+                    FontFamily="RBo"
                     FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Đăng ký"
                     TextColor="{StaticResource disableButtonColor}"
-                    
-                                             Margin="20,3">
+                    VerticalOptions="Center">
                     <Label.Triggers>
-                        <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference frbtnSignup}, Path=IsEnabled}" Value="True">
-                            <Setter Property="TextColor" Value="{StaticResource bgColor}"/>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference frbtnSignup}, Path=IsEnabled}"
+                            TargetType="Label"
+                            Value="True">
+                            <Setter Property="TextColor" Value="{StaticResource bgColor}" />
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>
                 <Frame.Triggers>
                     <Trigger TargetType="Frame" Property="IsEnabled" Value="True">
-                        <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                        <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                     </Trigger>
                 </Frame.Triggers>
             </Frame>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

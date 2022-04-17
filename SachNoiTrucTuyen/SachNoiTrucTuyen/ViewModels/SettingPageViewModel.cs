@@ -1,26 +1,23 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
 using SachNoiTrucTuyen.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
     public class SettingPageViewModel : BindableBase
-    {   
+    {
         public ObservableCollection<SettingItem> SettingUserItems { get; set; }
         public ObservableCollection<SettingItem> SettingAppItems { get; set; }
         private bool _isUserLogin = false;
+
         public bool IsUserLogin
         {
             get => _isUserLogin;
             set => SetProperty(ref _isUserLogin, value);
         }
+
         public SettingPageViewModel(INavigationService navigation)
         {
             SettingUserItems = new ObservableCollection<SettingItem>()
@@ -44,7 +41,6 @@ namespace SachNoiTrucTuyen.ViewModels
                 new SettingItem(navigation) {Type = 1,Name = "Chính sách bảo mật", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_doc_2.png"), NavigationPage = ""},
                 new SettingItem(navigation) {Type = 2,Name = "Phiên bản", Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_s_set.png"), SubName = "2.0",ShowMoreIsVisible = false},
             };
-                  
         }
     }
 }

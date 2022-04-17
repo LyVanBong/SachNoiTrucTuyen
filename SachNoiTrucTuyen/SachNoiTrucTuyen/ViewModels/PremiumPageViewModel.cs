@@ -1,10 +1,7 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using SachNoiTrucTuyen.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using Xamarin.Forms;
 
 namespace SachNoiTrucTuyen.ViewModels
@@ -13,23 +10,28 @@ namespace SachNoiTrucTuyen.ViewModels
     {
         public ObservableCollection<ItemWelcomePage> ItemPremiumPages { get; set; }
         private int _position = 0;
+
         public int Position
         {
             get { return _position; }
             set { SetProperty(ref _position, value); }
         }
+
         public string[] Descriptions = new string[]
         {
             "7 ngày đầu tiên dùng thử miễn phí, sau đó bạn sẽ bị tính phí 99.000 đ mỗi tháng",
             "7 ngày đầu tiên dùng thử miễn phí, sau đó bạn sẽ bị tính phí 249.000 đ mỗi 3 tháng",
             "7 ngày đầu tiên dùng thử miễn phí, sau đó bạn sẽ bị tính phí 699.000 đ mỗi năm"
         };
+
         private string _descripton = "7 ngày đầu tiên dùng thử miễn phí, sau đó bạn sẽ bị tính phí 99.000 đ mỗi tháng";
+
         public string Description
         {
             get => _descripton;
             set => SetProperty(ref _descripton, value);
         }
+
         public PremiumPageViewModel()
         {
             ItemPremiumPages = new ObservableCollection<ItemWelcomePage>()
@@ -39,7 +41,6 @@ namespace SachNoiTrucTuyen.ViewModels
                     Title = "Nâng cấp PREMIUM",
                     SubTitle = "Nghe và đọc tất cả nội dung",
                     Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_p_1.png"),
-                  
                 }
                 ,
                 new ItemWelcomePage()
@@ -54,8 +55,6 @@ namespace SachNoiTrucTuyen.ViewModels
                     Title = "Cộng đồng",
                     SubTitle = "Viết cảm nhận và tương tác với cộng đồng người yêu sách",
                     Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_p_3.png"),
-                   
-
                 }
                 ,
                 new ItemWelcomePage()
@@ -63,8 +62,6 @@ namespace SachNoiTrucTuyen.ViewModels
                     Title = "No Ads",
                     SubTitle = "Không còn quảng cáo",
                     Image = ImageSource.FromResource("SachNoiTrucTuyen.Resources.Images.ic_p_4.png"),
-
-
                 }
                 ,
                 new ItemWelcomePage()
@@ -81,11 +78,10 @@ namespace SachNoiTrucTuyen.ViewModels
                 return true;
             });
 
-
             RadioCheckedCommand = new Command((x) =>
             {
                 var btn = x as RadioButton;
-                switch(btn.ClassId)
+                switch (btn.ClassId)
                 {
                     case "rd99": Description = Descriptions[0]; break;
                     case "rd249": Description = Descriptions[1]; break;
@@ -93,6 +89,7 @@ namespace SachNoiTrucTuyen.ViewModels
                 }
             });
         }
+
         public Command RadioCheckedCommand { get; set; }
     }
 }

@@ -1,9 +1,5 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -13,9 +9,10 @@ namespace SachNoiTrucTuyen.ViewModels
     {
         private string _username;
         private string _password;
+
         public string Username
         {
-           get => _username;
+            get => _username;
             set
             {
                 if (!string.IsNullOrEmpty(value) && !string.IsNullOrEmpty(Password))
@@ -29,10 +26,12 @@ namespace SachNoiTrucTuyen.ViewModels
                 SetProperty(ref _username, value);
             }
         }
+
         public string Password
         {
             get => _password;
-            set  {
+            set
+            {
                 if (!string.IsNullOrEmpty(value) && !string.IsNullOrEmpty(Username))
                 {
                     IsEnabled = true;
@@ -41,20 +40,26 @@ namespace SachNoiTrucTuyen.ViewModels
                 {
                     IsEnabled = false;
                 }
-                SetProperty(ref _password, value); }
+                SetProperty(ref _password, value);
+            }
         }
+
         private bool _isFocused;
+
         public bool IsFocused
         {
             get => _isFocused;
             set => SetProperty(ref _isFocused, value);
         }
+
         private bool _isEnabled;
+
         public bool IsEnabled
         {
             get => _isEnabled;
             set => SetProperty(ref _isEnabled, value);
         }
+
         public LoginPageViewModel(INavigationService navigationService)
         {
             LoginCommand = new Command(() =>
@@ -64,6 +69,7 @@ namespace SachNoiTrucTuyen.ViewModels
                 navigationService.NavigateAsync("NavigationPage/MainPage", null, true, true);
             });
         }
+
         public Command LoginCommand { get; set; }
     }
 }

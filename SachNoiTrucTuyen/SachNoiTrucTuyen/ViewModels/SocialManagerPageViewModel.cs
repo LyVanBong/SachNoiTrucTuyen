@@ -1,8 +1,4 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Mvvm;
 
 namespace SachNoiTrucTuyen.ViewModels
 {
@@ -10,8 +6,6 @@ namespace SachNoiTrucTuyen.ViewModels
     {
         public SocialManagerPageViewModel()
         {
-
         }
     }
 }
-

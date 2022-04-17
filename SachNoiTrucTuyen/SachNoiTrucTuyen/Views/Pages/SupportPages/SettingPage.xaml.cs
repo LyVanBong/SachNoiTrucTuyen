@@ -6,12 +6,14 @@ namespace SachNoiTrucTuyen.Views.Pages.SupportPages
 {
     public partial class SettingPage : ContentPage
     {
-        SettingPageViewModel vm;
+        private SettingPageViewModel vm;
+
         public SettingPage()
         {
             InitializeComponent();
-            vm= BindingContext as SettingPageViewModel;
+            vm = BindingContext as SettingPageViewModel;
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();

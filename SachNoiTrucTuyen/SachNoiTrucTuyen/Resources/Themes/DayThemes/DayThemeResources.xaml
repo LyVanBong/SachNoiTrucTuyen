@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Color x:Key="bgColor">White</Color>
     <Color x:Key="primaryColor">#7963EC</Color>
     <Color x:Key="plpColor">#897963EC</Color>
@@ -13,15 +12,10 @@
     <Color x:Key="welcomeTitleColor">#DD2388</Color>
     <Color x:Key="subTitleColor">#F0F0F0</Color>
     <Color x:Key="placeHolderColor2">#DEDEDE</Color>
-    <LinearGradientBrush x:Key="gradientColor" StartPoint="0,0"
-                     EndPoint="1,1">
-        <GradientStop Color="Yellow"
-                  Offset="0.0" />
-        <GradientStop Color="Red"
-                  Offset="0.25" />
-        <GradientStop Color="Blue"
-                  Offset="0.75" />
-        <GradientStop Color="LimeGreen"
-                  Offset="1.0" />
+    <LinearGradientBrush x:Key="gradientColor" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Offset="0.0" Color="Yellow" />
+        <GradientStop Offset="0.25" Color="Red" />
+        <GradientStop Offset="0.75" Color="Blue" />
+        <GradientStop Offset="1.0" Color="LimeGreen" />
     </LinearGradientBrush>
 </ResourceDictionary>

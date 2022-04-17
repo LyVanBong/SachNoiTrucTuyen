@@ -1,11 +1,7 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
 using SachNoiTrucTuyen.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using Xamarin.Forms;
 
 namespace SachNoiTrucTuyen.ViewModels
@@ -13,6 +9,7 @@ namespace SachNoiTrucTuyen.ViewModels
     public class FeelingPageViewModel : BindableBase
     {
         public ObservableCollection<Post> Feelings { get; set; }
+
         public FeelingPageViewModel(INavigationService navigation)
         {
             Feelings = App.Posts;
@@ -42,6 +39,7 @@ namespace SachNoiTrucTuyen.ViewModels
                 navigation.NavigateAsync("NavigationPage/UserPage", new NavigationParameters() { { "UserId", post.UserId } }, true, true);
             });
         }
+
         public Command PostClickCommand { get; set; }
         public Command ShowMoreCommand { get; set; }
         public Command SwitchToUserCommand { get; set; }

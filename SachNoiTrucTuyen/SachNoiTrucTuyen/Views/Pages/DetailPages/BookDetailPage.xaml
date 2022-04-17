@@ -1,265 +1,282 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SachNoiTrucTuyen.Views.Pages.DetailPages.BookDetailPage"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
-             xmlns:md="clr-namespace:SachNoiTrucTuyen.Models" xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels" x:DataType="viewmodels:BookDetailPageViewModel">
+<ContentPage
+    x:Class="SachNoiTrucTuyen.Views.Pages.DetailPages.BookDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:SachNoiTrucTuyen.Views.CustomView"
+    xmlns:md="clr-namespace:SachNoiTrucTuyen.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:SachNoiTrucTuyen.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:BookDetailPageViewModel"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_play_2.png" x:Key="Play"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_document.png" x:Key="Document"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" x:Key="Premium"/>
-        <xct:ImageResource Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment.png" x:Key="Heart"/>
+        <xct:ImageResource x:Key="Play" Id="SachNoiTrucTuyen.Resources.Images.ic_play_2.png" />
+        <xct:ImageResource x:Key="Document" Id="SachNoiTrucTuyen.Resources.Images.ic_document.png" />
+        <xct:ImageResource x:Key="Premium" Id="SachNoiTrucTuyen.Resources.Images.ic_premium.png" />
+        <xct:ImageResource x:Key="Heart" Id="SachNoiTrucTuyen.Resources.Images.ic_heart_comment.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="55,*"
-              RowSpacing="0">
-            <Frame HeightRequest="55"
-                   Padding="0"
-                   Grid.Row="0"
-                   CornerRadius="0">
+        <Grid RowDefinitions="55,*" RowSpacing="0">
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                CornerRadius="0"
+                HeightRequest="55">
                 <Grid>
-                    <Image Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
-                            VerticalOptions="Center"
-                            WidthRequest="20"
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Margin="15,10,15,10"
-                            >
+                    <Image
+                        Margin="15,10,15,10"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="{xct:ImageResource Id=SachNoiTrucTuyen.Resources.Images.ic_down.png}"
+                        VerticalOptions="Center"
+                        WidthRequest="20">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:GoBack}"/>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label Text="Hãy bắt tôi nếu bạn có thể"
-                           HorizontalOptions="Center"
-                           FontFamily="R"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontSize="16">
-
-                    </Label>
+                    <Label
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Text="Hãy bắt tôi nếu bạn có thể"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
                 </Grid>
             </Frame>
             <ScrollView Grid.Row="1">
                 <StackLayout>
-                    <Grid WidthRequest="160"
-                          HorizontalOptions="Center">
+                    <Grid HorizontalOptions="Center" WidthRequest="160">
                         <StackLayout>
-                            <Image Source="https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0"
-                            Aspect="AspectFill"
-                            HeightRequest="210"
-                            WidthRequest="140" 
-                            HorizontalOptions="Center"
-                            Margin="10"
-                            xct:CornerRadiusEffect.CornerRadius="5"
-                            xct:ShadowEffect.Color="Gray"
-                            xct:ShadowEffect.OffsetX="4"
-                            xct:ShadowEffect.OffsetY="6"
-                            xct:ShadowEffect.Opacity="1.5"
-                            xct:ShadowEffect.Radius="5"
-                            />
+                            <Image
+                                Margin="10"
+                                xct:CornerRadiusEffect.CornerRadius="5"
+                                xct:ShadowEffect.Color="Gray"
+                                xct:ShadowEffect.OffsetX="4"
+                                xct:ShadowEffect.OffsetY="6"
+                                xct:ShadowEffect.Opacity="1.5"
+                                xct:ShadowEffect.Radius="5"
+                                Aspect="AspectFill"
+                                HeightRequest="210"
+                                HorizontalOptions="Center"
+                                Source="https://dl.dropboxusercontent.com/s/4596m7cvp4ybj5u/hay-bat-toi-neu-ban-co-the-20210412074657.jpg?dl=0"
+                                WidthRequest="140" />
                         </StackLayout>
-                        <Image Source="{StaticResource Premium}"
-                                               WidthRequest="20"
-                                               HeightRequest="20"
-                                               HorizontalOptions="End"
-                                               VerticalOptions="Start"
-                                               Margin="15,10"
-                                               IsVisible="True"/>
+                        <Image
+                            Margin="15,10"
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            IsVisible="True"
+                            Source="{StaticResource Premium}"
+                            VerticalOptions="Start"
+                            WidthRequest="20" />
                     </Grid>
-                    <Label Text="Hãy bắt tôi nếu bạn có thể"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="16"
-                                                   FontFamily="RB"
-                            HorizontalOptions="Center"
-                                                    TextColor="{StaticResource nameBookColor}"/>
-                    <Label MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"
-                           HorizontalOptions="Center">
+                    <Label
+                        Margin="10,0,10,0"
+                        FontFamily="RB"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2"
+                        Text="Hãy bắt tôi nếu bạn có thể"
+                        TextColor="{StaticResource nameBookColor}" />
+                    <Label
+                        Margin="10,0,10,0"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Tác giả: "/>
-                                <Span Text="Frank Abagnale"/>
+                                <Span Text="Tác giả: " />
+                                <Span Text="Frank Abagnale" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    
-                    <Label MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"
-                           HorizontalOptions="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Giọng đọc: "/>
-                                <Span Text="Hồng Thắm"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center">
-                        <Image Source="{StaticResource Heart}"
-                               WidthRequest="30"
-                               HeightRequest="30"/>
 
-                        <Label Margin="5,10,10,10"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="18"
-                                                   FontFamily="R"
-                               Text="XEM CẢM NHẬN"
-                               TextColor="{StaticResource tabBarColor}"
-                               VerticalOptions="Center"/>
+                    <Label
+                        Margin="10,0,10,0"
+                        FontFamily="R"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Giọng đọc: " />
+                                <Span Text="Hồng Thắm" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                        <Image
+                            HeightRequest="30"
+                            Source="{StaticResource Heart}"
+                            WidthRequest="30" />
+
+                        <Label
+                            Margin="5,10,10,10"
+                            FontFamily="R"
+                            FontSize="18"
+                            LineBreakMode="TailTruncation"
+                            Text="XEM CẢM NHẬN"
+                            TextColor="{StaticResource tabBarColor}"
+                            VerticalOptions="Center" />
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FeelingPage',Animated=True, UseModalNavigation=True}"/>
+                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/FeelingPage', Animated=True, UseModalNavigation=True}" />
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
-                    <Grid ColumnDefinitions="*,*"
-                          Margin="10">
-                        <Frame BackgroundColor="{StaticResource tabBarColor}"
-                               HeightRequest="45"
-                               CornerRadius="15"
-                               Grid.Column="0"
-                               Padding="0"
-                               HasShadow="False">
-                            <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center">
-                                <Image Source="{StaticResource Document}"
-                               WidthRequest="20"
-                               HeightRequest="20"/>
+                    <Grid Margin="10" ColumnDefinitions="*,*">
+                        <Frame
+                            Grid.Column="0"
+                            Padding="0"
+                            BackgroundColor="{StaticResource tabBarColor}"
+                            CornerRadius="15"
+                            HasShadow="False"
+                            HeightRequest="45">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Image
+                                    HeightRequest="20"
+                                    Source="{StaticResource Document}"
+                                    WidthRequest="20" />
 
-                                <Label Margin="0,10,10,10"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"
-                               Text="ĐỌC"
-                               TextColor="{StaticResource bgColor}"
-                               VerticalOptions="Center"/>
+                                <Label
+                                    Margin="0,10,10,10"
+                                    FontFamily="R"
+                                    FontSize="16"
+                                    LineBreakMode="TailTruncation"
+                                    Text="ĐỌC"
+                                    TextColor="{StaticResource bgColor}"
+                                    VerticalOptions="Center" />
                             </StackLayout>
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/ReadBookPage', Animated=True, UseModalNavigation=True}"/>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/ReadBookPage', Animated=True, UseModalNavigation=True}" />
                             </Frame.GestureRecognizers>
                         </Frame>
-                        <Frame BackgroundColor="{StaticResource tabBarColor}"
-                               HeightRequest="45"
-                               CornerRadius="15"
-                               Grid.Column="1"
-                               Padding="0"
-                               HasShadow="False">
-                            <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="Center">
-                                <Image Source="{StaticResource Play}"
-                               WidthRequest="20"
-                               HeightRequest="20"/>
+                        <Frame
+                            Grid.Column="1"
+                            Padding="0"
+                            BackgroundColor="{StaticResource tabBarColor}"
+                            CornerRadius="15"
+                            HasShadow="False"
+                            HeightRequest="45">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Image
+                                    HeightRequest="20"
+                                    Source="{StaticResource Play}"
+                                    WidthRequest="20" />
 
-                                <Label Margin="0,10,10,10"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"
-                               Text="NGHE"
-                               TextColor="{StaticResource bgColor}"
-                               VerticalOptions="Center"/>
+                                <Label
+                                    Margin="0,10,10,10"
+                                    FontFamily="R"
+                                    FontSize="16"
+                                    LineBreakMode="TailTruncation"
+                                    Text="NGHE"
+                                    TextColor="{StaticResource bgColor}"
+                                    VerticalOptions="Center" />
                             </StackLayout>
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceBookPage', Animated=True, UseModalNavigation=True}"/>
+                                <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/VoiceBookPage', Animated=True, UseModalNavigation=True}" />
                             </Frame.GestureRecognizers>
                         </Frame>
                     </Grid>
-                    
-                        <Label Margin="10,5"
-                           Text="Quyến sách này nói về điều gì?"
-                           FontFamily="RBo" 
-                           TextColor="{StaticResource nameBookColor}"
-                           FontSize="16"/>
-                    <customViews:CustomLabel Margin="10,0"
-                                             Text="-  Cuốn sách kể về câu chuyện của chính tác giả - Frank Abagnale khi ông thực hiện các vụ lừa đảo huyền thoại như làm chi phiếu giả để rút vài triệu đô la, các lân mạo danh, những cuộc tẩu thoát ngoạn mục, ... Các nhân viên FBI lúc bấy giờ đã quyết tâm bắt cho bằng được Frank để đưa ra xét xử, nhưng băng trí thông minh của mình Frank đã đóng giả thành phi công, luật sư và thậm chí là giáo sư để nhanh chân tẩu thoát. Cuốn sách 'Hãy Bắt Tôi Nếu Bạn Có Thể' (xuất bản năm 1980) kể vê cuộc săn đuổi ly kỳ và hấp dẫn giữa FBI với chính bản thân tác giả."
-                                             FontFamily="R" 
-                                             LineBreakMode="TailTruncation"
-                                             MaxLines="5"
-                                             TextColor="{StaticResource nameBookColor}"
-                                             FontSize="16">
+
+                    <Label
+                        Margin="10,5"
+                        FontFamily="RBo"
+                        FontSize="16"
+                        Text="Quyến sách này nói về điều gì?"
+                        TextColor="{StaticResource nameBookColor}" />
+                    <customViews:CustomLabel
+                        Margin="10,0"
+                        FontFamily="R"
+                        FontSize="16"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="5"
+                        Text="-  Cuốn sách kể về câu chuyện của chính tác giả - Frank Abagnale khi ông thực hiện các vụ lừa đảo huyền thoại như làm chi phiếu giả để rút vài triệu đô la, các lân mạo danh, những cuộc tẩu thoát ngoạn mục, ... Các nhân viên FBI lúc bấy giờ đã quyết tâm bắt cho bằng được Frank để đưa ra xét xử, nhưng băng trí thông minh của mình Frank đã đóng giả thành phi công, luật sư và thậm chí là giáo sư để nhanh chân tẩu thoát. Cuốn sách 'Hãy Bắt Tôi Nếu Bạn Có Thể' (xuất bản năm 1980) kể vê cuộc săn đuổi ly kỳ và hấp dẫn giữa FBI với chính bản thân tác giả."
+                        TextColor="{StaticResource nameBookColor}">
                         <customViews:CustomLabel.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding ShowMore}" Value="True">
-                                <Setter Property="LineBreakMode" Value="WordWrap"/>
-                                <Setter Property="MaxLines" Value="20"/>
+                            <DataTrigger
+                                Binding="{Binding ShowMore}"
+                                TargetType="Label"
+                                Value="True">
+                                <Setter Property="LineBreakMode" Value="WordWrap" />
+                                <Setter Property="MaxLines" Value="20" />
                             </DataTrigger>
                         </customViews:CustomLabel.Triggers>
                     </customViews:CustomLabel>
-                     
+
                     <StackLayout IsVisible="{Binding ShowMore}">
-                        <Label Margin="10,5"
-                           Text="Quyến sách này dành cho ai?"
-                           FontFamily="RBo" 
-                           TextColor="{StaticResource nameBookColor}"
-                           FontSize="16"/>
-                        <customViews:CustomLabel Margin="10,0"
-                                                 Text="° Những ai thích đọc sách thể loại trinh thám,tội phạm &#10; ° Giao dịch viên ngân hàng hoặc nhân viên ngành hàng không &#10; ° Người hâm mộ của bộ phim truyên hình đã được chuyển thể từ câu chuyện ly kỳ này. "
-                                                 TextColor="{StaticResource nameBookColor}"
-                                                 FontSize="16"/>
-                        <Label Margin="10,5"
-                           Text="Về tác giả"
-                           FontFamily="RBo" 
-                           TextColor="{StaticResource nameBookColor}"
-                           FontSize="16"/>
-                        <customViews:CustomLabel Margin="10,0"
-                                                 Text="Frank Abagnale từng là một nhân vật huyên thoại trong giới tội phạm lừa đảo, hiện đang là một nhà cố vấn an ninh chuyên nghiệp và cũng là giảng viên tại Cục Điêu Tra Tội phạm Tài chính Liên bang Mỹ. Đồng thời, ông cũng điêu hành công ty tư vấn chống lừa đảo tài chính Abagnale và Associates."
-                                                 TextColor="{StaticResource nameBookColor}"
-                                                 FontSize="16"/>
-                    </StackLayout>
-                    <Button HeightRequest="40"
-                            HorizontalOptions="Center"
-                            Margin="10"
-                            Text="Xem thêm"
-                            FontFamily="R"
-                            Padding="20,5"
+                        <Label
+                            Margin="10,5"
+                            FontFamily="RBo"
                             FontSize="16"
-                            Command="{Binding ShowMoreCommand}"
-                            BackgroundColor="{StaticResource placeHolderColor}"
-                            CornerRadius="15"
-                            TextTransform="None">
+                            Text="Quyến sách này dành cho ai?"
+                            TextColor="{StaticResource nameBookColor}" />
+                        <customViews:CustomLabel
+                            Margin="10,0"
+                            FontSize="16"
+                            Text="° Những ai thích đọc sách thể loại trinh thám,tội phạm &#10; ° Giao dịch viên ngân hàng hoặc nhân viên ngành hàng không &#10; ° Người hâm mộ của bộ phim truyên hình đã được chuyển thể từ câu chuyện ly kỳ này. "
+                            TextColor="{StaticResource nameBookColor}" />
+                        <Label
+                            Margin="10,5"
+                            FontFamily="RBo"
+                            FontSize="16"
+                            Text="Về tác giả"
+                            TextColor="{StaticResource nameBookColor}" />
+                        <customViews:CustomLabel
+                            Margin="10,0"
+                            FontSize="16"
+                            Text="Frank Abagnale từng là một nhân vật huyên thoại trong giới tội phạm lừa đảo, hiện đang là một nhà cố vấn an ninh chuyên nghiệp và cũng là giảng viên tại Cục Điêu Tra Tội phạm Tài chính Liên bang Mỹ. Đồng thời, ông cũng điêu hành công ty tư vấn chống lừa đảo tài chính Abagnale và Associates."
+                            TextColor="{StaticResource nameBookColor}" />
+                    </StackLayout>
+                    <Button
+                        Margin="10"
+                        Padding="20,5"
+                        BackgroundColor="{StaticResource placeHolderColor}"
+                        Command="{Binding ShowMoreCommand}"
+                        CornerRadius="15"
+                        FontFamily="R"
+                        FontSize="16"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        Text="Xem thêm"
+                        TextTransform="None">
                         <Button.Triggers>
-                            <DataTrigger TargetType="Button" Binding="{Binding ShowMore}" Value="True">
-                                <Setter Property="Text" Value="Ẩn bớt"/>
+                            <DataTrigger
+                                Binding="{Binding ShowMore}"
+                                TargetType="Button"
+                                Value="True">
+                                <Setter Property="Text" Value="Ẩn bớt" />
                             </DataTrigger>
                         </Button.Triggers>
-                        
                     </Button>
 
                     <StackLayout Spacing="5">
-                        <Label Text="Có thể bạn sẽ thích"
-                               FontSize="18"
-                               Margin="15,10"
-                               FontFamily="RBo"
-                               TextColor="{StaticResource titleColor}"/>
-                        <CollectionView HeightRequest="330"
-                                        ItemsSource="{Binding ListBook}">
+                        <Label
+                            Margin="15,10"
+                            FontFamily="RBo"
+                            FontSize="18"
+                            Text="Có thể bạn sẽ thích"
+                            TextColor="{StaticResource titleColor}" />
+                        <CollectionView HeightRequest="330" ItemsSource="{Binding ListBook}">
                             <CollectionView.ItemsLayout>
-                                <LinearItemsLayout ItemSpacing="5"
-                                                   Orientation="Horizontal"/>
+                                <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="md:Book">
                                     <StackLayout x:Name="ItemBook">
                                         <Grid WidthRequest="160">
 
-                                            <StackLayout Spacing="0"
-                                                     WidthRequest="160" 
-                                                     Margin="5,0,0,0"
-                                                     HorizontalOptions="Start">
+                                            <StackLayout
+                                                Margin="5,0,0,0"
+                                                HorizontalOptions="Start"
+                                                Spacing="0"
+                                                WidthRequest="160">
 
-                                                <Image Source="{Binding ImgBook}"
-                                                    Aspect="AspectFill"
-                                                    HeightRequest="210"
-                                                    WidthRequest="140" 
-                                                    HorizontalOptions="Start"
+                                                <Image
                                                     Margin="10"
                                                     xct:CornerRadiusEffect.CornerRadius="5"
                                                     xct:ShadowEffect.Color="Gray"
@@ -267,48 +284,50 @@
                                                     xct:ShadowEffect.OffsetY="6"
                                                     xct:ShadowEffect.Opacity="1.5"
                                                     xct:ShadowEffect.Radius="5"
-                                                    />
+                                                    Aspect="AspectFill"
+                                                    HeightRequest="210"
+                                                    HorizontalOptions="Start"
+                                                    Source="{Binding ImgBook}"
+                                                    WidthRequest="140" />
 
-                                                <Label Text="{Binding TitleBook}"
-                                                   WidthRequest="140"
-                                                   MaxLines="2"
-                                                   LineBreakMode="TailTruncation"
-                                                   Margin="10,0,10,0"
-                                                   FontSize="16"
-                                                   FontFamily="RB"
-                   
-                                                    TextColor="{StaticResource nameBookColor}"/>
-                                                <Label Text="{Binding AuthorBook}"
-                                                   WidthRequest="140"
-                                                   MaxLines="2"
-                                                   Margin="10,0,10,0"
-                                                   LineBreakMode="TailTruncation"
-                                                   FontSize="16"
-                                                   FontFamily="R"/>
+                                                <Label
+                                                    Margin="10,0,10,0"
+                                                    FontFamily="RB"
+                                                    FontSize="16"
+                                                    LineBreakMode="TailTruncation"
+                                                    MaxLines="2"
+                                                    Text="{Binding TitleBook}"
+                                                    TextColor="{StaticResource nameBookColor}"
+                                                    WidthRequest="140" />
+                                                <Label
+                                                    Margin="10,0,10,0"
+                                                    FontFamily="R"
+                                                    FontSize="16"
+                                                    LineBreakMode="TailTruncation"
+                                                    MaxLines="2"
+                                                    Text="{Binding AuthorBook}"
+                                                    WidthRequest="140" />
                                             </StackLayout>
 
-                                            <Image Source="{StaticResource Premium}"
-                                               WidthRequest="20"
-                                               HeightRequest="20"
-                                               HorizontalOptions="End"
-                                               VerticalOptions="Start"
-                                               Margin="15,10"
-                                               IsVisible="{Binding IsPremium}"/>
-
+                                            <Image
+                                                Margin="15,10"
+                                                HeightRequest="20"
+                                                HorizontalOptions="End"
+                                                IsVisible="{Binding IsPremium}"
+                                                Source="{StaticResource Premium}"
+                                                VerticalOptions="Start"
+                                                WidthRequest="20" />
                                         </Grid>
                                         <StackLayout.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/BookDetailPage', Animated=True, UseModalNavigation=True}"/>
+                                            <TapGestureRecognizer Command="{prism:NavigateTo 'NavigationPage/BookDetailPage', Animated=True, UseModalNavigation=True}" />
                                         </StackLayout.GestureRecognizers>
                                     </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
-
                     </StackLayout>
                 </StackLayout>
-                
             </ScrollView>
         </Grid>
     </ContentPage.Content>
-
 </ContentPage>
