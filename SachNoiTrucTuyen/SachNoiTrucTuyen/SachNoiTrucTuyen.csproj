@@ -215,11 +215,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.4.0.56" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.4.0.56" />
-    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
-    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="23.2.7" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="23.2.7" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.8.0" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
   </ItemGroup>
 
